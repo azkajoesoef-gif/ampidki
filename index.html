@@ -1,0 +1,1814 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0F172A" />
+  <title>DPD AMPI DKI Jakarta | Angkatan Muda Pembaharuan Indonesia</title>
+  <meta name="description" content="Website resmi DPD AMPI (Angkatan Muda Pembaharuan Indonesia) DKI Jakarta. Kreativitas, Kepemudaan, Pembaharuan untuk Jakarta Maju." />
+  <meta name="keywords" content="AMPI, DPD AMPI DKI Jakarta, Angkatan Muda Pembaharuan Indonesia, Pemuda Jakarta, Organisasi Kepemudaan Jakarta" />
+  <meta property="og:title" content="DPD AMPI DKI Jakarta" />
+  <meta property="og:description" content="Kreativitas, Kepemudaan, Pembaharuan untuk Jakarta Maju." />
+  <meta property="og:type" content="website" />
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%230F172A'/><path d='M55 12 26 56h20l-6 32 32-46H52z' fill='%23F59E0B'/></svg>" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" referrerpolicy="no-referrer" />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            gold: { DEFAULT: '#F59E0B', dark: '#EAB308', light: '#FCD34D', deep: '#B45309' },
+            navy: { DEFAULT: '#0F172A', 900: '#0B1220', 800: '#1E293B', 700: '#1E3A8A', 600: '#1D4ED8' }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'ui-sans-serif', 'system-ui', 'sans-serif']
+          },
+          boxShadow: {
+            glow: '0 0 45px -12px rgba(245,158,11,.65)',
+            card: '0 18px 40px -20px rgba(15,23,42,.35)'
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+    body { font-family: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+    ::selection { background: #F59E0B; color: #0F172A; }
+
+    /* Custom scrollbar */
+    ::-webkit-scrollbar { width: 10px; }
+    ::-webkit-scrollbar-track { background: #0F172A; }
+    ::-webkit-scrollbar-thumb { background: #EAB308; border-radius: 999px; border: 2px solid #0F172A; }
+    ::-webkit-scrollbar-thumb:hover { background: #F59E0B; }
+
+    /* Nav link underline indicator */
+    .nav-link { position: relative; }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      left: 0; right: 0; bottom: -7px;
+      height: 2px;
+      border-radius: 2px;
+      background: #F59E0B;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform .35s cubic-bezier(.22,1,.36,1);
+    }
+    .nav-link:hover::after,
+    .nav-link.active::after { transform: scaleX(1); }
+    .nav-link.active { color: #F59E0B; }
+
+    /* Scroll reveal */
+    .reveal { opacity: 0; transform: translateY(26px); transition: opacity .8s cubic-bezier(.22,1,.36,1), transform .8s cubic-bezier(.22,1,.36,1); will-change: opacity, transform; }
+    .reveal.is-visible { opacity: 1; transform: none; }
+
+    /* Grid pattern background */
+    .bg-grid {
+      background-image:
+        linear-gradient(to right, rgba(255,255,255,.07) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255,255,255,.07) 1px, transparent 1px);
+      background-size: 56px 56px;
+    }
+    .bg-grid-light {
+      background-image:
+        linear-gradient(to right, rgba(15,23,42,.055) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(15,23,42,.055) 1px, transparent 1px);
+      background-size: 48px 48px;
+    }
+
+    /* Focus ring for form */
+    .field:focus {
+      outline: none;
+      border-color: #F59E0B;
+      box-shadow: 0 0 0 4px rgba(245,158,11,.18);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+    }
+  </style>
+</head>
+
+<body class="bg-white text-navy antialiased">
+
+  <!-- ================= SKIP LINK ================= -->
+  <a href="#beranda" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[200] focus:rounded-lg focus:bg-gold focus:px-4 focus:py-2 focus:text-sm focus:font-bold focus:text-navy">
+    Lewati ke konten utama
+  </a>
+
+  <!-- ================= HEADER / NAVBAR ================= -->
+  <header id="navbar" class="fixed inset-x-0 top-0 z-50 border-b border-white/5 bg-navy/70 backdrop-blur-md transition-all duration-300">
+    <nav class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8" aria-label="Navigasi utama">
+      <div class="flex h-[72px] items-center justify-between gap-4 lg:h-20">
+
+        <!-- Brand -->
+        <a href="#beranda" class="group flex shrink-0 items-center gap-3">
+          <span class="relative grid h-11 w-11 place-items-center rounded-xl bg-gradient-to-br from-gold-light via-gold to-gold-dark text-navy shadow-glow transition-transform duration-300 group-hover:scale-105">
+            <i class="fa-solid fa-bolt text-lg" aria-hidden="true"></i>
+            <span class="absolute -bottom-1 -right-1 grid h-4 w-4 place-items-center rounded-full bg-navy-700 text-[7px] font-black text-white ring-2 ring-navy">DKI</span>
+          </span>
+          <span class="leading-tight">
+            <span class="block text-[15px] font-extrabold tracking-tight text-white">DPD AMPI</span>
+            <span class="block text-[10px] font-bold uppercase tracking-[0.22em] text-gold">DKI Jakarta</span>
+          </span>
+        </a>
+
+        <!-- Desktop menu -->
+        <ul class="hidden items-center gap-6 xl:gap-7 lg:flex">
+          <li><a href="#beranda" class="nav-link text-[13px] font-semibold text-slate-200 transition-colors hover:text-gold">Beranda</a></li>
+          <li><a href="#profil" class="nav-link text-[13px] font-semibold text-slate-200 transition-colors hover:text-gold">Profil</a></li>
+          <li><a href="#struktur" class="nav-link text-[13px] font-semibold text-slate-200 transition-colors hover:text-gold">Struktur</a></li>
+          <li><a href="#program" class="nav-link text-[13px] font-semibold text-slate-200 transition-colors hover:text-gold">Program</a></li>
+          <li><a href="#berita" class="nav-link text-[13px] font-semibold text-slate-200 transition-colors hover:text-gold">Berita</a></li>
+          <li><a href="#aspirasi" class="nav-link text-[13px] font-semibold text-slate-200 transition-colors hover:text-gold">Aspirasi</a></li>
+          <li><a href="#kontak" class="nav-link text-[13px] font-semibold text-slate-200 transition-colors hover:text-gold">Kontak</a></li>
+        </ul>
+
+        <!-- CTA + Hamburger -->
+        <div class="flex items-center gap-3">
+          <a href="#aspirasi"
+             class="hidden items-center gap-2 rounded-full bg-gradient-to-r from-gold-light via-gold to-gold-dark px-5 py-2.5 text-[13px] font-extrabold text-navy shadow-lg shadow-gold/25 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-glow md:inline-flex">
+            <i class="fa-solid fa-user-plus text-xs" aria-hidden="true"></i>
+            Gabung AMPI
+          </a>
+
+          <button id="menuBtn" type="button"
+                  class="grid h-11 w-11 place-items-center rounded-xl border border-white/15 text-white transition-colors hover:border-gold/60 hover:text-gold lg:hidden"
+                  aria-label="Buka menu navigasi" aria-expanded="false" aria-controls="mobileMenu">
+            <i id="menuIcon" class="fa-solid fa-bars text-lg" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Mobile menu -->
+    <div id="mobileMenu" class="hidden border-t border-white/10 bg-navy/98 backdrop-blur-xl lg:hidden">
+      <ul class="mx-auto max-w-7xl space-y-1 px-4 py-5 sm:px-6">
+        <li><a href="#beranda"  class="mobile-link flex items-center gap-3 rounded-xl px-4 py-3 text-sm font-semibold text-slate-200 transition-colors hover:bg-white/5 hover:text-gold"><i class="fa-solid fa-house w-4 text-gold/80"></i> Beranda</a></li>
+        <li><a href="#profil"   class="mobile-link flex items-center gap-3 rounded-xl px-4 py-3 text-sm font-semibold text-slate-200 transition-colors hover:bg-white/5 hover:text-gold"><i class="fa-solid fa-circle-info w-4 text-gold/80"></i> Profil &amp; Visi Misi</a></li>
+        <li><a href="#struktur" class="mobile-link flex items-center gap-3 rounded-xl px-4 py-3 text-sm font-semibold text-slate-200 transition-colors hover:bg-white/5 hover:text-gold"><i class="fa-solid fa-sitemap w-4 text-gold/80"></i> Struktur Organisasi</a></li>
+        <li><a href="#program"  class="mobile-link flex items-center gap-3 rounded-xl px-4 py-3 text-sm font-semibold text-slate-200 transition-colors hover:bg-white/5 hover:text-gold"><i class="fa-solid fa-diagram-project w-4 text-gold/80"></i> Bidang / Program Kerja</a></li>
+        <li><a href="#berita"   class="mobile-link flex items-center gap-3 rounded-xl px-4 py-3 text-sm font-semibold text-slate-200 transition-colors hover:bg-white/5 hover:text-gold"><i class="fa-regular fa-newspaper w-4 text-gold/80"></i> Berita / Kegiatan</a></li>
+        <li><a href="#aspirasi" class="mobile-link flex items-center gap-3 rounded-xl px-4 py-3 text-sm font-semibold text-slate-200 transition-colors hover:bg-white/5 hover:text-gold"><i class="fa-solid fa-comment-dots w-4 text-gold/80"></i> Aspirasi Warga</a></li>
+        <li><a href="#kontak"   class="mobile-link flex items-center gap-3 rounded-xl px-4 py-3 text-sm font-semibold text-slate-200 transition-colors hover:bg-white/5 hover:text-gold"><i class="fa-solid fa-envelope w-4 text-gold/80"></i> Kontak</a></li>
+        <li class="pt-2">
+          <a href="#aspirasi" class="mobile-link flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-gold-light via-gold to-gold-dark px-4 py-3 text-sm font-extrabold text-navy shadow-lg shadow-gold/20">
+            <i class="fa-solid fa-user-plus text-xs"></i> Gabung AMPI DKI Jakarta
+          </a>
+        </li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ================= HERO ================= -->
+    <section id="beranda" class="relative isolate overflow-hidden bg-navy pt-32 lg:pt-40">
+      <!-- Decorative -->
+      <div class="pointer-events-none absolute inset-0 bg-grid opacity-60" aria-hidden="true"></div>
+      <div class="pointer-events-none absolute -right-24 -top-32 h-[26rem] w-[26rem] rounded-full bg-gold/20 blur-[110px]" aria-hidden="true"></div>
+      <div class="pointer-events-none absolute -left-32 top-1/3 h-[24rem] w-[24rem] rounded-full bg-navy-700/50 blur-[110px]" aria-hidden="true"></div>
+      <div class="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gold/50 to-transparent" aria-hidden="true"></div>
+
+      <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="grid items-center gap-14 pb-40 lg:grid-cols-12 lg:gap-10 lg:pb-52">
+
+          <!-- Copy -->
+          <div class="lg:col-span-7">
+            <span class="reveal inline-flex items-center gap-2.5 rounded-full border border-gold/30 bg-gold/10 px-4 py-2 text-[11px] font-bold uppercase tracking-[0.18em] text-gold">
+              <span class="relative flex h-2 w-2">
+                <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-gold opacity-70"></span>
+                <span class="relative inline-flex h-2 w-2 rounded-full bg-gold"></span>
+              </span>
+              Organisasi Resmi DPD AMPI DKI Jakarta
+            </span>
+
+            <h1 class="reveal mt-6 text-[2.1rem] font-extrabold leading-[1.12] tracking-tight text-white sm:text-5xl lg:text-[3.4rem]">
+              Mewadahi Karya dan <span class="bg-gradient-to-r from-gold-light via-gold to-gold-dark bg-clip-text text-transparent">Pembaharuan Pemuda Jakarta</span> Menuju Kota Global
+            </h1>
+
+            <p class="reveal mt-6 max-w-2xl text-[15px] leading-relaxed text-slate-300 sm:text-base">
+              DPD AMPI DKI Jakarta hadir sebagai rumah bersama pemuda ibu kota — bergerak di ranah
+              <span class="font-semibold text-white">advokasi publik</span>,
+              <span class="font-semibold text-white">kepemudaan</span>,
+              <span class="font-semibold text-white">sosial-politik</span>, dan
+              <span class="font-semibold text-white">ekonomi kreatif</span>
+              untuk memastikan suara generasi muda Jakarta didengar, diakomodasi, dan diwujudkan dalam kebijakan nyata.
+            </p>
+
+            <!-- Tagline -->
+            <p class="reveal mt-5 flex flex-wrap items-center gap-x-2 gap-y-1 text-sm font-bold italic text-gold">
+              <i class="fa-solid fa-quote-left text-xs" aria-hidden="true"></i>
+              Kreativitas, Kepemudaan, Pembaharuan untuk Jakarta Maju
+              <i class="fa-solid fa-quote-right text-xs" aria-hidden="true"></i>
+            </p>
+
+            <div class="reveal mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
+              <a href="#aspirasi"
+                 class="group inline-flex items-center justify-center gap-2.5 rounded-full bg-gradient-to-r from-gold-light via-gold to-gold-dark px-7 py-4 text-sm font-extrabold text-navy shadow-xl shadow-gold/25 transition-all duration-300 hover:-translate-y-1 hover:shadow-glow">
+                <i class="fa-solid fa-id-card-clip" aria-hidden="true"></i>
+                Daftar Jadi Kader / Anggota
+                <i class="fa-solid fa-arrow-right text-xs transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true"></i>
+              </a>
+              <a href="#program"
+                 class="inline-flex items-center justify-center gap-2.5 rounded-full border border-white/20 bg-white/5 px-7 py-4 text-sm font-bold text-white backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-gold/60 hover:bg-white/10 hover:text-gold">
+                <i class="fa-solid fa-diagram-project" aria-hidden="true"></i>
+                Lihat Program Kerja
+              </a>
+            </div>
+          </div>
+
+          <!-- Visual -->
+          <div class="reveal relative lg:col-span-5">
+            <div class="absolute -inset-5 rounded-[2.5rem] bg-gradient-to-tr from-gold/25 via-transparent to-navy-700/40 blur-2xl" aria-hidden="true"></div>
+
+            <div class="relative overflow-hidden rounded-[2rem] border border-white/10 bg-gradient-to-br from-navy-800 via-navy to-navy-900 shadow-2xl">
+              <!-- Skyline inside card -->
+              <div class="relative aspect-[4/5] w-full sm:aspect-[16/10] lg:aspect-[4/5]">
+                <div class="absolute inset-0 bg-grid opacity-40" aria-hidden="true"></div>
+
+                <!-- Glow -->
+                <div class="absolute left-1/2 top-1/4 h-52 w-52 -translate-x-1/2 rounded-full bg-gold/25 blur-[70px]" aria-hidden="true"></div>
+
+                <!-- Center content -->
+                <div class="absolute inset-0 flex flex-col items-center justify-center px-8 text-center">
+                  <span class="grid h-20 w-20 place-items-center rounded-2xl bg-gradient-to-br from-gold-light via-gold to-gold-dark text-navy shadow-glow">
+                    <i class="fa-solid fa-city text-3xl" aria-hidden="true"></i>
+                  </span>
+                  <p class="mt-6 text-xs font-bold uppercase tracking-[0.3em] text-gold">Jakarta Maju</p>
+                  <p class="mt-2 max-w-[15rem] text-sm leading-relaxed text-slate-300">
+                    Monumen &amp; skyline ibu kota — saksi gerakan pemuda pembaharuan.
+                  </p>
+                </div>
+
+                <!-- Skyline silhouette -->
+                <svg class="absolute bottom-0 left-0 h-32 w-full text-navy-800 sm:h-40 lg:h-48" viewBox="0 0 1440 220" preserveAspectRatio="none" fill="currentColor" aria-hidden="true">
+                  <path d="M0,220 L0,150 L60,150 L60,118 L112,118 L112,158 L172,158 L172,92 L196,92 L196,72 L210,72 L210,54 L224,54 L224,38 L238,38 L238,16 L252,16 L252,38 L266,38 L266,54 L280,54 L280,72 L294,72 L294,92 L318,92 L318,168 L380,168 L380,108 L440,108 L440,140 L500,140 L500,78 L560,78 L560,128 L620,128 L620,98 L700,98 L700,148 L760,148 L760,58 L820,58 L820,118 L880,118 L880,88 L940,88 L940,158 L1000,158 L1000,108 L1060,108 L1060,138 L1120,138 L1120,78 L1180,78 L1180,148 L1240,148 L1240,118 L1300,118 L1300,168 L1360,168 L1360,138 L1440,138 L1440,220 Z"/>
+                </svg>
+                <svg class="absolute bottom-0 left-0 h-24 w-full text-navy-900 sm:h-28 lg:h-32" viewBox="0 0 1440 220" preserveAspectRatio="none" fill="currentColor" aria-hidden="true">
+                  <path d="M0,220 L0,178 L90,178 L90,140 L180,140 L180,190 L260,190 L260,150 L360,150 L360,186 L460,186 L460,132 L560,132 L560,180 L660,180 L660,146 L780,146 L780,192 L900,192 L900,156 L1020,156 L1020,184 L1140,184 L1140,142 L1260,142 L1260,188 L1380,188 L1380,160 L1440,160 L1440,220 Z"/>
+                </svg>
+              </div>
+            </div>
+
+            <!-- Floating badges -->
+            <div class="absolute -left-3 top-10 hidden rounded-2xl border border-white/10 bg-navy-800/90 px-4 py-3 shadow-xl backdrop-blur-md sm:block">
+              <p class="flex items-center gap-2 text-[11px] font-bold uppercase tracking-wider text-gold">
+                <i class="fa-solid fa-users" aria-hidden="true"></i> Kader Aktif
+              </p>
+              <p class="mt-1 text-xl font-extrabold text-white">12.500+</p>
+            </div>
+
+            <div class="absolute -right-3 bottom-24 hidden rounded-2xl border border-white/10 bg-navy-800/90 px-4 py-3 shadow-xl backdrop-blur-md sm:block">
+              <p class="flex items-center gap-2 text-[11px] font-bold uppercase tracking-wider text-gold">
+                <i class="fa-solid fa-map-location-dot" aria-hidden="true"></i> Wilayah
+              </p>
+              <p class="mt-1 text-xl font-extrabold text-white">6 Kota/Kab</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stats bar -->
+      <div class="relative mx-auto -mb-14 max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="reveal grid grid-cols-2 gap-px overflow-hidden rounded-3xl border border-white/10 bg-white/5 shadow-2xl backdrop-blur-md lg:grid-cols-4">
+          <div class="bg-navy/60 px-6 py-7 text-center transition-colors hover:bg-navy/40">
+            <p class="text-3xl font-extrabold text-gold"><span class="counter" data-count="12500" data-suffix="+">0</span></p>
+            <p class="mt-1.5 text-[11px] font-bold uppercase tracking-[0.16em] text-slate-300">Kader Terdaftar</p>
+          </div>
+          <div class="bg-navy/60 px-6 py-7 text-center transition-colors hover:bg-navy/40">
+            <p class="text-3xl font-extrabold text-gold"><span class="counter" data-count="6">0</span></p>
+            <p class="mt-1.5 text-[11px] font-bold uppercase tracking-[0.16em] text-slate-300">Wilayah Administratif</p>
+          </div>
+          <div class="bg-navy/60 px-6 py-7 text-center transition-colors hover:bg-navy/40">
+            <p class="text-3xl font-extrabold text-gold"><span class="counter" data-count="24" data-suffix="+">0</span></p>
+            <p class="mt-1.5 text-[11px] font-bold uppercase tracking-[0.16em] text-slate-300">Program Berjalan</p>
+          </div>
+          <div class="bg-navy/60 px-6 py-7 text-center transition-colors hover:bg-navy/40">
+            <p class="text-3xl font-extrabold text-gold"><span class="counter" data-count="150" data-suffix="+">0</span></p>
+            <p class="mt-1.5 text-[11px] font-bold uppercase tracking-[0.16em] text-slate-300">Kegiatan Terlaksana</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PROFIL & NILAI ================= -->
+    <section id="profil" class="relative bg-white pt-28 pb-20 sm:pt-32 lg:pt-36">
+      <div class="pointer-events-none absolute inset-x-0 top-0 h-64 bg-grid-light opacity-70" aria-hidden="true"></div>
+
+      <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+
+        <!-- Heading -->
+        <div class="reveal mx-auto max-w-3xl text-center">
+          <span class="inline-flex items-center gap-2 rounded-full border border-gold/30 bg-gold/10 px-4 py-1.5 text-[11px] font-bold uppercase tracking-[0.18em] text-gold-deep">
+            <i class="fa-solid fa-circle-info" aria-hidden="true"></i> Profil &amp; Nilai
+          </span>
+          <h2 class="mt-5 text-3xl font-extrabold leading-tight tracking-tight text-navy sm:text-4xl lg:text-[2.6rem]">
+            Tentang <span class="text-gold-dark">DPD AMPI DKI Jakarta</span>
+          </h2>
+          <p class="mt-4 text-[15px] leading-relaxed text-slate-600">
+            Angkatan Muda Pembaharuan Indonesia (AMPI) adalah organisasi kepemudaan yang berdiri sebagai
+            wadah perjuangan generasi muda dalam mengawal pembaharuan bangsa — hadir di ibu kota sebagai
+            lokomotif perubahan.
+          </p>
+        </div>
+
+        <!-- Sejarah + Image -->
+        <div class="mt-16 grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+          <div class="reveal">
+            <h3 class="text-2xl font-extrabold tracking-tight text-navy">Lokomotif Pemuda Pembaharuan di Ibu Kota</h3>
+            <div class="mt-5 space-y-4 text-[15px] leading-relaxed text-slate-600">
+              <p>
+                Sejak kehadirannya, AMPI menempatkan diri sebagai kekuatan moral dan intelektual pemuda
+                yang berdiri di atas tiga landasan: karya nyata, intelektualitas, dan solidaritas sosial.
+                Di DKI Jakarta — pusat denyut ekonomi, politik, dan budaya nasional — peran tersebut
+                menuntut kepekaan tinggi terhadap persoalan warga kota.
+              </p>
+              <p>
+                DPD AMPI DKI Jakarta mengoordinasikan gerakan di lima kota administrasi dan satu kabupaten
+                administratif. Kami bekerja lintas sektor: mendorong kebijakan publik yang berpihak pada
+                pemuda, membangun kapasitas kader, menggerakkan ekonomi kreatif, serta menghadirkan
+                kehadiran sosial yang nyata di tengah masyarakat.
+              </p>
+              <p>
+                Bagi kami, pembaharuan bukan slogan. Ia adalah kerja harian — terukur, kolaboratif, dan
+                berdampak langsung bagi warga Jakarta.
+              </p>
+            </div>
+
+            <div class="mt-8 grid grid-cols-2 gap-4">
+              <div class="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+                <i class="fa-solid fa-scale-balanced text-xl text-gold-dark" aria-hidden="true"></i>
+                <p class="mt-3 text-sm font-bold text-navy">Advokasi Berbasis Data</p>
+                <p class="mt-1 text-xs leading-relaxed text-slate-500">Kebijakan publik yang kami dorong selalu berbasis kajian dan kebutuhan riil warga.</p>
+              </div>
+              <div class="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+                <i class="fa-solid fa-handshake-angle text-xl text-gold-dark" aria-hidden="true"></i>
+                <p class="mt-3 text-sm font-bold text-navy">Kolaborasi Lintas Sektor</p>
+                <p class="mt-1 text-xs leading-relaxed text-slate-500">Bersinergi dengan pemerintah, akademisi, komunitas, dan dunia usaha.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Image placeholder -->
+          <div class="reveal relative">
+            <div class="absolute -inset-4 rounded-[2.5rem] bg-gradient-to-br from-gold/20 to-navy-700/10 blur-2xl" aria-hidden="true"></div>
+            <div class="relative overflow-hidden rounded-3xl border border-slate-200 shadow-card">
+              <div class="relative grid aspect-[4/3] w-full place-items-center bg-gradient-to-br from-navy-800 via-navy to-navy-900">
+                <div class="absolute inset-0 bg-grid opacity-50" aria-hidden="true"></div>
+                <div class="absolute bottom-0 left-0 h-24 w-full text-navy-900" aria-hidden="true">
+                  <svg viewBox="0 0 1440 220" preserveAspectRatio="none" fill="currentColor" class="h-full w-full">
+                    <path d="M0,220 L0,168 L120,168 L120,130 L240,130 L240,180 L360,180 L360,138 L480,138 L480,190 L600,190 L600,120 L720,120 L720,176 L840,176 L840,142 L960,142 L960,188 L1080,188 L1080,150 L1200,150 L1200,182 L1320,182 L1320,144 L1440,144 L1440,220 Z"/>
+                  </svg>
+                </div>
+                <div class="relative text-center">
+                  <i class="fa-solid fa-people-group text-5xl text-gold/70" aria-hidden="true"></i>
+                  <p class="mt-4 text-xs font-bold uppercase tracking-[0.25em] text-gold">Foto Kegiatan</p>
+                  <p class="mt-1 text-[11px] text-slate-400">Placeholder — ganti dengan dokumentasi resmi</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="absolute -bottom-6 -left-4 rounded-2xl border border-slate-200 bg-white px-5 py-4 shadow-card sm:-left-6">
+              <p class="text-[10px] font-bold uppercase tracking-[0.16em] text-slate-400">Berdiri Sejak</p>
+              <p class="mt-0.5 text-2xl font-extrabold text-navy">2000<span class="text-gold-dark">-an</span></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3 Pilar -->
+        <div class="mt-20">
+          <div class="reveal mx-auto max-w-2xl text-center">
+            <h3 class="text-2xl font-extrabold tracking-tight text-navy sm:text-3xl">Tiga Pilar Utama AMPI</h3>
+            <p class="mt-3 text-sm leading-relaxed text-slate-600">Fondasi gerakan yang menjiwai setiap langkah kader DPD AMPI DKI Jakarta.</p>
+          </div>
+
+          <div class="mt-10 grid gap-6 md:grid-cols-3">
+            <!-- Pilar 1 -->
+            <article class="reveal group relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-8 shadow-sm transition-all duration-500 hover:-translate-y-2 hover:border-gold/50 hover:shadow-card">
+              <span class="absolute right-6 top-6 text-5xl font-extrabold text-slate-100 transition-colors group-hover:text-gold/20">01</span>
+              <span class="relative grid h-14 w-14 place-items-center rounded-2xl bg-gradient-to-br from-gold-light via-gold to-gold-dark text-navy shadow-lg shadow-gold/25">
+                <i class="fa-solid fa-hammer text-xl" aria-hidden="true"></i>
+              </span>
+              <h4 class="relative mt-6 text-lg font-extrabold text-navy">Karya Nyata</h4>
+              <p class="relative mt-3 text-sm leading-relaxed text-slate-600">
+                Setiap gagasan harus berujung pada tindakan. Kami mengutamakan program yang terukur,
+                tepat sasaran, dan dirasakan langsung manfaatnya oleh warga Jakarta.
+              </p>
+            </article>
+
+            <!-- Pilar 2 -->
+            <article class="reveal group relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-8 shadow-sm transition-all duration-500 hover:-translate-y-2 hover:border-gold/50 hover:shadow-card">
+              <span class="absolute right-6 top-6 text-5xl font-extrabold text-slate-100 transition-colors group-hover:text-gold/20">02</span>
+              <span class="relative grid h-14 w-14 place-items-center rounded-2xl bg-gradient-to-br from-gold-light via-gold to-gold-dark text-navy shadow-lg shadow-gold/25">
+                <i class="fa-solid fa-graduation-cap text-xl" aria-hidden="true"></i>
+              </span>
+              <h4 class="relative mt-6 text-lg font-extrabold text-navy">Intelektualitas &amp; Kepemimpinan</h4>
+              <p class="relative mt-3 text-sm leading-relaxed text-slate-600">
+                Kader AMPI dibekali nalar kritis, kapasitas kepemimpinan publik, dan integritas —
+                agar mampu mengambil peran strategis di ruang kebijakan maupun masyarakat.
+              </p>
+            </article>
+
+            <!-- Pilar 3 -->
+            <article class="reveal group relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-8 shadow-sm transition-all duration-500 hover:-translate-y-2 hover:border-gold/50 hover:shadow-card">
+              <span class="absolute right-6 top-6 text-5xl font-extrabold text-slate-100 transition-colors group-hover:text-gold/20">03</span>
+              <span class="relative grid h-14 w-14 place-items-center rounded-2xl bg-gradient-to-br from-gold-light via-gold to-gold-dark text-navy shadow-lg shadow-gold/25">
+                <i class="fa-solid fa-people-group text-xl" aria-hidden="true"></i>
+              </span>
+              <h4 class="relative mt-6 text-lg font-extrabold text-navy">Solidaritas Sosial</h4>
+              <p class="relative mt-3 text-sm leading-relaxed text-slate-600">
+                Kehadiran kami nyata di tengah warga: respons cepat bencana, pendampingan komunitas,
+                dan penguatan ekonomi kerakyatan di tingkat kelurahan.
+              </p>
+            </article>
+          </div>
+        </div>
+
+        <!-- Visi & Misi -->
+        <div class="mt-20 grid gap-6 lg:grid-cols-5">
+          <!-- Visi -->
+          <div class="reveal relative overflow-hidden rounded-3xl bg-gradient-to-br from-navy via-navy-800 to-navy-900 p-8 text-white shadow-2xl lg:col-span-2 lg:p-10">
+            <div class="absolute inset-0 bg-grid opacity-40" aria-hidden="true"></div>
+            <div class="absolute -right-16 -top-16 h-56 w-56 rounded-full bg-gold/20 blur-3xl" aria-hidden="true"></div>
+
+            <div class="relative">
+              <span class="inline-flex items-center gap-2 rounded-full border border-gold/30 bg-gold/10 px-3.5 py-1.5 text-[10px] font-bold uppercase tracking-[0.18em] text-gold">
+                <i class="fa-solid fa-eye" aria-hidden="true"></i> Visi
+              </span>
+              <p class="mt-6 text-lg font-semibold leading-relaxed text-white sm:text-xl">
+                “Menjadi lokomotif pemuda pembaharuan yang <span class="text-gold">unggul, berintegritas, dan berdampak nyata</span>
+                bagi terwujudnya Jakarta sebagai kota global yang maju, humanis, berkeadilan, dan berkelanjutan.”
+              </p>
+            </div>
+          </div>
+
+          <!-- Misi -->
+          <div class="reveal rounded-3xl border border-slate-200 bg-white p-8 shadow-sm lg:col-span-3 lg:p-10">
+            <span class="inline-flex items-center gap-2 rounded-full border border-navy/15 bg-navy/5 px-3.5 py-1.5 text-[10px] font-bold uppercase tracking-[0.18em] text-navy">
+              <i class="fa-solid fa-bullseye" aria-hidden="true"></i> Misi
+            </span>
+
+            <ul class="mt-7 space-y-5">
+              <li class="flex gap-4">
+                <span class="mt-0.5 grid h-7 w-7 shrink-0 place-items-center rounded-lg bg-gold/15 text-[11px] font-extrabold text-gold-deep">01</span>
+                <p class="text-sm leading-relaxed text-slate-600">
+                  <span class="font-bold text-navy">Menguatkan kaderisasi.</span>
+                  Membangun sistem pendidikan dan pelatihan kader yang berjenjang, modern, dan berkarakter.
+                </p>
+              </li>
+              <li class="flex gap-4">
+                <span class="mt-0.5 grid h-7 w-7 shrink-0 place-items-center rounded-lg bg-gold/15 text-[11px] font-extrabold text-gold-deep">02</span>
+                <p class="text-sm leading-relaxed text-slate-600">
+                  <span class="font-bold text-navy">Mengawal kebijakan publik.</span>
+                  Melakukan advokasi berbasis data untuk isu ketenagakerjaan, pendidikan, dan ruang hidup pemuda Jakarta.
+                </p>
+              </li>
+              <li class="flex gap-4">
+                <span class="mt-0.5 grid h-7 w-7 shrink-0 place-items-center rounded-lg bg-gold/15 text-[11px] font-extrabold text-gold-deep">03</span>
+                <p class="text-sm leading-relaxed text-slate-600">
+                  <span class="font-bold text-navy">Mendorong ekonomi kreatif.</span>
+                  Memfasilitasi pemuda Jakarta mengembangkan usaha, keterampilan digital, dan industri kreatif.
+                </p>
+              </li>
+              <li class="flex gap-4">
+                <span class="mt-0.5 grid h-7 w-7 shrink-0 place-items-center rounded-lg bg-gold/15 text-[11px] font-extrabold text-gold-deep">04</span>
+                <p class="text-sm leading-relaxed text-slate-600">
+                  <span class="font-bold text-navy">Memperkuat solidaritas sosial.</span>
+                  Hadir aktif dalam kegiatan kemanusiaan, lingkungan, dan pemberdayaan masyarakat kota.
+                </p>
+              </li>
+              <li class="flex gap-4">
+                <span class="mt-0.5 grid h-7 w-7 shrink-0 place-items-center rounded-lg bg-gold/15 text-[11px] font-extrabold text-gold-deep">05</span>
+                <p class="text-sm leading-relaxed text-slate-600">
+                  <span class="font-bold text-navy">Membangun kolaborasi.</span>
+                  Menjalin kemitraan strategis dengan pemerintah, akademisi, komunitas, dan dunia usaha.
+                </p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SAMBUTAN KETUA ================= -->
+    <section id="sambutan" class="relative overflow-hidden bg-slate-50 py-20 lg:py-28">
+      <div class="pointer-events-none absolute -left-24 top-10 h-72 w-72 rounded-full bg-gold/10 blur-[90px]" aria-hidden="true"></div>
+
+      <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
+
+          <!-- Foto Ketua -->
+          <div class="reveal lg:col-span-5">
+            <div class="relative mx-auto max-w-sm lg:max-w-none">
+              <div class="absolute -inset-3 rounded-[2rem] bg-gradient-to-br from-gold/30 to-navy-700/20 blur-2xl" aria-hidden="true"></div>
+
+              <div class="relative overflow-hidden rounded-[1.75rem] border-4 border-white bg-gradient-to-br from-navy-800 via-navy to-navy-900 shadow-2xl">
+                <div class="relative grid aspect-[4/5] w-full place-items-center">
+                  <div class="absolute inset-0 bg-grid opacity-40" aria-hidden="true"></div>
+                  <div class="relative text-center">
+                    <span class="grid h-24 w-24 place-items-center rounded-full border-2 border-gold/40 bg-white/5 backdrop-blur">
+                      <i class="fa-solid fa-user-tie text-4xl text-gold/80" aria-hidden="true"></i>
+                    </span>
+                    <p class="mt-5 text-[10px] font-bold uppercase tracking-[0.25em] text-gold">Foto Resmi Ketua</p>
+                    <p class="mt-1 px-6 text-[11px] text-slate-400">Placeholder — ganti dengan foto ketua definitif</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Name plate -->
+              <div class="absolute -bottom-6 left-1/2 w-[86%] -translate-x-1/2 rounded-2xl border border-slate-200 bg-white px-5 py-4 text-center shadow-card">
+                <!-- Ganti dengan nama Ketua DPD AMPI DKI Jakarta yang definitif -->
+                <p class="text-sm font-extrabold text-navy">H. Muhammad Rizky Aditya, S.E., M.Si.</p>
+                <p class="mt-1 text-[10px] font-bold uppercase tracking-[0.16em] text-gold-deep">Ketua DPD AMPI DKI Jakarta</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sambutan -->
+          <div class="reveal lg:col-span-7">
+            <span class="inline-flex items-center gap-2 rounded-full border border-gold/30 bg-gold/10 px-4 py-1.5 text-[11px] font-bold uppercase tracking-[0.18em] text-gold-deep">
+              <i class="fa-solid fa-quote-left" aria-hidden="true"></i> Sambutan Ketua
+            </span>
+
+            <h2 class="mt-5 text-3xl font-extrabold leading-tight tracking-tight text-navy sm:text-4xl">
+              Pemuda Jakarta, Penjaga Arah <span class="text-gold-dark">Pembaharuan</span>
+            </h2>
+
+            <div class="relative mt-7 rounded-3xl border border-slate-200 bg-white p-7 shadow-sm sm:p-9">
+              <i class="fa-solid fa-quote-left absolute -top-4 left-7 text-3xl text-gold/40" aria-hidden="true"></i>
+
+              <div class="space-y-4 text-[15px] leading-relaxed text-slate-600">
+                <p>
+                  Assalamu'alaikum warahmatullahi wabarakatuh. Salam sejahtera bagi kita semua.
+                </p>
+                <p>
+                  Jakarta adalah kota yang tidak pernah berhenti bergerak — dan di dalamnya tumbuh
+                  jutaan pemuda dengan energi, gagasan, serta keberanian untuk membawa perubahan.
+                  DPD AMPI DKI Jakarta hadir untuk memastikan energi itu tidak berhenti sebagai wacana,
+                  melainkan berubah menjadi karya yang nyata.
+                </p>
+                <p>
+                  Kami membuka pintu seluas-luasnya bagi pemuda ibu kota dari berbagai latar belakang:
+                  mahasiswa, profesional muda, pelaku UMKM, kreator digital, hingga pegiat sosial.
+                  Bersama, kita rawat tradisi intelektual, kita bangun solidaritas, dan kita kawal
+                  kebijakan publik agar berpihak pada masa depan Jakarta.
+                </p>
+                <p class="font-semibold text-navy">
+                  Mari berkarya, mari berkontribusi. Karena Jakarta maju hanya bisa diwujudkan
+                  jika pemudanya hadir dan mengambil peran.
+                </p>
+              </div>
+
+              <div class="mt-7 flex items-center gap-3 border-t border-slate-200 pt-6">
+                <span class="grid h-11 w-11 place-items-center rounded-xl bg-gold/15 text-gold-deep">
+                  <i class="fa-solid fa-signature" aria-hidden="true"></i>
+                </span>
+                <div>
+                  <p class="text-sm font-extrabold text-navy">H. Muhammad Rizky Aditya, S.E., M.Si.</p>
+                  <p class="text-[11px] font-semibold uppercase tracking-wider text-slate-500">Ketua DPD AMPI DKI Jakarta</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= STRUKTUR ORGANISASI ================= -->
+    <section id="struktur" class="relative overflow-hidden bg-navy py-20 lg:py-28">
+      <div class="pointer-events-none absolute inset-0 bg-grid opacity-50" aria-hidden="true"></div>
+      <div class="pointer-events-none absolute -right-20 top-1/4 h-80 w-80 rounded-full bg-gold/15 blur-[110px]" aria-hidden="true"></div>
+      <div class="pointer-events-none absolute -left-24 bottom-0 h-80 w-80 rounded-full bg-navy-700/40 blur-[110px]" aria-hidden="true"></div>
+
+      <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+
+        <div class="reveal mx-auto max-w-3xl text-center">
+          <span class="inline-flex items-center gap-2 rounded-full border border-gold/30 bg-gold/10 px-4 py-1.5 text-[11px] font-bold uppercase tracking-[0.18em] text-gold">
+            <i class="fa-solid fa-sitemap" aria-hidden="true"></i> Struktur Organisasi
+          </span>
+          <h2 class="mt-5 text-3xl font-extrabold leading-tight tracking-tight text-white sm:text-4xl">
+            Pengurus <span class="text-gold">DPD AMPI DKI Jakarta</span>
+          </h2>
+          <p class="mt-4 text-[15px] leading-relaxed text-slate-300">
+            Susunan pengurus yang mengemban amanah organisasi pada periode kepengurusan berjalan —
+            bekerja kolektif, transparan, dan akuntabel.
+          </p>
+        </div>
+
+        <!-- Pengurus Inti -->
+        <div class="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+
+          <!-- Card Ketua (highlight) -->
+          <article class="reveal group relative overflow-hidden rounded-3xl border border-gold/30 bg-gradient-to-br from-gold/15 via-navy-800/80 to-navy-800/60 p-7 backdrop-blur-sm transition-all duration-500 hover:-translate-y-2 hover:border-gold/70">
+            <span class="absolute right-5 top-5 rounded-full bg-gold px-3 py-1 text-[9px] font-black uppercase tracking-wider text-navy">Pimpinan</span>
+            <span class="grid h-16 w-16 place-items-center rounded-2xl bg-gradient-to-br from-gold-light via-gold to-gold-dark text-navy shadow-glow">
+              <i class="fa-solid fa-crown text-2xl" aria-hidden="true"></i>
+            </span>
+            <!-- Ganti dengan data pengurus resmi -->
+            <h3 class="mt-6 text-lg font-extrabold text-white">H. Muhammad Rizky Aditya, S.E., M.Si.</h3>
+            <p class="mt-1 text-[11px] font-bold uppercase tracking-[0.16em] text-gold">Ketua</p>
+            <p class="mt-4 text-sm leading-relaxed text-slate-300">
+              Penanggung jawab utama kebijakan organisasi, arah gerakan, dan representasi eksternal DPD AMPI DKI Jakarta.
+            </p>
+          </article>
+
+          <!-- Wakil Ketua -->
+          <article class="reveal group rounded-3xl border border-white/10 bg-white/5 p-7 backdrop-blur-sm transition-all duration-500 hover:-translate-y-2 hover:border-gold/50 hover:bg-white/10">
+            <span class="grid h-14 w-14 place-items-center rounded-2xl bg-white/10 text-gold">
+              <i class="fa-solid fa-user-shield text-xl" aria-hidden="true"></i>
+            </span>
+            <h3 class="mt-6 text-lg font-extrabold text-white">Drs. Andi Prasetyo Nugroho, M.M.</h3>
+            <p class="mt-1 text-[11px] font-bold uppercase tracking-[0.16em] text-gold">Wakil Ketua</p>
+            <p class="mt-4 text-sm leading-relaxed text-slate-300">
+              Membantu ketua dalam koordinasi bidang, pengawasan program, dan penguatan jaringan organisasi.
+            </p>
+          </article>
+
+          <!-- Sekretaris -->
+          <article class="reveal group rounded-3xl border border-white/10 bg-white/5 p-7 backdrop-blur-sm transition-all duration-500 hover:-translate-y-2 hover:border-gold/50 hover:bg-white/10">
+            <span class="grid h-14 w-14 place-items-center rounded-2xl bg-white/10 text-gold">
+              <i class="fa-solid fa-file-pen text-xl" aria-hidden="true"></i>
+            </span>
+            <h3 class="mt-6 text-lg font-extrabold text-white">Nadia Salsabila Putri, S.H.</h3>
+            <p class="mt-1 text-[11px] font-bold uppercase tracking-[0.16em] text-gold">Sekretaris</p>
+            <p class="mt-4 text-sm leading-relaxed text-slate-300">
+              Mengelola administrasi, korespondensi, arsip organisasi, serta kesekretariatan seluruh kegiatan.
+            </p>
+          </article>
+
+          <!-- Bendahara -->
+          <article class="reveal group rounded-3xl border border-white/10 bg-white/5 p-7 backdrop-blur-sm transition-all duration-500 hover:-translate-y-2 hover:border-gold/50 hover:bg-white/10">
+            <span class="grid h-14 w-14 place-items-center rounded-2xl bg-white/10 text-gold">
+              <i class="fa-solid fa-wallet text-xl" aria-hidden="true"></i>
+            </span>
+            <h3 class="mt-6 text-lg font-extrabold text-white">Bagas Dwi Ramadhan, S.E.</h3>
+            <p class="mt-1 text-[11px] font-bold uppercase tracking-[0.16em] text-gold">Bendahara</p>
+            <p class="mt-4 text-sm leading-relaxed text-slate-300">
+              Bertanggung jawab atas pengelolaan keuangan, penyusunan anggaran, dan pelaporan finansial organisasi.
+            </p>
+          </article>
+
+          <!-- Bidang Organisasi & Kaderisasi -->
+          <article class="reveal group rounded-3xl border border-white/10 bg-white/5 p-7 backdrop-blur-sm transition-all duration-500 hover:-translate-y-2 hover:border-gold/50 hover:bg-white/10">
+            <span class="grid h-14 w-14 place-items-center rounded-2xl bg-white/10 text-gold">
+              <i class="fa-solid fa-users-gear text-xl" aria-hidden="true"></i>
+            </span>
+            <h3 class="mt-6 text-lg font-extrabold text-white">Rizky Maulana Ibrahim, S.I.P.</h3>
+            <p class="mt-1 text-[11px] font-bold uppercase tracking-[0.16em] text-gold">Ketua Bidang Organisasi &amp; Kaderisasi</p>
+            <p class="mt-4 text-sm leading-relaxed text-slate-300">
+              Menyusun kurikulum kaderisasi, rekrutmen anggota, serta pembinaan jaringan di tingkat kota dan kecamatan.
+            </p>
+          </article>
+
+          <!-- Bidang Sosial & Ekonomi Kreatif -->
+          <article class="reveal group rounded-3xl border border-white/10 bg-white/5 p-7 backdrop-blur-sm transition-all duration-500 hover:-translate-y-2 hover:border-gold/50 hover:bg-white/10">
+            <span class="grid h-14 w-14 place-items-center rounded-2xl bg-white/10 text-gold">
+              <i class="fa-solid fa-lightbulb text-xl" aria-hidden="true"></i>
+            </span>
+            <h3 class="mt-6 text-lg font-extrabold text-white">Siti Aisyah Rahmawati, S.Kom.</h3>
+            <p class="mt-1 text-[11px] font-bold uppercase tracking-[0.16em] text-gold">Ketua Bidang Sosial &amp; Ekonomi Kreatif</p>
+            <p class="mt-4 text-sm leading-relaxed text-slate-300">
+              Menggerakkan program bakti sosial, pemberdayaan UMKM muda, serta pengembangan industri kreatif Jakarta.
+            </p>
+          </article>
+        </div>
+
+        <!-- Note -->
+        <p class="reveal mt-10 text-center text-xs text-slate-400">
+          <i class="fa-solid fa-circle-info mr-1.5 text-gold/70" aria-hidden="true"></i>
+          Susunan pengurus lengkap beserta SK kepengurusan dapat diminta melalui sekretariat DPD AMPI DKI Jakarta.
+        </p>
+      </div>
+    </section>
+
+    <!-- ================= PROGRAM UNGGULAN ================= -->
+    <section id="program" class="relative bg-white py-20 lg:py-28">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+
+        <div class="reveal mx-auto max-w-3xl text-center">
+          <span class="inline-flex items-center gap-2 rounded-full border border-gold/30 bg-gold/10 px-4 py-1.5 text-[11px] font-bold uppercase tracking-[0.18em] text-gold-deep">
+            <i class="fa-solid fa-diagram-project" aria-hidden="true"></i> Bidang &amp; Program Kerja
+          </span>
+          <h2 class="mt-5 text-3xl font-extrabold leading-tight tracking-tight text-navy sm:text-4xl">
+            Program <span class="text-gold-dark">Unggulan</span> Kami
+          </h2>
+          <p class="mt-4 text-[15px] leading-relaxed text-slate-600">
+            Empat pilar program yang menjadi wajah gerakan DPD AMPI DKI Jakarta —
+            dirancang untuk menjawab kebutuhan nyata pemuda dan warga ibu kota.
+          </p>
+        </div>
+
+        <div class="mt-14 grid gap-6 md:grid-cols-2">
+
+          <!-- Program 1 -->
+          <article class="reveal group relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-8 shadow-sm transition-all duration-500 hover:-translate-y-2 hover:border-gold/50 hover:shadow-card">
+            <div class="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-gold/5 transition-all duration-500 group-hover:bg-gold/10" aria-hidden="true"></div>
+
+            <div class="relative flex items-start gap-5">
+              <span class="grid h-14 w-14 shrink-0 place-items-center rounded-2xl bg-gradient-to-br from-gold-light via-gold to-gold-dark text-navy shadow-lg shadow-gold/25">
+                <i class="fa-solid fa-laptop-code text-xl" aria-hidden="true"></i>
+              </span>
+              <div>
+                <span class="text-[10px] font-bold uppercase tracking-[0.18em] text-gold-deep">Digitalisasi &amp; Ekonomi Kreatif</span>
+                <h3 class="mt-2 text-lg font-extrabold text-navy">AMPI Jakarta Youth Tech &amp; Creative</h3>
+                <p class="mt-3 text-sm leading-relaxed text-slate-600">
+                  Pelatihan keterampilan digital, literasi teknologi, inkubasi startup muda, serta pendampingan
+                  pelaku ekonomi kreatif Jakarta agar naik kelas dan berdaya saing global.
+                </p>
+                <div class="mt-5 flex flex-wrap gap-2">
+                  <span class="rounded-full bg-slate-100 px-3 py-1 text-[11px] font-semibold text-slate-600">Coding Bootcamp</span>
+                  <span class="rounded-full bg-slate-100 px-3 py-1 text-[11px] font-semibold text-slate-600">UMKM Digital</span>
+                  <span class="rounded-full bg-slate-100 px-3 py-1 text-[11px] font-semibold text-slate-600">Creative Hub</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Program 2 -->
+          <article class="reveal group relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-8 shadow-sm transition-all duration-500 hover:-translate-y-2 hover:border-gold/50 hover:shadow-card">
+            <div class="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-gold/5 transition-all duration-500 group-hover:bg-gold/10" aria-hidden="true"></div>
+
+            <div class="relative flex items-start gap-5">
+              <span class="grid h-14 w-14 shrink-0 place-items-center rounded-2xl bg-gradient-to-br from-gold-light via-gold to-gold-dark text-navy shadow-lg shadow-gold/25">
+                <i class="fa-solid fa-hand-holding-heart text-xl" aria-hidden="true"></i>
+              </span>
+              <div>
+                <span class="text-[10px] font-bold uppercase tracking-[0.18em] text-gold-deep">Bakti Sosial Masyarakat</span>
+                <h3 class="mt-2 text-lg font-extrabold text-navy">AMPI Peduli Sosial</h3>
+                <p class="mt-3 text-sm leading-relaxed text-slate-600">
+                  Gerakan kemanusiaan dan kepedulian warga Jakarta: respons bencana, santunan,
+                  donor darah, program lingkungan bersih, hingga pendampingan komunitas prasejahtera.
+                </p>
+                <div class="mt-5 flex flex-wrap gap-2">
+                  <span class="rounded-full bg-slate-100 px-3 py-1 text-[11px] font-semibold text-slate-600">Tanggap Bencana</span>
+                  <span class="rounded-full bg-slate-100 px-3 py-1 text-[11px] font-semibold text-slate-600">Donor Darah</span>
+                  <span class="rounded-full bg-slate-100 px-3 py-1 text-[11px] font-semibold text-slate-600">Jakarta Hijau</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Program 3 -->
+          <article class="reveal group relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-8 shadow-sm transition-all duration-500 hover:-translate-y-2 hover:border-gold/50 hover:shadow-card">
+            <div class="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-gold/5 transition-all duration-500 group-hover:bg-gold/10" aria-hidden="true"></div>
+
+            <div class="relative flex items-start gap-5">
+              <span class="grid h-14 w-14 shrink-0 place-items-center rounded-2xl bg-gradient-to-br from-gold-light via-gold to-gold-dark text-navy shadow-lg shadow-gold/25">
+                <i class="fa-solid fa-chalkboard-user text-xl" aria-hidden="true"></i>
+              </span>
+              <div>
+                <span class="text-[10px] font-bold uppercase tracking-[0.18em] text-gold-deep">Pelatihan Kader &amp; Kepemimpinan</span>
+                <h3 class="mt-2 text-lg font-extrabold text-navy">AMPI Leadership Academy</h3>
+                <p class="mt-3 text-sm leading-relaxed text-slate-600">
+                  Sekolah kader berjenjang: pendidikan dasar organisasi, public speaking, analisis kebijakan publik,
+                  manajemen organisasi, hingga simulasi kepemimpinan di ruang pemerintahan.
+                </p>
+                <div class="mt-5 flex flex-wrap gap-2">
+                  <span class="rounded-full bg-slate-100 px-3 py-1 text-[11px] font-semibold text-slate-600">Kaderisasi Dasar</span>
+                  <span class="rounded-full bg-slate-100 px-3 py-1 text-[11px] font-semibold text-slate-600">Public Speaking</span>
+                  <span class="rounded-full bg-slate-100 px-3 py-1 text-[11px] font-semibold text-slate-600">Policy School</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Program 4 -->
+          <article class="reveal group relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-8 shadow-sm transition-all duration-500 hover:-translate-y-2 hover:border-gold/50 hover:shadow-card">
+            <div class="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-gold/5 transition-all duration-500 group-hover:bg-gold/10" aria-hidden="true"></div>
+
+            <div class="relative flex items-start gap-5">
+              <span class="grid h-14 w-14 shrink-0 place-items-center rounded-2xl bg-gradient-to-br from-gold-light via-gold to-gold-dark text-navy shadow-lg shadow-gold/25">
+                <i class="fa-solid fa-scale-balanced text-xl" aria-hidden="true"></i>
+              </span>
+              <div>
+                <span class="text-[10px] font-bold uppercase tracking-[0.18em] text-gold-deep">Advokasi Publik &amp; Ketenagakerjaan</span>
+                <h3 class="mt-2 text-lg font-extrabold text-navy">Advokasi Kebijakan Publik &amp; Ketenagakerjaan Pemuda</h3>
+                <p class="mt-3 text-sm leading-relaxed text-slate-600">
+                  Kajian kebijakan, hearing publik, dan posisi resmi organisasi terhadap isu
+                  ketenagakerjaan, upah layak, perlindungan pekerja muda, serta akses pendidikan dan perumahan.
+                </p>
+                <div class="mt-5 flex flex-wrap gap-2">
+                  <span class="rounded-full bg-slate-100 px-3 py-1 text-[11px] font-semibold text-slate-600">Policy Brief</span>
+                  <span class="rounded-full bg-slate-100 px-3 py-1 text-[11px] font-semibold text-slate-600">Hearing Publik</span>
+                  <span class="rounded-full bg-slate-100 px-3 py-1 text-[11px] font-semibold text-slate-600">Klinik Hukum</span>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- CTA -->
+        <div class="reveal mt-12 text-center">
+          <a href="#aspirasi"
+             class="group inline-flex items-center gap-2.5 rounded-full bg-navy px-7 py-4 text-sm font-extrabold text-white shadow-xl shadow-navy/20 transition-all duration-300 hover:-translate-y-1 hover:bg-navy-800">
+            <i class="fa-solid fa-hand-point-right text-gold" aria-hidden="true"></i>
+            Saya Ingin Terlibat dalam Program Ini
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= WILAYAH KERJA ================= -->
+    <section id="wilayah" class="relative overflow-hidden bg-slate-50 py-20 lg:py-28">
+      <div class="pointer-events-none absolute inset-x-0 top-0 h-72 bg-grid-light opacity-70" aria-hidden="true"></div>
+
+      <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+
+        <div class="reveal mx-auto max-w-3xl text-center">
+          <span class="inline-flex items-center gap-2 rounded-full border border-gold/30 bg-gold/10 px-4 py-1.5 text-[11px] font-bold uppercase tracking-[0.18em] text-gold-deep">
+            <i class="fa-solid fa-map-location-dot" aria-hidden="true"></i> Wilayah Kerja
+          </span>
+          <h2 class="mt-5 text-3xl font-extrabold leading-tight tracking-tight text-navy sm:text-4xl">
+            Cakupan <span class="text-gold-dark">DPD AMPI DKI Jakarta</span>
+          </h2>
+          <p class="mt-4 text-[15px] leading-relaxed text-slate-600">
+            Hadir di seluruh wilayah administratif Provinsi DKI Jakarta —
+            lima kota administrasi dan satu kabupaten administratif.
+          </p>
+        </div>
+
+        <div class="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+
+          <!-- Jakarta Pusat -->
+          <article class="reveal group relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-7 shadow-sm transition-all duration-500 hover:-translate-y-2 hover:border-gold/50 hover:shadow-card">
+            <div class="flex items-start justify-between">
+              <span class="grid h-12 w-12 place-items-center rounded-2xl bg-navy text-gold transition-colors duration-500 group-hover:bg-gold group-hover:text-navy">
+                <i class="fa-solid fa-landmark" aria-hidden="true"></i>
+              </span>
+              <span class="text-3xl font-extrabold text-slate-100 transition-colors group-hover:text-gold/25">01</span>
+            </div>
+            <h3 class="mt-5 text-lg font-extrabold text-navy">Jakarta Pusat</h3>
+            <p class="mt-1 text-[11px] font-bold uppercase tracking-[0.14em] text-gold-deep">Kota Administrasi</p>
+            <p class="mt-3 text-sm leading-relaxed text-slate-600">
+              Pusat pemerintahan dan jantung kebijakan ibu kota — basis advokasi publik dan dialog lintas lembaga.
+            </p>
+          </article>
+
+          <!-- Jakarta Selatan -->
+          <article class="reveal group relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-7 shadow-sm transition-all duration-500 hover:-translate-y-2 hover:border-gold/50 hover:shadow-card">
+            <div class="flex items-start justify-between">
+              <span class="grid h-12 w-12 place-items-center rounded-2xl bg-navy text-gold transition-colors duration-500 group-hover:bg-gold group-hover:text-navy">
+                <i class="fa-solid fa-briefcase" aria-hidden="true"></i>
+              </span>
+              <span class="text-3xl font-extrabold text-slate-100 transition-colors group-hover:text-gold/25">02</span>
+            </div>
+            <h3 class="mt-5 text-lg font-extrabold text-navy">Jakarta Selatan</h3>
+            <p class="mt-1 text-[11px] font-bold uppercase tracking-[0.14em] text-gold-deep">Kota Administrasi</p>
+            <p class="mt-3 text-sm leading-relaxed text-slate-600">
+              Kawasan bisnis, kreatif, dan pendidikan — pusat pengembangan talenta muda dan ekonomi digital.
+            </p>
+          </article>
+
+          <!-- Jakarta Timur -->
+          <article class="reveal group relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-7 shadow-sm transition-all duration-500 hover:-translate-y-2 hover:border-gold/50 hover:shadow-card">
+            <div class="flex items-start justify-between">
+              <span class="grid h-12 w-12 place-items-center rounded-2xl bg-navy text-gold transition-colors duration-500 group-hover:bg-gold group-hover:text-navy">
+                <i class="fa-solid fa-industry" aria-hidden="true"></i>
+              </span>
+              <span class="text-3xl font-extrabold text-slate-100 transition-colors group-hover:text-gold/25">03</span>
+            </div>
+            <h3 class="mt-5 text-lg font-extrabold text-navy">Jakarta Timur</h3>
+            <p class="mt-1 text-[11px] font-bold uppercase tracking-[0.14em] text-gold-deep">Kota Administrasi</p>
+            <p class="mt-3 text-sm leading-relaxed text-slate-600">
+              Wilayah terluas dengan basis komunitas kuat — fokus pemberdayaan UMKM dan ketenagakerjaan pemuda.
+            </p>
+          </article>
+
+          <!-- Jakarta Barat -->
+          <article class="reveal group relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-7 shadow-sm transition-all duration-500 hover:-translate-y-2 hover:border-gold/50 hover:shadow-card">
+            <div class="flex items-start justify-between">
+              <span class="grid h-12 w-12 place-items-center rounded-2xl bg-navy text-gold transition-colors duration-500 group-hover:bg-gold group-hover:text-navy">
+                <i class="fa-solid fa-store" aria-hidden="true"></i>
+              </span>
+              <span class="text-3xl font-extrabold text-slate-100 transition-colors group-hover:text-gold/25">04</span>
+            </div>
+            <h3 class="mt-5 text-lg font-extrabold text-navy">Jakarta Barat</h3>
+            <p class="mt-1 text-[11px] font-bold uppercase tracking-[0.14em] text-gold-deep">Kota Administrasi</p>
+            <p class="mt-3 text-sm leading-relaxed text-slate-600">
+              Pusat perdagangan dan industri kreatif — penguatan wirausaha muda serta literasi keuangan.
+            </p>
+          </article>
+
+          <!-- Jakarta Utara -->
+          <article class="reveal group relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-7 shadow-sm transition-all duration-500 hover:-translate-y-2 hover:border-gold/50 hover:shadow-card">
+            <div class="flex items-start justify-between">
+              <span class="grid h-12 w-12 place-items-center rounded-2xl bg-navy text-gold transition-colors duration-500 group-hover:bg-gold group-hover:text-navy">
+                <i class="fa-solid fa-ship" aria-hidden="true"></i>
+              </span>
+              <span class="text-3xl font-extrabold text-slate-100 transition-colors group-hover:text-gold/25">05</span>
+            </div>
+            <h3 class="mt-5 text-lg font-extrabold text-navy">Jakarta Utara</h3>
+            <p class="mt-1 text-[11px] font-bold uppercase tracking-[0.14em] text-gold-deep">Kota Administrasi</p>
+            <p class="mt-3 text-sm leading-relaxed text-slate-600">
+              Wajah pesisir ibu kota — perhatian pada isu lingkungan, rob, dan pemberdayaan warga pesisir.
+            </p>
+          </article>
+
+          <!-- Kepulauan Seribu -->
+          <article class="reveal group relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-7 shadow-sm transition-all duration-500 hover:-translate-y-2 hover:border-gold/50 hover:shadow-card">
+            <div class="flex items-start justify-between">
+              <span class="grid h-12 w-12 place-items-center rounded-2xl bg-navy text-gold transition-colors duration-500 group-hover:bg-gold group-hover:text-navy">
+                <i class="fa-solid fa-water" aria-hidden="true"></i>
+              </span>
+              <span class="text-3xl font-extrabold text-slate-100 transition-colors group-hover:text-gold/25">06</span>
+            </div>
+            <h3 class="mt-5 text-lg font-extrabold text-navy">Kepulauan Seribu</h3>
+            <p class="mt-1 text-[11px] font-bold uppercase tracking-[0.14em] text-gold-deep">Kabupaten Administrasi</p>
+            <p class="mt-3 text-sm leading-relaxed text-slate-600">
+              Kawasan kepulauan dengan potensi wisata bahari — pengembangan pariwisata berkelanjutan dan konservasi.
+            </p>
+          </article>
+        </div>
+
+        <!-- Note strip -->
+        <div class="reveal mt-10 flex flex-col items-center justify-between gap-5 rounded-3xl border border-slate-200 bg-white p-7 shadow-sm sm:flex-row">
+          <div class="flex items-center gap-4 text-center sm:text-left">
+            <span class="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-gold/15 text-gold-deep">
+              <i class="fa-solid fa-network-wired" aria-hidden="true"></i>
+            </span>
+            <div>
+              <p class="text-sm font-extrabold text-navy">Koordinasi hingga tingkat kecamatan &amp; kelurahan</p>
+              <p class="mt-1 text-xs leading-relaxed text-slate-500">
+                Setiap kota administrasi memiliki pengurus tingkat kota yang siap menerima aspirasi warga.
+              </p>
+            </div>
+          </div>
+          <a href="#kontak" class="inline-flex shrink-0 items-center gap-2 rounded-full bg-navy px-6 py-3 text-xs font-extrabold text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-navy-800">
+            <i class="fa-solid fa-location-dot text-gold" aria-hidden="true"></i> Hubungi Wilayah Anda
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= BERITA & KEGIATAN ================= -->
+    <section id="berita" class="relative bg-white py-20 lg:py-28">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+
+        <div class="reveal flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
+          <div class="max-w-2xl">
+            <span class="inline-flex items-center gap-2 rounded-full border border-gold/30 bg-gold/10 px-4 py-1.5 text-[11px] font-bold uppercase tracking-[0.18em] text-gold-deep">
+              <i class="fa-regular fa-newspaper" aria-hidden="true"></i> Berita &amp; Kegiatan
+            </span>
+            <h2 class="mt-5 text-3xl font-extrabold leading-tight tracking-tight text-navy sm:text-4xl">
+              Galeri <span class="text-gold-dark">Kegiatan Terkini</span>
+            </h2>
+            <p class="mt-4 text-[15px] leading-relaxed text-slate-600">
+              Dokumentasi gerak nyata DPD AMPI DKI Jakarta di tengah masyarakat dan ruang kebijakan publik.
+            </p>
+          </div>
+          <a href="#aspirasi" class="group hidden items-center gap-2 text-sm font-extrabold text-navy transition-colors hover:text-gold-dark md:inline-flex">
+            Ikuti Kegiatan Kami
+            <i class="fa-solid fa-arrow-right text-xs transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true"></i>
+          </a>
+        </div>
+
+        <div class="mt-12 grid gap-7 sm:grid-cols-2 lg:grid-cols-4">
+
+          <!-- Berita 1 -->
+          <article class="reveal group flex flex-col overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition-all duration-500 hover:-translate-y-2 hover:border-gold/50 hover:shadow-card">
+            <div class="relative aspect-[16/10] w-full overflow-hidden bg-gradient-to-br from-navy-800 via-navy to-navy-900">
+              <div class="absolute inset-0 bg-grid opacity-40" aria-hidden="true"></div>
+              <div class="absolute inset-0 grid place-items-center">
+                <i class="fa-solid fa-flag text-4xl text-gold/50 transition-transform duration-500 group-hover:scale-110" aria-hidden="true"></i>
+              </div>
+              <span class="absolute left-4 top-4 rounded-full bg-gold px-3 py-1 text-[10px] font-black uppercase tracking-wider text-navy">Pelantikan</span>
+            </div>
+            <div class="flex flex-1 flex-col p-6">
+              <p class="flex items-center gap-2 text-[11px] font-bold uppercase tracking-wider text-slate-400">
+                <i class="fa-regular fa-calendar" aria-hidden="true"></i> 18 Januari 2026
+              </p>
+              <h3 class="mt-3 text-base font-extrabold leading-snug text-navy transition-colors group-hover:text-gold-deep">
+                Pelantikan Pengurus DPD AMPI DKI Jakarta Periode 2026–2031
+              </h3>
+              <p class="mt-3 flex-1 text-sm leading-relaxed text-slate-600">
+                Pelantikan pengurus baru disaksikan jajaran pengurus pusat dan tokoh pemuda ibu kota,
+                menandai dimulainya agenda pembaharuan lima tahun ke depan.
+              </p>
+              <span class="mt-5 inline-flex items-center gap-2 text-xs font-extrabold text-navy transition-colors group-hover:text-gold-dark">
+                Baca Selengkapnya <i class="fa-solid fa-arrow-right text-[10px]" aria-hidden="true"></i>
+              </span>
+            </div>
+          </article>
+
+          <!-- Berita 2 -->
+          <article class="reveal group flex flex-col overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition-all duration-500 hover:-translate-y-2 hover:border-gold/50 hover:shadow-card">
+            <div class="relative aspect-[16/10] w-full overflow-hidden bg-gradient-to-br from-navy-800 via-navy to-navy-900">
+              <div class="absolute inset-0 bg-grid opacity-40" aria-hidden="true"></div>
+              <div class="absolute inset-0 grid place-items-center">
+                <i class="fa-solid fa-comments text-4xl text-gold/50 transition-transform duration-500 group-hover:scale-110" aria-hidden="true"></i>
+              </div>
+              <span class="absolute left-4 top-4 rounded-full bg-navy-700 px-3 py-1 text-[10px] font-black uppercase tracking-wider text-white">Diskusi Publik</span>
+            </div>
+            <div class="flex flex-1 flex-col p-6">
+              <p class="flex items-center gap-2 text-[11px] font-bold uppercase tracking-wider text-slate-400">
+                <i class="fa-regular fa-calendar" aria-hidden="true"></i> 07 Februari 2026
+              </p>
+              <h3 class="mt-3 text-base font-extrabold leading-snug text-navy transition-colors group-hover:text-gold-deep">
+                Diskusi Publik: Masa Depan Ketenagakerjaan Pemuda Jakarta
+              </h3>
+              <p class="mt-3 flex-1 text-sm leading-relaxed text-slate-600">
+                Forum terbuka bersama akademisi dan praktisi membahas perlindungan pekerja muda,
+                upah layak, dan kesiapan menghadapi otomatisasi industri.
+              </p>
+              <span class="mt-5 inline-flex items-center gap-2 text-xs font-extrabold text-navy transition-colors group-hover:text-gold-dark">
+                Baca Selengkapnya <i class="fa-solid fa-arrow-right text-[10px]" aria-hidden="true"></i>
+              </span>
+            </div>
+          </article>
+
+          <!-- Berita 3 -->
+          <article class="reveal group flex flex-col overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition-all duration-500 hover:-translate-y-2 hover:border-gold/50 hover:shadow-card">
+            <div class="relative aspect-[16/10] w-full overflow-hidden bg-gradient-to-br from-navy-800 via-navy to-navy-900">
+              <div class="absolute inset-0 bg-grid opacity-40" aria-hidden="true"></div>
+              <div class="absolute inset-0 grid place-items-center">
+                <i class="fa-solid fa-hand-holding-heart text-4xl text-gold/50 transition-transform duration-500 group-hover:scale-110" aria-hidden="true"></i>
+              </div>
+              <span class="absolute left-4 top-4 rounded-full bg-gold-dark px-3 py-1 text-[10px] font-black uppercase tracking-wider text-navy">Aksi Sosial</span>
+            </div>
+            <div class="flex flex-1 flex-col p-6">
+              <p class="flex items-center gap-2 text-[11px] font-bold uppercase tracking-wider text-slate-400">
+                <i class="fa-regular fa-calendar" aria-hidden="true"></i> 22 Februari 2026
+              </p>
+              <h3 class="mt-3 text-base font-extrabold leading-snug text-navy transition-colors group-hover:text-gold-deep">
+                AMPI Peduli: Bantuan Air Bersih untuk Warga Pesisir Jakarta Utara
+              </h3>
+              <p class="mt-3 flex-1 text-sm leading-relaxed text-slate-600">
+                Distribusi air bersih dan paket sembako bagi ratusan keluarga terdampak
+                penurunan kualitas air tanah di kawasan pesisir ibu kota.
+              </p>
+              <span class="mt-5 inline-flex items-center gap-2 text-xs font-extrabold text-navy transition-colors group-hover:text-gold-dark">
+                Baca Selengkapnya <i class="fa-solid fa-arrow-right text-[10px]" aria-hidden="true"></i>
+              </span>
+            </div>
+          </article>
+
+          <!-- Berita 4 -->
+          <article class="reveal group flex flex-col overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition-all duration-500 hover:-translate-y-2 hover:border-gold/50 hover:shadow-card">
+            <div class="relative aspect-[16/10] w-full overflow-hidden bg-gradient-to-br from-navy-800 via-navy to-navy-900">
+              <div class="absolute inset-0 bg-grid opacity-40" aria-hidden="true"></div>
+              <div class="absolute inset-0 grid place-items-center">
+                <i class="fa-solid fa-laptop-code text-4xl text-gold/50 transition-transform duration-500 group-hover:scale-110" aria-hidden="true"></i>
+              </div>
+              <span class="absolute left-4 top-4 rounded-full bg-emerald-500 px-3 py-1 text-[10px] font-black uppercase tracking-wider text-white">Pelatihan</span>
+            </div>
+            <div class="flex flex-1 flex-col p-6">
+              <p class="flex items-center gap-2 text-[11px] font-bold uppercase tracking-wider text-slate-400">
+                <i class="fa-regular fa-calendar" aria-hidden="true"></i> 14 Maret 2026
+              </p>
+              <h3 class="mt-3 text-base font-extrabold leading-snug text-navy transition-colors group-hover:text-gold-deep">
+                AMPI Youth Tech: 500 Pemuda Ikuti Bootcamp Digital Marketing
+              </h3>
+              <p class="mt-3 flex-1 text-sm leading-relaxed text-slate-600">
+                Program kolaborasi dengan pelaku industri digital untuk membekali pemuda Jakarta
+                keterampilan pemasaran digital dan pengelolaan bisnis online.
+              </p>
+              <span class="mt-5 inline-flex items-center gap-2 text-xs font-extrabold text-navy transition-colors group-hover:text-gold-dark">
+                Baca Selengkapnya <i class="fa-solid fa-arrow-right text-[10px]" aria-hidden="true"></i>
+              </span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= ASPIRASI & REGISTRASI ================= -->
+    <section id="aspirasi" class="relative overflow-hidden bg-navy py-20 lg:py-28">
+      <div class="pointer-events-none absolute inset-0 bg-grid opacity-50" aria-hidden="true"></div>
+      <div class="pointer-events-none absolute -left-24 top-0 h-80 w-80 rounded-full bg-gold/15 blur-[110px]" aria-hidden="true"></div>
+      <div class="pointer-events-none absolute -right-24 bottom-0 h-80 w-80 rounded-full bg-navy-700/40 blur-[110px]" aria-hidden="true"></div>
+
+      <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="grid gap-12 lg:grid-cols-12 lg:gap-14">
+
+          <!-- Info -->
+          <div class="reveal lg:col-span-5">
+            <span class="inline-flex items-center gap-2 rounded-full border border-gold/30 bg-gold/10 px-4 py-1.5 text-[11px] font-bold uppercase tracking-[0.18em] text-gold">
+              <i class="fa-solid fa-comment-dots" aria-hidden="true"></i> Aspirasi &amp; Keanggotaan
+            </span>
+
+            <h2 class="mt-5 text-3xl font-extrabold leading-tight tracking-tight text-white sm:text-4xl">
+              Suara Anda <span class="text-gold">Kami Perjuangkan</span>
+            </h2>
+
+            <p class="mt-5 text-[15px] leading-relaxed text-slate-300">
+              Sampaikan aspirasi, keluhan, atau gagasan Anda untuk Jakarta. Sekaligus,
+              daftarkan diri Anda menjadi bagian dari gerakan pemuda pembaharuan
+              DPD AMPI DKI Jakarta.
+            </p>
+
+            <ul class="mt-8 space-y-4">
+              <li class="flex items-start gap-4 rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-sm transition-colors hover:border-gold/40">
+                <span class="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-gold/15 text-gold">
+                  <i class="fa-solid fa-bullhorn" aria-hidden="true"></i>
+                </span>
+                <div>
+                  <p class="text-sm font-extrabold text-white">Aspirasi Ditindaklanjuti</p>
+                  <p class="mt-1 text-xs leading-relaxed text-slate-300">Setiap aspirasi dikaji dan dibawa ke forum advokasi kebijakan publik yang relevan.</p>
+                </div>
+              </li>
+              <li class="flex items-start gap-4 rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-sm transition-colors hover:border-gold/40">
+                <span class="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-gold/15 text-gold">
+                  <i class="fa-solid fa-user-graduate" aria-hidden="true"></i>
+                </span>
+                <div>
+                  <p class="text-sm font-extrabold text-white">Pelatihan Kader Gratis</p>
+                  <p class="mt-1 text-xs leading-relaxed text-slate-300">Anggota mendapat akses prioritas ke AMPI Leadership Academy dan kegiatan organisasi.</p>
+                </div>
+              </li>
+              <li class="flex items-start gap-4 rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-sm transition-colors hover:border-gold/40">
+                <span class="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-gold/15 text-gold">
+                  <i class="fa-solid fa-handshake" aria-hidden="true"></i>
+                </span>
+                <div>
+                  <p class="text-sm font-extrabold text-white">Jaringan Luas</p>
+                  <p class="mt-1 text-xs leading-relaxed text-slate-300">Terhubung dengan pemuda lintas profesi di lima kota administrasi dan Kepulauan Seribu.</p>
+                </div>
+              </li>
+            </ul>
+
+            <div class="mt-8 flex items-center gap-4 rounded-2xl border border-gold/25 bg-gold/10 p-5">
+              <i class="fa-solid fa-shield-halved text-2xl text-gold" aria-hidden="true"></i>
+              <p class="text-xs leading-relaxed text-slate-200">
+                <span class="font-bold text-white">Data Anda aman.</span> Informasi yang Anda kirim hanya digunakan
+                untuk keperluan keanggotaan dan tindak lanjut aspirasi DPD AMPI DKI Jakarta.
+              </p>
+            </div>
+          </div>
+
+          <!-- Form -->
+          <div class="reveal lg:col-span-7">
+            <div class="rounded-3xl border border-white/10 bg-white p-7 shadow-2xl sm:p-9">
+
+              <div class="mb-7">
+                <h3 class="text-xl font-extrabold text-navy">Formulir Aspirasi &amp; Registrasi Anggota</h3>
+                <p class="mt-2 text-sm leading-relaxed text-slate-500">
+                  Isi data berikut dengan lengkap. Tim sekretariat akan menghubungi Anda dalam 1×24 jam kerja.
+                </p>
+              </div>
+
+              <form id="aspirasiForm" novalidate class="space-y-5">
+
+                <!-- Nama -->
+                <div>
+                  <label for="nama" class="mb-2 block text-xs font-extrabold uppercase tracking-[0.14em] text-navy">
+                    Nama Lengkap <span class="text-gold-dark">*</span>
+                  </label>
+                  <div class="relative">
+                    <span class="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-slate-400">
+                      <i class="fa-solid fa-user text-sm" aria-hidden="true"></i>
+                    </span>
+                    <input id="nama" name="nama" type="text" required autocomplete="name"
+                           placeholder="Contoh: Budi Santoso"
+                           class="field w-full rounded-xl border border-slate-300 bg-white py-3.5 pl-11 pr-4 text-sm text-navy placeholder:text-slate-400 transition-all duration-200" />
+                  </div>
+                </div>
+
+                <!-- WhatsApp & Email -->
+                <div class="grid gap-5 sm:grid-cols-2">
+                  <div>
+                    <label for="whatsapp" class="mb-2 block text-xs font-extrabold uppercase tracking-[0.14em] text-navy">
+                      No. WhatsApp <span class="text-gold-dark">*</span>
+                    </label>
+                    <div class="relative">
+                      <span class="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-slate-400">
+                        <i class="fa-brands fa-whatsapp text-sm" aria-hidden="true"></i>
+                      </span>
+                      <input id="whatsapp" name="whatsapp" type="tel" required autocomplete="tel"
+                             inputmode="numeric" placeholder="0812xxxxxxx"
+                             class="field w-full rounded-xl border border-slate-300 bg-white py-3.5 pl-11 pr-4 text-sm text-navy placeholder:text-slate-400 transition-all duration-200" />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label for="email" class="mb-2 block text-xs font-extrabold uppercase tracking-[0.14em] text-navy">
+                      Alamat Email <span class="text-gold-dark">*</span>
+                    </label>
+                    <div class="relative">
+                      <span class="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-slate-400">
+                        <i class="fa-regular fa-envelope text-sm" aria-hidden="true"></i>
+                      </span>
+                      <input id="email" name="email" type="email" required autocomplete="email"
+                             placeholder="nama@email.com"
+                             class="field w-full rounded-xl border border-slate-300 bg-white py-3.5 pl-11 pr-4 text-sm text-navy placeholder:text-slate-400 transition-all duration-200" />
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Wilayah & Keperluan -->
+                <div class="grid gap-5 sm:grid-cols-2">
+                  <div>
+                    <label for="wilayah" class="mb-2 block text-xs font-extrabold uppercase tracking-[0.14em] text-navy">
+                      Wilayah Domisili <span class="text-gold-dark">*</span>
+                    </label>
+                    <div class="relative">
+                      <span class="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-slate-400">
+                        <i class="fa-solid fa-location-dot text-sm" aria-hidden="true"></i>
+                      </span>
+                      <select id="wilayah" name="wilayah" required
+                              class="field w-full appearance-none rounded-xl border border-slate-300 bg-white py-3.5 pl-11 pr-10 text-sm text-navy transition-all duration-200">
+                        <option value="" disabled selected>Pilih wilayah…</option>
+                        <option value="Jakarta Pusat">Jakarta Pusat</option>
+                        <option value="Jakarta Selatan">Jakarta Selatan</option>
+                        <option value="Jakarta Timur">Jakarta Timur</option>
+                        <option value="Jakarta Barat">Jakarta Barat</option>
+                        <option value="Jakarta Utara">Jakarta Utara</option>
+                        <option value="Kepulauan Seribu">Kepulauan Seribu</option>
+                      </select>
+                      <span class="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-slate-400">
+                        <i class="fa-solid fa-chevron-down text-xs" aria-hidden="true"></i>
+                      </span>
+                    </div>
+                  </div>
+
+                  <div>
+                    <label for="keperluan" class="mb-2 block text-xs font-extrabold uppercase tracking-[0.14em] text-navy">
+                      Keperluan <span class="text-gold-dark">*</span>
+                    </label>
+                    <div class="relative">
+                      <span class="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-slate-400">
+                        <i class="fa-solid fa-list-check text-sm" aria-hidden="true"></i>
+                      </span>
+                      <select id="keperluan" name="keperluan" required
+                              class="field w-full appearance-none rounded-xl border border-slate-300 bg-white py-3.5 pl-11 pr-10 text-sm text-navy transition-all duration-200">
+                        <option value="" disabled selected>Pilih keperluan…</option>
+                        <option value="Registrasi Anggota">Registrasi Anggota / Kader</option>
+                        <option value="Aspirasi Warga">Menyampaikan Aspirasi Warga</option>
+                        <option value="Kolaborasi Program">Kolaborasi Program</option>
+                        <option value="Lainnya">Lainnya</option>
+                      </select>
+                      <span class="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-slate-400">
+                        <i class="fa-solid fa-chevron-down text-xs" aria-hidden="true"></i>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Pesan -->
+                <div>
+                  <label for="pesan" class="mb-2 block text-xs font-extrabold uppercase tracking-[0.14em] text-navy">
+                    Pesan / Aspirasi <span class="text-gold-dark">*</span>
+                  </label>
+                  <textarea id="pesan" name="pesan" rows="5" required
+                            placeholder="Tuliskan aspirasi, gagasan, atau alasan Anda ingin bergabung bersama DPD AMPI DKI Jakarta…"
+                            class="field w-full resize-none rounded-xl border border-slate-300 bg-white px-4 py-3.5 text-sm leading-relaxed text-navy placeholder:text-slate-400 transition-all duration-200"></textarea>
+                  <p class="mt-2 text-[11px] text-slate-400">
+                    <i class="fa-solid fa-circle-info mr-1" aria-hidden="true"></i>
+                    Minimal 10 karakter agar dapat kami tindak lanjuti dengan tepat.
+                  </p>
+                </div>
+
+                <!-- Persetujuan -->
+                <label class="flex cursor-pointer items-start gap-3 rounded-xl border border-slate-200 bg-slate-50 p-4 transition-colors hover:border-gold/50">
+                  <input id="setuju" name="setuju" type="checkbox" required
+                         class="mt-0.5 h-4 w-4 shrink-0 cursor-pointer rounded border-slate-300 accent-gold" />
+                  <span class="text-xs leading-relaxed text-slate-600">
+                    Saya menyetujui data yang saya kirimkan digunakan oleh DPD AMPI DKI Jakarta
+                    untuk keperluan keanggotaan dan tindak lanjut aspirasi.
+                  </span>
+                </label>
+
+                <!-- Submit -->
+                <button type="submit"
+                        class="group flex w-full items-center justify-center gap-2.5 rounded-xl bg-gradient-to-r from-gold-light via-gold to-gold-dark px-6 py-4 text-sm font-extrabold text-navy shadow-xl shadow-gold/25 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-glow focus:outline-none focus:ring-4 focus:ring-gold/30">
+                  <i class="fa-solid fa-paper-plane text-sm" aria-hidden="true"></i>
+                  Kirim Aspirasi &amp; Registrasi
+                  <i class="fa-solid fa-arrow-right text-xs transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true"></i>
+                </button>
+
+                <p class="text-center text-[11px] text-slate-400">
+                  Dengan mengirim formulir ini, Anda tercatat sebagai bagian dari jaringan pemuda pembaharuan Jakarta.
+                </p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer id="kontak" class="relative overflow-hidden border-t border-white/10 bg-navy-900 pt-16">
+    <div class="pointer-events-none absolute inset-0 bg-grid opacity-40" aria-hidden="true"></div>
+    <div class="pointer-events-none absolute -left-32 -top-32 h-80 w-80 rounded-full bg-gold/10 blur-[110px]" aria-hidden="true"></div>
+
+    <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+
+      <div class="grid gap-12 lg:grid-cols-12 lg:gap-10">
+
+        <!-- Brand -->
+        <div class="lg:col-span-4">
+          <div class="flex items-center gap-3">
+            <span class="grid h-12 w-12 place-items-center rounded-xl bg-gradient-to-br from-gold-light via-gold to-gold-dark text-navy shadow-glow">
+              <i class="fa-solid fa-bolt text-lg" aria-hidden="true"></i>
+            </span>
+            <span class="leading-tight">
+              <span class="block text-base font-extrabold text-white">DPD AMPI</span>
+              <span class="block text-[10px] font-bold uppercase tracking-[0.22em] text-gold">DKI Jakarta</span>
+            </span>
+          </div>
+
+          <p class="mt-6 text-sm leading-relaxed text-slate-400">
+            Angkatan Muda Pembaharuan Indonesia — Provinsi DKI Jakarta.
+            Wadah perjuangan pemuda ibu kota untuk karya nyata, intelektualitas, dan solidaritas sosial.
+          </p>
+
+          <p class="mt-5 flex items-start gap-2.5 text-xs font-bold italic leading-relaxed text-gold">
+            <i class="fa-solid fa-quote-left mt-0.5 text-[10px]" aria-hidden="true"></i>
+            Kreativitas, Kepemudaan, Pembaharuan untuk Jakarta Maju
+          </p>
+
+          <!-- Social Media -->
+          <div class="mt-7">
+            <p class="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-500">Media Sosial Resmi</p>
+            <div class="mt-4 flex flex-wrap gap-3">
+              <a href="#" aria-label="Instagram DPD AMPI DKI Jakarta"
+                 class="grid h-11 w-11 place-items-center rounded-xl border border-white/10 bg-white/5 text-slate-300 transition-all duration-300 hover:-translate-y-1 hover:border-gold/60 hover:bg-gold hover:text-navy">
+                <i class="fa-brands fa-instagram text-lg" aria-hidden="true"></i>
+              </a>
+              <a href="#" aria-label="TikTok DPD AMPI DKI Jakarta"
+                 class="grid h-11 w-11 place-items-center rounded-xl border border-white/10 bg-white/5 text-slate-300 transition-all duration-300 hover:-translate-y-1 hover:border-gold/60 hover:bg-gold hover:text-navy">
+                <i class="fa-brands fa-tiktok text-lg" aria-hidden="true"></i>
+              </a>
+              <a href="#" aria-label="YouTube DPD AMPI DKI Jakarta"
+                 class="grid h-11 w-11 place-items-center rounded-xl border border-white/10 bg-white/5 text-slate-300 transition-all duration-300 hover:-translate-y-1 hover:border-gold/60 hover:bg-gold hover:text-navy">
+                <i class="fa-brands fa-youtube text-lg" aria-hidden="true"></i>
+              </a>
+              <a href="#" aria-label="X / Twitter DPD AMPI DKI Jakarta"
+                 class="grid h-11 w-11 place-items-center rounded-xl border border-white/10 bg-white/5 text-slate-300 transition-all duration-300 hover:-translate-y-1 hover:border-gold/60 hover:bg-gold hover:text-navy">
+                <i class="fa-brands fa-x-twitter text-lg" aria-hidden="true"></i>
+              </a>
+              <a href="#" aria-label="Facebook DPD AMPI DKI Jakarta"
+                 class="grid h-11 w-11 place-items-center rounded-xl border border-white/10 bg-white/5 text-slate-300 transition-all duration-300 hover:-translate-y-1 hover:border-gold/60 hover:bg-gold hover:text-navy">
+                <i class="fa-brands fa-facebook-f text-lg" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Navigasi -->
+        <div class="lg:col-span-2">
+          <h3 class="text-xs font-extrabold uppercase tracking-[0.2em] text-white">Navigasi</h3>
+          <ul class="mt-5 space-y-3">
+            <li><a href="#beranda"  class="text-sm text-slate-400 transition-colors hover:text-gold">Beranda</a></li>
+            <li><a href="#profil"   class="text-sm text-slate-400 transition-colors hover:text-gold">Profil &amp; Visi Misi</a></li>
+            <li><a href="#struktur" class="text-sm text-slate-400 transition-colors hover:text-gold">Struktur Organisasi</a></li>
+            <li><a href="#program"  class="text-sm text-slate-400 transition-colors hover:text-gold">Program Kerja</a></li>
+            <li><a href="#wilayah"  class="text-sm text-slate-400 transition-colors hover:text-gold">Wilayah Kerja</a></li>
+            <li><a href="#berita"   class="text-sm text-slate-400 transition-colors hover:text-gold">Berita &amp; Kegiatan</a></li>
+            <li><a href="#aspirasi" class="text-sm text-slate-400 transition-colors hover:text-gold">Aspirasi Warga</a></li>
+          </ul>
+        </div>
+
+        <!-- Kontak -->
+        <div class="lg:col-span-3">
+          <h3 class="text-xs font-extrabold uppercase tracking-[0.2em] text-white">Sekretariat</h3>
+
+          <ul class="mt-5 space-y-4">
+            <li class="flex items-start gap-3">
+              <span class="mt-0.5 grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-white/5 text-gold">
+                <i class="fa-solid fa-location-dot text-sm" aria-hidden="true"></i>
+              </span>
+              <p class="text-sm leading-relaxed text-slate-400">
+                Gedung Sekretariat DPD AMPI DKI Jakarta<br />
+                Jl. Kramat Raya No. 00, Senen,<br />
+                Jakarta Pusat 10450, DKI Jakarta
+              </p>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="mt-0.5 grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-white/5 text-gold">
+                <i class="fa-solid fa-phone text-sm" aria-hidden="true"></i>
+              </span>
+              <p class="text-sm leading-relaxed text-slate-400">
+                <a href="tel:+62210000000" class="transition-colors hover:text-gold">(021) 0000 0000</a><br />
+                <a href="https://wa.me/6281200000000" class="transition-colors hover:text-gold">+62 812-0000-0000 (WhatsApp)</a>
+              </p>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="mt-0.5 grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-white/5 text-gold">
+                <i class="fa-regular fa-envelope text-sm" aria-hidden="true"></i>
+              </span>
+              <p class="text-sm leading-relaxed text-slate-400">
+                <a href="mailto:sekretariat@ampidkijakarta.or.id" class="transition-colors hover:text-gold">sekretariat@ampidkijakarta.or.id</a>
+              </p>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="mt-0.5 grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-white/5 text-gold">
+                <i class="fa-regular fa-clock text-sm" aria-hidden="true"></i>
+              </span>
+              <p class="text-sm leading-relaxed text-slate-400">
+                Senin – Jumat, 09.00 – 17.00 WIB
+              </p>
+            </li>
+          </ul>
+        </div>
+
+        <!-- CTA Box -->
+        <div class="lg:col-span-3">
+          <div class="rounded-3xl border border-gold/25 bg-gradient-to-br from-gold/15 via-white/5 to-transparent p-6">
+            <span class="grid h-12 w-12 place-items-center rounded-2xl bg-gradient-to-br from-gold-light via-gold to-gold-dark text-navy shadow-glow">
+              <i class="fa-solid fa-bullhorn text-lg" aria-hidden="true"></i>
+            </span>
+            <h3 class="mt-5 text-base font-extrabold text-white">Punya Aspirasi untuk Jakarta?</h3>
+            <p class="mt-2 text-xs leading-relaxed text-slate-300">
+              Sampaikan langsung kepada kami. Setiap suara warga ibu kota layak diperjuangkan.
+            </p>
+            <a href="#aspirasi"
+               class="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-gold-light via-gold to-gold-dark px-5 py-3.5 text-xs font-extrabold text-navy shadow-lg shadow-gold/20 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-glow">
+              <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
+              Kirim Aspirasi Sekarang
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom bar -->
+      <div class="mt-14 flex flex-col items-center justify-between gap-4 border-t border-white/10 py-7 sm:flex-row">
+        <p class="text-center text-xs text-slate-500 sm:text-left">
+          Copyright &copy; 2026 <span class="font-semibold text-slate-300">DPD AMPI DKI Jakarta</span>. Hak Cipta Dilindungi.
+        </p>
+        <p class="text-center text-xs text-slate-500 sm:text-right">
+          Angkatan Muda Pembaharuan Indonesia &mdash; Provinsi DKI Jakarta
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= BACK TO TOP ================= -->
+  <button id="toTop" type="button" aria-label="Kembali ke atas"
+          class="pointer-events-none fixed bottom-6 right-6 z-40 grid h-12 w-12 translate-y-4 place-items-center rounded-full bg-gradient-to-br from-gold-light via-gold to-gold-dark text-navy opacity-0 shadow-xl shadow-gold/30 transition-all duration-300 hover:scale-110 focus:outline-none focus:ring-4 focus:ring-gold/40">
+    <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+  </button>
+
+  <!-- ================= TOAST ================= -->
+  <div id="toast"
+       class="pointer-events-none fixed inset-x-0 bottom-6 z-[100] flex translate-y-4 justify-center px-4 opacity-0 transition-all duration-300">
+    <div class="pointer-events-auto flex w-full max-w-md items-start gap-3 rounded-2xl border border-gold/30 bg-navy/95 p-4 shadow-2xl backdrop-blur-md">
+      <span id="toastIcon" class="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-gold text-navy">
+        <i class="fa-solid fa-check" aria-hidden="true"></i>
+      </span>
+      <div class="min-w-0 flex-1">
+        <p id="toastTitle" class="text-sm font-extrabold text-white">Berhasil</p>
+        <p id="toastMsg" class="mt-0.5 text-xs leading-relaxed text-slate-300">Pesan Anda telah kami terima.</p>
+      </div>
+      <button type="button" onclick="hideToast()" aria-label="Tutup notifikasi"
+              class="shrink-0 rounded-lg p-1 text-slate-400 transition-colors hover:text-white">
+        <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- ================= JAVASCRIPT ================= -->
+  <script>
+    (function () {
+      'use strict';
+
+      /* ---------------- Navbar scroll state ---------------- */
+      const navbar = document.getElementById('navbar');
+      const toTop = document.getElementById('toTop');
+
+      function onScroll() {
+        const y = window.scrollY;
+
+        if (y > 30) {
+          navbar.classList.add('bg-navy/95', 'shadow-xl', 'shadow-black/25', 'border-white/10');
+          navbar.classList.remove('bg-navy/70');
+        } else {
+          navbar.classList.remove('bg-navy/95', 'shadow-xl', 'shadow-black/25', 'border-white/10');
+          navbar.classList.add('bg-navy/70');
+        }
+
+        if (y > 600) {
+          toTop.classList.remove('opacity-0', 'translate-y-4', 'pointer-events-none');
+          toTop.classList.add('opacity-100', 'translate-y-0');
+        } else {
+          toTop.classList.add('opacity-0', 'translate-y-4', 'pointer-events-none');
+          toTop.classList.remove('opacity-100', 'translate-y-0');
+        }
+
+        updateActiveLink();
+      }
+
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+
+      /* ---------------- Back to top ---------------- */
+      toTop.addEventListener('click', function () {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      /* ---------------- Mobile menu ---------------- */
+      const menuBtn = document.getElementById('menuBtn');
+      const menuIcon = document.getElementById('menuIcon');
+      const mobileMenu = document.getElementById('mobileMenu');
+
+      function closeMobileMenu() {
+        mobileMenu.classList.add('hidden');
+        menuIcon.classList.remove('fa-xmark');
+        menuIcon.classList.add('fa-bars');
+        menuBtn.setAttribute('aria-expanded', 'false');
+        menuBtn.setAttribute('aria-label', 'Buka menu navigasi');
+      }
+
+      function openMobileMenu() {
+        mobileMenu.classList.remove('hidden');
+        menuIcon.classList.remove('fa-bars');
+        menuIcon.classList.add('fa-xmark');
+        menuBtn.setAttribute('aria-expanded', 'true');
+        menuBtn.setAttribute('aria-label', 'Tutup menu navigasi');
+      }
+
+      menuBtn.addEventListener('click', function () {
+        if (mobileMenu.classList.contains('hidden')) {
+          openMobileMenu();
+        } else {
+          closeMobileMenu();
+        }
+      });
+
+      document.querySelectorAll('.mobile-link').forEach(function (link) {
+        link.addEventListener('click', closeMobileMenu);
+      });
+
+      window.addEventListener('resize', function () {
+        if (window.innerWidth >= 1024) closeMobileMenu();
+      });
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') closeMobileMenu();
+      });
+
+      /* ---------------- Active nav link ---------------- */
+      const navLinks = Array.prototype.slice.call(document.querySelectorAll('.nav-link'));
+      const sectionIds = ['beranda', 'profil', 'struktur', 'program', 'berita', 'aspirasi', 'kontak'];
+      const sections = sectionIds
+        .map(function (id) { return document.getElementById(id); })
+        .filter(Boolean);
+
+      function updateActiveLink() {
+        const scrollPos = window.scrollY + 140;
+        let currentId = sections.length ? sections[0].id : '';
+
+        sections.forEach(function (section) {
+          if (scrollPos >= section.offsetTop) currentId = section.id;
+        });
+
+        // Jika sudah di dasar halaman, aktifkan kontak
+        if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 4) {
+          currentId = 'kontak';
+        }
+
+        navLinks.forEach(function (link) {
+          const href = link.getAttribute('href') || '';
+          link.classList.toggle('active', href === '#' + currentId);
+        });
+      }
+
+      /* ---------------- Reveal on scroll ---------------- */
+      const revealEls = Array.prototype.slice.call(document.querySelectorAll('.reveal'));
+
+      if ('IntersectionObserver' in window) {
+        const revealObserver = new IntersectionObserver(function (entries, observer) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.08, rootMargin: '0px 0px -60px 0px' });
+
+        revealEls.forEach(function (el, index) {
+          el.style.transitionDelay = Math.min(index % 4, 3) * 70 + 'ms';
+          revealObserver.observe(el);
+        });
+
+        // Safety fallback
+        window.setTimeout(function () {
+          revealEls.forEach(function (el) { el.classList.add('is-visible'); });
+        }, 4000);
+      } else {
+        revealEls.forEach(function (el) { el.classList.add('is-visible'); });
+      }
+
+      /* ---------------- Counter animation ---------------- */
+      const counters = Array.prototype.slice.call(document.querySelectorAll('.counter'));
+
+      function animateCounter(el) {
+        const target = parseFloat(el.getAttribute('data-count')) || 0;
+        const suffix = el.getAttribute('data-suffix') || '';
+        const duration = 1600;
+        const startTime = performance.now();
+
+        function step(now) {
+          const progress = Math.min((now - startTime) / duration, 1);
+          const eased = 1 - Math.pow(1 - progress, 3);
+          const value = Math.floor(target * eased);
+
+          el.textContent = value.toLocaleString('id-ID') + suffix;
+
+          if (progress < 1) {
+            requestAnimationFrame(step);
+          } else {
+            el.textContent = target.toLocaleString('id-ID') + suffix;
+          }
+        }
+
+        requestAnimationFrame(step);
+      }
+
+      if ('IntersectionObserver' in window && counters.length) {
+        const counterObserver = new IntersectionObserver(function (entries, observer) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              animateCounter(entry.target);
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.4 });
+
+        counters.forEach(function (el) { counterObserver.observe(el); });
+      } else {
+        counters.forEach(function (el) {
+          el.textContent = (parseFloat(el.getAttribute('data-count')) || 0).toLocaleString('id-ID') +
+            (el.getAttribute('data-suffix') || '');
+        });
+      }
+
+      /* ---------------- Toast ---------------- */
+      const toast = document.getElementById('toast');
+      const toastIcon = document.getElementById('toastIcon');
+      const toastTitle = document.getElementById('toastTitle');
+      const toastMsg = document.getElementById('toastMsg');
+      let toastTimer = null;
+
+      window.showToast = function (title, message, type) {
+        toastTitle.textContent = title;
+        toastMsg.textContent = message;
+
+        if (type === 'error') {
+          toastIcon.className = 'grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-red-500 text-white';
+          toastIcon.innerHTML = '<i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i>';
+        } else {
+          toastIcon.className = 'grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-gold text-navy';
+          toastIcon.innerHTML = '<i class="fa-solid fa-check" aria-hidden="true"></i>';
+        }
+
+        toast.classList.remove('opacity-0', 'translate-y-4');
+        toast.classList.add('opacity-100', 'translate-y-0');
+
+        if (toastTimer) window.clearTimeout(toastTimer);
+        toastTimer = window.setTimeout(hideToast, 5000);
+      };
+
+      window.hideToast = function () {
+        toast.classList.add('opacity-0', 'translate-y-4');
+        toast.classList.remove('opacity-100', 'translate-y-0');
+        if (toastTimer) window.clearTimeout(toastTimer);
+      };
+
+      /* ---------------- Form handling ---------------- */
+      const form = document.getElementById('aspirasiForm');
+      const submitBtn = form ? form.querySelector('button[type="submit"]') : null;
+
+      function markInvalid(el, isInvalid) {
+        if (!el) return;
+        if (isInvalid) {
+          el.classList.add('border-red-500', 'ring-4', 'ring-red-500/15');
+          el.classList.remove('border-slate-300');
+        } else {
+          el.classList.remove('border-red-500', 'ring-4', 'ring-red-500/15');
+          el.classList.add('border-slate-300');
+        }
+      }
+
+      if (form) {
+        const fields = ['nama', 'whatsapp', 'email', 'wilayah', 'keperluan', 'pesan', 'setuju']
+          .map(function (id) { return document.getElementById(id); });
+
+        fields.forEach(function (el) {
+          if (!el) return;
+          const evt = (el.type === 'checkbox' || el.tagName === 'SELECT') ? 'change' : 'input';
+          el.addEventListener(evt, function () { markInvalid(el, false); });
+        });
+
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
+
+          const nama = document.getElementById('nama');
+          const whatsapp = document.getElementById('whatsapp');
+          const email = document.getElementById('email');
+          const wilayah = document.getElementById('wilayah');
+          const keperluan = document.getElementById('keperluan');
+          const pesan = document.getElementById('pesan');
+          const setuju = document.getElementById('setuju');
+
+          // Reset visual state
+          fields.forEach(function (el) { markInvalid(el, false); });
+
+          // Validasi
+          if (!nama.value.trim() || nama.value.trim().length < 3) {
+            markInvalid(nama, true);
+            nama.focus();
+            return window.showToast('Data Belum Lengkap', 'Mohon isi nama lengkap Anda (minimal 3 karakter).', 'error');
+          }
+
+          const phoneDigits = whatsapp.value.replace(/\D/g, '');
+          if (phoneDigits.length < 9 || phoneDigits.length > 15) {
+            markInvalid(whatsapp, true);
+            whatsapp.focus();
+            return window.showToast('Nomor Tidak Valid', 'Masukkan nomor WhatsApp aktif, contoh: 08123456789.', 'error');
+          }
+
+          const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+          if (!emailPattern.test(email.value.trim())) {
+            markInvalid(email, true);
+            email.focus();
+            return window.showToast('Email Tidak Valid', 'Mohon periksa kembali format alamat email Anda.', 'error');
+          }
+
+          if (!wilayah.value) {
+            markInvalid(wilayah, true);
+            wilayah.focus();
+            return window.showToast('Wilayah Belum Dipilih', 'Silakan pilih wilayah domisili Anda terlebih dahulu.', 'error');
+          }
+
+          if (!keperluan.value) {
+            markInvalid(keperluan, true);
+            keperluan.focus();
+            return window.showToast('Keperluan Belum Dipilih', 'Silakan pilih keperluan Anda mengirim formulir ini.', 'error');
+          }
+
+          if (!pesan.value.trim() || pesan.value.trim().length < 10) {
+            markInvalid(pesan, true);
+            pesan.focus();
+            return window.showToast('Pesan Terlalu Singkat', 'Mohon tuliskan pesan atau aspirasi minimal 10 karakter.', 'error');
+          }
+
+          if (!setuju.checked) {
+            setuju.focus();
+            return window.showToast('Persetujuan Diperlukan', 'Centang persetujuan penggunaan data untuk melanjutkan.', 'error');
+          }
+
+          // Simulasi pengiriman
+          const originalHTML = submitBtn.innerHTML;
+          submitBtn.disabled = true;
+          submitBtn.classList.add('opacity-70', 'cursor-wait');
+          submitBtn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> Mengirim data…';
+
+          window.setTimeout(function () {
+            submitBtn.disabled = false;
+            submitBtn.classList.remove('opacity-70', 'cursor-wait');
+            submitBtn.innerHTML = originalHTML;
+
+            window.showToast(
+              'Terima kasih, ' + nama.value.trim().split(' ')[0] + '!',
+              'Data Anda sebagai ' + keperluan.value + ' di wilayah ' + wilayah.value +
+              ' telah kami terima. Tim sekretariat akan menghubungi Anda melalui WhatsApp atau email dalam 1×24 jam kerja.',
+              'success'
+            );
+
+            form.reset();
+            fields.forEach(function (el) { markInvalid(el, false); });
+          }, 1200);
+        });
+      }
+
+      /* ---------------- Smooth scroll fallback (browser lama) ---------------- */
+      document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+        anchor.addEventListener('click', function (e) {
+          const targetId = this.getAttribute('href');
+          if (!targetId || targetId === '#') return;
+
+          const target = document.querySelector(targetId);
+          if (!target) return;
+
+          e.preventDefault();
+          const offset = 84;
+          const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+
+          window.scrollTo({ top: top, behavior: 'smooth' });
+          history.pushState(null, '', targetId);
+        });
+      });
+
+      /* ---------------- Init ---------------- */
+      updateActiveLink();
+    })();
+  </script>
+</body>
+</html>
