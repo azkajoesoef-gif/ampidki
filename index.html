@@ -11,7 +11,9 @@
   <meta property="og:description" content="Kreativitas, Kepemudaan, Pembaharuan untuk Jakarta Maju." />
   <meta property="og:type" content="website" />
 
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%230F172A'/><path d='M55 12 26 56h20l-6 32 32-46H52z' fill='%23F59E0B'/></svg>" />
+  <!-- Favicon & Logo dari link yang diberikan -->
+  <link rel="icon" type="image/png" href="https://i.ibb.co.com/wFh7Hfb5/logo-ampi-1.png" />
+  <link rel="apple-touch-icon" href="https://i.ibb.co.com/wFh7Hfb5/logo-ampi-1.png" />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -71,8 +73,8 @@
     .nav-link.active::after { transform: scaleX(1); }
     .nav-link.active { color: #F59E0B; }
 
-    /* Scroll reveal */
-    .reveal { opacity: 0; transform: translateY(26px); transition: opacity .8s cubic-bezier(.22,1,.36,1), transform .8s cubic-bezier(.22,1,.36,1); will-change: opacity, transform; }
+    /* Scroll reveal - VERSI YANG DIPERBAIKI */
+    .reveal { opacity: 1; transform: none; transition: opacity .8s cubic-bezier(.22,1,.36,1), transform .8s cubic-bezier(.22,1,.36,1); will-change: opacity, transform; }
     .reveal.is-visible { opacity: 1; transform: none; }
 
     /* Grid pattern background */
@@ -117,10 +119,7 @@
 
         <!-- Brand -->
         <a href="#beranda" class="group flex shrink-0 items-center gap-3">
-          <span class="relative grid h-11 w-11 place-items-center rounded-xl bg-gradient-to-br from-gold-light via-gold to-gold-dark text-navy shadow-glow transition-transform duration-300 group-hover:scale-105">
-            <i class="fa-solid fa-bolt text-lg" aria-hidden="true"></i>
-            <span class="absolute -bottom-1 -right-1 grid h-4 w-4 place-items-center rounded-full bg-navy-700 text-[7px] font-black text-white ring-2 ring-navy">DKI</span>
-          </span>
+          <img src="https://i.ibb.co.com/wFh7Hfb5/logo-ampi-1.png" alt="Logo AMPI DKI Jakarta" class="h-11 w-11 rounded-xl object-contain bg-white p-1 shadow-glow transition-transform duration-300 group-hover:scale-105" />
           <span class="leading-tight">
             <span class="block text-[15px] font-extrabold tracking-tight text-white">DPD AMPI</span>
             <span class="block text-[10px] font-bold uppercase tracking-[0.22em] text-gold">DKI Jakarta</span>
@@ -246,9 +245,7 @@
 
                 <!-- Center content -->
                 <div class="absolute inset-0 flex flex-col items-center justify-center px-8 text-center">
-                  <span class="grid h-20 w-20 place-items-center rounded-2xl bg-gradient-to-br from-gold-light via-gold to-gold-dark text-navy shadow-glow">
-                    <i class="fa-solid fa-city text-3xl" aria-hidden="true"></i>
-                  </span>
+                  <img src="https://i.ibb.co.com/wFh7Hfb5/logo-ampi-1.png" alt="Logo AMPI" class="h-20 w-20 object-contain bg-white rounded-2xl p-2 shadow-glow" />
                   <p class="mt-6 text-xs font-bold uppercase tracking-[0.3em] text-gold">Jakarta Maju</p>
                   <p class="mt-2 max-w-[15rem] text-sm leading-relaxed text-slate-300">
                     Monumen &amp; skyline ibu kota — saksi gerakan pemuda pembaharuan.
@@ -333,20 +330,13 @@
             <h3 class="text-2xl font-extrabold tracking-tight text-navy">Lokomotif Pemuda Pembaharuan di Ibu Kota</h3>
             <div class="mt-5 space-y-4 text-[15px] leading-relaxed text-slate-600">
               <p>
-                Sejak kehadirannya, AMPI menempatkan diri sebagai kekuatan moral dan intelektual pemuda
-                yang berdiri di atas tiga landasan: karya nyata, intelektualitas, dan solidaritas sosial.
-                Di DKI Jakarta — pusat denyut ekonomi, politik, dan budaya nasional — peran tersebut
-                menuntut kepekaan tinggi terhadap persoalan warga kota.
+                Sejak dideklarasikan pada 28 Juni 1978 di Pandaan, Jawa Timur, AMPI menempatkan diri sebagai kekuatan moral dan intelektual pemuda[reference:0]. Di DKI Jakarta — pusat denyut ekonomi, politik, dan budaya nasional — peran tersebut menuntut kepekaan tinggi terhadap persoalan warga kota.
               </p>
               <p>
-                DPD AMPI DKI Jakarta mengoordinasikan gerakan di lima kota administrasi dan satu kabupaten
-                administratif. Kami bekerja lintas sektor: mendorong kebijakan publik yang berpihak pada
-                pemuda, membangun kapasitas kader, menggerakkan ekonomi kreatif, serta menghadirkan
-                kehadiran sosial yang nyata di tengah masyarakat.
+                DPD AMPI DKI Jakarta mengoordinasikan gerakan di lima kota administrasi dan satu kabupaten administratif. Kami bekerja lintas sektor: mendorong kebijakan publik yang berpihak pada pemuda, membangun kapasitas kader, menggerakkan ekonomi kreatif, serta menghadirkan kehadiran sosial yang nyata di tengah masyarakat.
               </p>
               <p>
-                Bagi kami, pembaharuan bukan slogan. Ia adalah kerja harian — terukur, kolaboratif, dan
-                berdampak langsung bagi warga Jakarta.
+                Bagi kami, pembaharuan bukan slogan. Ia adalah kerja harian — terukur, kolaboratif, dan berdampak langsung bagi warga Jakarta.
               </p>
             </div>
 
@@ -385,7 +375,7 @@
 
             <div class="absolute -bottom-6 -left-4 rounded-2xl border border-slate-200 bg-white px-5 py-4 shadow-card sm:-left-6">
               <p class="text-[10px] font-bold uppercase tracking-[0.16em] text-slate-400">Berdiri Sejak</p>
-              <p class="mt-0.5 text-2xl font-extrabold text-navy">2000<span class="text-gold-dark">-an</span></p>
+              <p class="mt-0.5 text-2xl font-extrabold text-navy">1978</p>
             </div>
           </div>
         </div>
@@ -451,8 +441,9 @@
                 <i class="fa-solid fa-eye" aria-hidden="true"></i> Visi
               </span>
               <p class="mt-6 text-lg font-semibold leading-relaxed text-white sm:text-xl">
-                “Menjadi lokomotif pemuda pembaharuan yang <span class="text-gold">unggul, berintegritas, dan berdampak nyata</span>
-                bagi terwujudnya Jakarta sebagai kota global yang maju, humanis, berkeadilan, dan berkelanjutan.”
+                “Memantapkan peran kekaryaan sebagai pilar utama pembinaan kepemudaan Partai Golkar,
+                serta menjadi lokomotif pemuda pembaharuan yang unggul, berintegritas, dan berdampak nyata
+                bagi terwujudnya Jakarta sebagai kota global yang maju, humanis, berkeadilan, dan berkelanjutan.”[reference:1]
               </p>
             </div>
           </div>
@@ -467,36 +458,36 @@
               <li class="flex gap-4">
                 <span class="mt-0.5 grid h-7 w-7 shrink-0 place-items-center rounded-lg bg-gold/15 text-[11px] font-extrabold text-gold-deep">01</span>
                 <p class="text-sm leading-relaxed text-slate-600">
+                  <span class="font-bold text-navy">Melakukan percepatan konsolidasi kelembagaan dan program</span>
+                  untuk memperkuat posisi AMPI di tengah-tengah masyarakat dalam suasana yang demokratis serta menjamin hubungan yang harmonis dengan seluruh komponen bangsa.[reference:2]
+                </p>
+              </li>
+              <li class="flex gap-4">
+                <span class="mt-0.5 grid h-7 w-7 shrink-0 place-items-center rounded-lg bg-gold/15 text-[11px] font-extrabold text-gold-deep">02</span>
+                <p class="text-sm leading-relaxed text-slate-600">
                   <span class="font-bold text-navy">Menguatkan kaderisasi.</span>
                   Membangun sistem pendidikan dan pelatihan kader yang berjenjang, modern, dan berkarakter.
                 </p>
               </li>
               <li class="flex gap-4">
-                <span class="mt-0.5 grid h-7 w-7 shrink-0 place-items-center rounded-lg bg-gold/15 text-[11px] font-extrabold text-gold-deep">02</span>
+                <span class="mt-0.5 grid h-7 w-7 shrink-0 place-items-center rounded-lg bg-gold/15 text-[11px] font-extrabold text-gold-deep">03</span>
                 <p class="text-sm leading-relaxed text-slate-600">
                   <span class="font-bold text-navy">Mengawal kebijakan publik.</span>
                   Melakukan advokasi berbasis data untuk isu ketenagakerjaan, pendidikan, dan ruang hidup pemuda Jakarta.
                 </p>
               </li>
               <li class="flex gap-4">
-                <span class="mt-0.5 grid h-7 w-7 shrink-0 place-items-center rounded-lg bg-gold/15 text-[11px] font-extrabold text-gold-deep">03</span>
+                <span class="mt-0.5 grid h-7 w-7 shrink-0 place-items-center rounded-lg bg-gold/15 text-[11px] font-extrabold text-gold-deep">04</span>
                 <p class="text-sm leading-relaxed text-slate-600">
                   <span class="font-bold text-navy">Mendorong ekonomi kreatif.</span>
                   Memfasilitasi pemuda Jakarta mengembangkan usaha, keterampilan digital, dan industri kreatif.
                 </p>
               </li>
               <li class="flex gap-4">
-                <span class="mt-0.5 grid h-7 w-7 shrink-0 place-items-center rounded-lg bg-gold/15 text-[11px] font-extrabold text-gold-deep">04</span>
+                <span class="mt-0.5 grid h-7 w-7 shrink-0 place-items-center rounded-lg bg-gold/15 text-[11px] font-extrabold text-gold-deep">05</span>
                 <p class="text-sm leading-relaxed text-slate-600">
                   <span class="font-bold text-navy">Memperkuat solidaritas sosial.</span>
                   Hadir aktif dalam kegiatan kemanusiaan, lingkungan, dan pemberdayaan masyarakat kota.
-                </p>
-              </li>
-              <li class="flex gap-4">
-                <span class="mt-0.5 grid h-7 w-7 shrink-0 place-items-center rounded-lg bg-gold/15 text-[11px] font-extrabold text-gold-deep">05</span>
-                <p class="text-sm leading-relaxed text-slate-600">
-                  <span class="font-bold text-navy">Membangun kolaborasi.</span>
-                  Menjalin kemitraan strategis dengan pemerintah, akademisi, komunitas, dan dunia usaha.
                 </p>
               </li>
             </ul>
@@ -524,7 +515,7 @@
                     <span class="grid h-24 w-24 place-items-center rounded-full border-2 border-gold/40 bg-white/5 backdrop-blur">
                       <i class="fa-solid fa-user-tie text-4xl text-gold/80" aria-hidden="true"></i>
                     </span>
-                    <p class="mt-5 text-[10px] font-bold uppercase tracking-[0.25em] text-gold">Foto Resmi Ketua</p>
+                    <p class="mt-5 text-[10px] font-bold uppercase tracking-[0.25em] text-gold">Foto Resmi Plt. Ketua</p>
                     <p class="mt-1 px-6 text-[11px] text-slate-400">Placeholder — ganti dengan foto ketua definitif</p>
                   </div>
                 </div>
@@ -532,9 +523,8 @@
 
               <!-- Name plate -->
               <div class="absolute -bottom-6 left-1/2 w-[86%] -translate-x-1/2 rounded-2xl border border-slate-200 bg-white px-5 py-4 text-center shadow-card">
-                <!-- Ganti dengan nama Ketua DPD AMPI DKI Jakarta yang definitif -->
-                <p class="text-sm font-extrabold text-navy">H. Muhammad Rizky Aditya, S.E., M.Si.</p>
-                <p class="mt-1 text-[10px] font-bold uppercase tracking-[0.16em] text-gold-deep">Ketua DPD AMPI DKI Jakarta</p>
+                <p class="text-sm font-extrabold text-navy">Gaeandra Kartasasmita</p>
+                <p class="mt-1 text-[10px] font-bold uppercase tracking-[0.16em] text-gold-deep">Plt. Ketua DPD AMPI DKI Jakarta</p>
               </div>
             </div>
           </div>
@@ -579,8 +569,8 @@
                   <i class="fa-solid fa-signature" aria-hidden="true"></i>
                 </span>
                 <div>
-                  <p class="text-sm font-extrabold text-navy">H. Muhammad Rizky Aditya, S.E., M.Si.</p>
-                  <p class="text-[11px] font-semibold uppercase tracking-wider text-slate-500">Ketua DPD AMPI DKI Jakarta</p>
+                  <p class="text-sm font-extrabold text-navy">Gaeandra Kartasasmita</p>
+                  <p class="text-[11px] font-semibold uppercase tracking-wider text-slate-500">Plt. Ketua DPD AMPI DKI Jakarta</p>
                 </div>
               </div>
             </div>
@@ -613,15 +603,14 @@
         <!-- Pengurus Inti -->
         <div class="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
 
-          <!-- Card Ketua (highlight) -->
+          <!-- Card Plt. Ketua (highlight) -->
           <article class="reveal group relative overflow-hidden rounded-3xl border border-gold/30 bg-gradient-to-br from-gold/15 via-navy-800/80 to-navy-800/60 p-7 backdrop-blur-sm transition-all duration-500 hover:-translate-y-2 hover:border-gold/70">
             <span class="absolute right-5 top-5 rounded-full bg-gold px-3 py-1 text-[9px] font-black uppercase tracking-wider text-navy">Pimpinan</span>
             <span class="grid h-16 w-16 place-items-center rounded-2xl bg-gradient-to-br from-gold-light via-gold to-gold-dark text-navy shadow-glow">
               <i class="fa-solid fa-crown text-2xl" aria-hidden="true"></i>
             </span>
-            <!-- Ganti dengan data pengurus resmi -->
-            <h3 class="mt-6 text-lg font-extrabold text-white">H. Muhammad Rizky Aditya, S.E., M.Si.</h3>
-            <p class="mt-1 text-[11px] font-bold uppercase tracking-[0.16em] text-gold">Ketua</p>
+            <h3 class="mt-6 text-lg font-extrabold text-white">Gaeandra Kartasasmita</h3>
+            <p class="mt-1 text-[11px] font-bold uppercase tracking-[0.16em] text-gold">Plt. Ketua</p>
             <p class="mt-4 text-sm leading-relaxed text-slate-300">
               Penanggung jawab utama kebijakan organisasi, arah gerakan, dan representasi eksternal DPD AMPI DKI Jakarta.
             </p>
@@ -632,7 +621,7 @@
             <span class="grid h-14 w-14 place-items-center rounded-2xl bg-white/10 text-gold">
               <i class="fa-solid fa-user-shield text-xl" aria-hidden="true"></i>
             </span>
-            <h3 class="mt-6 text-lg font-extrabold text-white">Drs. Andi Prasetyo Nugroho, M.M.</h3>
+            <h3 class="mt-6 text-lg font-extrabold text-white">Tim Pelaksana Tugas</h3>
             <p class="mt-1 text-[11px] font-bold uppercase tracking-[0.16em] text-gold">Wakil Ketua</p>
             <p class="mt-4 text-sm leading-relaxed text-slate-300">
               Membantu ketua dalam koordinasi bidang, pengawasan program, dan penguatan jaringan organisasi.
@@ -644,7 +633,7 @@
             <span class="grid h-14 w-14 place-items-center rounded-2xl bg-white/10 text-gold">
               <i class="fa-solid fa-file-pen text-xl" aria-hidden="true"></i>
             </span>
-            <h3 class="mt-6 text-lg font-extrabold text-white">Nadia Salsabila Putri, S.H.</h3>
+            <h3 class="mt-6 text-lg font-extrabold text-white">Tim Pelaksana Tugas</h3>
             <p class="mt-1 text-[11px] font-bold uppercase tracking-[0.16em] text-gold">Sekretaris</p>
             <p class="mt-4 text-sm leading-relaxed text-slate-300">
               Mengelola administrasi, korespondensi, arsip organisasi, serta kesekretariatan seluruh kegiatan.
@@ -656,7 +645,7 @@
             <span class="grid h-14 w-14 place-items-center rounded-2xl bg-white/10 text-gold">
               <i class="fa-solid fa-wallet text-xl" aria-hidden="true"></i>
             </span>
-            <h3 class="mt-6 text-lg font-extrabold text-white">Bagas Dwi Ramadhan, S.E.</h3>
+            <h3 class="mt-6 text-lg font-extrabold text-white">Tim Pelaksana Tugas</h3>
             <p class="mt-1 text-[11px] font-bold uppercase tracking-[0.16em] text-gold">Bendahara</p>
             <p class="mt-4 text-sm leading-relaxed text-slate-300">
               Bertanggung jawab atas pengelolaan keuangan, penyusunan anggaran, dan pelaporan finansial organisasi.
@@ -668,8 +657,8 @@
             <span class="grid h-14 w-14 place-items-center rounded-2xl bg-white/10 text-gold">
               <i class="fa-solid fa-users-gear text-xl" aria-hidden="true"></i>
             </span>
-            <h3 class="mt-6 text-lg font-extrabold text-white">Rizky Maulana Ibrahim, S.I.P.</h3>
-            <p class="mt-1 text-[11px] font-bold uppercase tracking-[0.16em] text-gold">Ketua Bidang Organisasi &amp; Kaderisasi</p>
+            <h3 class="mt-6 text-lg font-extrabold text-white">Bidang Organisasi &amp; Kaderisasi</h3>
+            <p class="mt-1 text-[11px] font-bold uppercase tracking-[0.16em] text-gold">Ketua Bidang</p>
             <p class="mt-4 text-sm leading-relaxed text-slate-300">
               Menyusun kurikulum kaderisasi, rekrutmen anggota, serta pembinaan jaringan di tingkat kota dan kecamatan.
             </p>
@@ -680,8 +669,8 @@
             <span class="grid h-14 w-14 place-items-center rounded-2xl bg-white/10 text-gold">
               <i class="fa-solid fa-lightbulb text-xl" aria-hidden="true"></i>
             </span>
-            <h3 class="mt-6 text-lg font-extrabold text-white">Siti Aisyah Rahmawati, S.Kom.</h3>
-            <p class="mt-1 text-[11px] font-bold uppercase tracking-[0.16em] text-gold">Ketua Bidang Sosial &amp; Ekonomi Kreatif</p>
+            <h3 class="mt-6 text-lg font-extrabold text-white">Bidang Sosial &amp; Ekonomi Kreatif</h3>
+            <p class="mt-1 text-[11px] font-bold uppercase tracking-[0.16em] text-gold">Ketua Bidang</p>
             <p class="mt-4 text-sm leading-relaxed text-slate-300">
               Menggerakkan program bakti sosial, pemberdayaan UMKM muda, serta pengembangan industri kreatif Jakarta.
             </p>
@@ -1314,9 +1303,7 @@
         <!-- Brand -->
         <div class="lg:col-span-4">
           <div class="flex items-center gap-3">
-            <span class="grid h-12 w-12 place-items-center rounded-xl bg-gradient-to-br from-gold-light via-gold to-gold-dark text-navy shadow-glow">
-              <i class="fa-solid fa-bolt text-lg" aria-hidden="true"></i>
-            </span>
+            <img src="https://i.ibb.co.com/wFh7Hfb5/logo-ampi-1.png" alt="Logo AMPI DKI Jakarta" class="h-12 w-12 rounded-xl bg-white p-1 object-contain shadow-glow" />
             <span class="leading-tight">
               <span class="block text-base font-extrabold text-white">DPD AMPI</span>
               <span class="block text-[10px] font-bold uppercase tracking-[0.22em] text-gold">DKI Jakarta</span>
@@ -1385,9 +1372,9 @@
                 <i class="fa-solid fa-location-dot text-sm" aria-hidden="true"></i>
               </span>
               <p class="text-sm leading-relaxed text-slate-400">
-                Gedung Sekretariat DPD AMPI DKI Jakarta<br />
-                Jl. Kramat Raya No. 00, Senen,<br />
-                Jakarta Pusat 10450, DKI Jakarta
+                Kantor DPD Partai Golkar DKI Jakarta<br />
+                Jl. Cikini Raya No. 56, Cikini, Menteng,<br />
+                Jakarta Pusat 10330, DKI Jakarta[reference:3]
               </p>
             </li>
             <li class="flex items-start gap-3">
@@ -1568,7 +1555,6 @@
           if (scrollPos >= section.offsetTop) currentId = section.id;
         });
 
-        // Jika sudah di dasar halaman, aktifkan kontak
         if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 4) {
           currentId = 'kontak';
         }
@@ -1579,7 +1565,7 @@
         });
       }
 
-      /* ---------------- Reveal on scroll ---------------- */
+      /* ---------------- Reveal on scroll - VERSI DIPERBAIKI ---------------- */
       const revealEls = Array.prototype.slice.call(document.querySelectorAll('.reveal'));
 
       if ('IntersectionObserver' in window) {
@@ -1590,17 +1576,18 @@
               observer.unobserve(entry.target);
             }
           });
-        }, { threshold: 0.08, rootMargin: '0px 0px -60px 0px' });
+        }, { threshold: 0, rootMargin: '0px 0px 0px 0px' }); // <-- DIPERBAIKI
 
         revealEls.forEach(function (el, index) {
           el.style.transitionDelay = Math.min(index % 4, 3) * 70 + 'ms';
           revealObserver.observe(el);
         });
 
-        // Safety fallback
+        // Safety fallback - DIPERCEPAT
         window.setTimeout(function () {
           revealEls.forEach(function (el) { el.classList.add('is-visible'); });
-        }, 4000);
+        }, 1000); // <-- DIPERBAIKI
+
       } else {
         revealEls.forEach(function (el) { el.classList.add('is-visible'); });
       }
@@ -1717,10 +1704,8 @@
           const pesan = document.getElementById('pesan');
           const setuju = document.getElementById('setuju');
 
-          // Reset visual state
           fields.forEach(function (el) { markInvalid(el, false); });
 
-          // Validasi
           if (!nama.value.trim() || nama.value.trim().length < 3) {
             markInvalid(nama, true);
             nama.focus();
@@ -1764,7 +1749,6 @@
             return window.showToast('Persetujuan Diperlukan', 'Centang persetujuan penggunaan data untuk melanjutkan.', 'error');
           }
 
-          // Simulasi pengiriman
           const originalHTML = submitBtn.innerHTML;
           submitBtn.disabled = true;
           submitBtn.classList.add('opacity-70', 'cursor-wait');
@@ -1788,7 +1772,7 @@
         });
       }
 
-      /* ---------------- Smooth scroll fallback (browser lama) ---------------- */
+      /* ---------------- Smooth scroll fallback ---------------- */
       document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
         anchor.addEventListener('click', function (e) {
           const targetId = this.getAttribute('href');
