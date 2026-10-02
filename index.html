@@ -11,7 +11,7 @@
   <meta property="og:description" content="Kreativitas, Kepemudaan, Pembaharuan untuk Jakarta Maju." />
   <meta property="og:type" content="website" />
 
-  <!-- Favicon & Logo dari link yang diberikan -->
+  <!-- Favicon & Logo -->
   <link rel="icon" type="image/png" href="https://i.ibb.co.com/wFh7Hfb5/logo-ampi-1.png" />
   <link rel="apple-touch-icon" href="https://i.ibb.co.com/wFh7Hfb5/logo-ampi-1.png" />
 
@@ -73,8 +73,8 @@
     .nav-link.active::after { transform: scaleX(1); }
     .nav-link.active { color: #F59E0B; }
 
-    /* Scroll reveal - VERSI YANG DIPERBAIKI */
-    .reveal { opacity: 1; transform: none; transition: opacity .8s cubic-bezier(.22,1,.36,1), transform .8s cubic-bezier(.22,1,.36,1); will-change: opacity, transform; }
+    /* Scroll reveal */
+    .reveal { opacity: 0; transform: translateY(26px); transition: opacity .8s cubic-bezier(.22,1,.36,1), transform .8s cubic-bezier(.22,1,.36,1); will-change: opacity, transform; }
     .reveal.is-visible { opacity: 1; transform: none; }
 
     /* Grid pattern background */
@@ -96,6 +96,29 @@
       outline: none;
       border-color: #F59E0B;
       box-shadow: 0 0 0 4px rgba(245,158,11,.18);
+    }
+
+    /* Tooltip for map cards */
+    .map-card { position: relative; }
+    .map-tooltip {
+      position: absolute;
+      bottom: 100%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-8px);
+      background: #0F172A;
+      color: #FCD34D;
+      padding: 4px 10px;
+      border-radius: 8px;
+      font-size: 11px;
+      font-weight: 700;
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .3s, transform .3s;
+    }
+    .map-card:hover .map-tooltip {
+      opacity: 1;
+      transform: translateX(-50%) translateY(-4px);
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -330,7 +353,7 @@
             <h3 class="text-2xl font-extrabold tracking-tight text-navy">Lokomotif Pemuda Pembaharuan di Ibu Kota</h3>
             <div class="mt-5 space-y-4 text-[15px] leading-relaxed text-slate-600">
               <p>
-                Sejak dideklarasikan pada 28 Juni 1978 di Pandaan, Jawa Timur, AMPI menempatkan diri sebagai kekuatan moral dan intelektual pemuda[reference:0]. Di DKI Jakarta — pusat denyut ekonomi, politik, dan budaya nasional — peran tersebut menuntut kepekaan tinggi terhadap persoalan warga kota.
+                Sejak dideklarasikan pada 28 Juni 1978 di Pandaan, Jawa Timur, AMPI menempatkan diri sebagai kekuatan moral dan intelektual pemuda[reference:4]. Di DKI Jakarta — pusat denyut ekonomi, politik, dan budaya nasional — peran tersebut menuntut kepekaan tinggi terhadap persoalan warga kota.
               </p>
               <p>
                 DPD AMPI DKI Jakarta mengoordinasikan gerakan di lima kota administrasi dan satu kabupaten administratif. Kami bekerja lintas sektor: mendorong kebijakan publik yang berpihak pada pemuda, membangun kapasitas kader, menggerakkan ekonomi kreatif, serta menghadirkan kehadiran sosial yang nyata di tengah masyarakat.
@@ -443,7 +466,7 @@
               <p class="mt-6 text-lg font-semibold leading-relaxed text-white sm:text-xl">
                 “Memantapkan peran kekaryaan sebagai pilar utama pembinaan kepemudaan Partai Golkar,
                 serta menjadi lokomotif pemuda pembaharuan yang unggul, berintegritas, dan berdampak nyata
-                bagi terwujudnya Jakarta sebagai kota global yang maju, humanis, berkeadilan, dan berkelanjutan.”[reference:1]
+                bagi terwujudnya Jakarta sebagai kota global yang maju, humanis, berkeadilan, dan berkelanjutan.”
               </p>
             </div>
           </div>
@@ -459,7 +482,7 @@
                 <span class="mt-0.5 grid h-7 w-7 shrink-0 place-items-center rounded-lg bg-gold/15 text-[11px] font-extrabold text-gold-deep">01</span>
                 <p class="text-sm leading-relaxed text-slate-600">
                   <span class="font-bold text-navy">Melakukan percepatan konsolidasi kelembagaan dan program</span>
-                  untuk memperkuat posisi AMPI di tengah-tengah masyarakat dalam suasana yang demokratis serta menjamin hubungan yang harmonis dengan seluruh komponen bangsa.[reference:2]
+                  untuk memperkuat posisi AMPI di tengah-tengah masyarakat dalam suasana yang demokratis serta menjamin hubungan yang harmonis dengan seluruh komponen bangsa.
                 </p>
               </li>
               <li class="flex gap-4">
@@ -512,11 +535,8 @@
                 <div class="relative grid aspect-[4/5] w-full place-items-center">
                   <div class="absolute inset-0 bg-grid opacity-40" aria-hidden="true"></div>
                   <div class="relative text-center">
-                    <span class="grid h-24 w-24 place-items-center rounded-full border-2 border-gold/40 bg-white/5 backdrop-blur">
-                      <i class="fa-solid fa-user-tie text-4xl text-gold/80" aria-hidden="true"></i>
-                    </span>
-                    <p class="mt-5 text-[10px] font-bold uppercase tracking-[0.25em] text-gold">Foto Resmi Plt. Ketua</p>
-                    <p class="mt-1 px-6 text-[11px] text-slate-400">Placeholder — ganti dengan foto ketua definitif</p>
+                    <!-- Ganti dengan foto ketua dari link yang diberikan -->
+                    <img src="https://i.ibb.co.com/Ld8hzRxn/Screenshot-2-10-2026-142943-redaksijakarta-com.jpg" alt="Foto Plt. Ketua DPD AMPI DKI Jakarta" class="h-full w-full object-cover rounded-[1.5rem]" />
                   </div>
                 </div>
               </div>
@@ -834,7 +854,8 @@
         <div class="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
 
           <!-- Jakarta Pusat -->
-          <article class="reveal group relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-7 shadow-sm transition-all duration-500 hover:-translate-y-2 hover:border-gold/50 hover:shadow-card">
+          <article class="map-card reveal group relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-7 shadow-sm transition-all duration-500 hover:-translate-y-2 hover:border-gold/50 hover:shadow-card">
+            <div class="map-tooltip">Pusat pemerintahan &amp; kebijakan</div>
             <div class="flex items-start justify-between">
               <span class="grid h-12 w-12 place-items-center rounded-2xl bg-navy text-gold transition-colors duration-500 group-hover:bg-gold group-hover:text-navy">
                 <i class="fa-solid fa-landmark" aria-hidden="true"></i>
@@ -849,7 +870,8 @@
           </article>
 
           <!-- Jakarta Selatan -->
-          <article class="reveal group relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-7 shadow-sm transition-all duration-500 hover:-translate-y-2 hover:border-gold/50 hover:shadow-card">
+          <article class="map-card reveal group relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-7 shadow-sm transition-all duration-500 hover:-translate-y-2 hover:border-gold/50 hover:shadow-card">
+            <div class="map-tooltip">Bisnis &amp; ekonomi kreatif</div>
             <div class="flex items-start justify-between">
               <span class="grid h-12 w-12 place-items-center rounded-2xl bg-navy text-gold transition-colors duration-500 group-hover:bg-gold group-hover:text-navy">
                 <i class="fa-solid fa-briefcase" aria-hidden="true"></i>
@@ -864,7 +886,8 @@
           </article>
 
           <!-- Jakarta Timur -->
-          <article class="reveal group relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-7 shadow-sm transition-all duration-500 hover:-translate-y-2 hover:border-gold/50 hover:shadow-card">
+          <article class="map-card reveal group relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-7 shadow-sm transition-all duration-500 hover:-translate-y-2 hover:border-gold/50 hover:shadow-card">
+            <div class="map-tooltip">Basis komunitas &amp; UMKM</div>
             <div class="flex items-start justify-between">
               <span class="grid h-12 w-12 place-items-center rounded-2xl bg-navy text-gold transition-colors duration-500 group-hover:bg-gold group-hover:text-navy">
                 <i class="fa-solid fa-industry" aria-hidden="true"></i>
@@ -879,7 +902,8 @@
           </article>
 
           <!-- Jakarta Barat -->
-          <article class="reveal group relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-7 shadow-sm transition-all duration-500 hover:-translate-y-2 hover:border-gold/50 hover:shadow-card">
+          <article class="map-card reveal group relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-7 shadow-sm transition-all duration-500 hover:-translate-y-2 hover:border-gold/50 hover:shadow-card">
+            <div class="map-tooltip">Perdagangan &amp; industri</div>
             <div class="flex items-start justify-between">
               <span class="grid h-12 w-12 place-items-center rounded-2xl bg-navy text-gold transition-colors duration-500 group-hover:bg-gold group-hover:text-navy">
                 <i class="fa-solid fa-store" aria-hidden="true"></i>
@@ -894,7 +918,8 @@
           </article>
 
           <!-- Jakarta Utara -->
-          <article class="reveal group relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-7 shadow-sm transition-all duration-500 hover:-translate-y-2 hover:border-gold/50 hover:shadow-card">
+          <article class="map-card reveal group relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-7 shadow-sm transition-all duration-500 hover:-translate-y-2 hover:border-gold/50 hover:shadow-card">
+            <div class="map-tooltip">Pesisir &amp; lingkungan</div>
             <div class="flex items-start justify-between">
               <span class="grid h-12 w-12 place-items-center rounded-2xl bg-navy text-gold transition-colors duration-500 group-hover:bg-gold group-hover:text-navy">
                 <i class="fa-solid fa-ship" aria-hidden="true"></i>
@@ -909,7 +934,8 @@
           </article>
 
           <!-- Kepulauan Seribu -->
-          <article class="reveal group relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-7 shadow-sm transition-all duration-500 hover:-translate-y-2 hover:border-gold/50 hover:shadow-card">
+          <article class="map-card reveal group relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-7 shadow-sm transition-all duration-500 hover:-translate-y-2 hover:border-gold/50 hover:shadow-card">
+            <div class="map-tooltip">Wisata bahari &amp; konservasi</div>
             <div class="flex items-start justify-between">
               <span class="grid h-12 w-12 place-items-center rounded-2xl bg-navy text-gold transition-colors duration-500 group-hover:bg-gold group-hover:text-navy">
                 <i class="fa-solid fa-water" aria-hidden="true"></i>
@@ -966,10 +992,27 @@
           </a>
         </div>
 
-        <div class="mt-12 grid gap-7 sm:grid-cols-2 lg:grid-cols-4">
+        <!-- Filter & Search (Fitur Baru) -->
+        <div class="reveal mt-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+          <div class="flex flex-wrap gap-2">
+            <button class="filter-btn active rounded-full bg-navy px-4 py-2 text-xs font-bold text-white transition-all" data-filter="all">Semua</button>
+            <button class="filter-btn rounded-full border border-slate-300 bg-white px-4 py-2 text-xs font-bold text-slate-600 transition-all hover:border-gold/60 hover:text-gold-deep" data-filter="Pelantikan">Pelantikan</button>
+            <button class="filter-btn rounded-full border border-slate-300 bg-white px-4 py-2 text-xs font-bold text-slate-600 transition-all hover:border-gold/60 hover:text-gold-deep" data-filter="Diskusi Publik">Diskusi Publik</button>
+            <button class="filter-btn rounded-full border border-slate-300 bg-white px-4 py-2 text-xs font-bold text-slate-600 transition-all hover:border-gold/60 hover:text-gold-deep" data-filter="Aksi Sosial">Aksi Sosial</button>
+            <button class="filter-btn rounded-full border border-slate-300 bg-white px-4 py-2 text-xs font-bold text-slate-600 transition-all hover:border-gold/60 hover:text-gold-deep" data-filter="Pelatihan">Pelatihan</button>
+          </div>
+          <div class="relative w-full sm:w-64">
+            <span class="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-slate-400">
+              <i class="fa-solid fa-magnifying-glass text-sm" aria-hidden="true"></i>
+            </span>
+            <input id="searchNews" type="text" placeholder="Cari kegiatan…" class="w-full rounded-full border border-slate-300 bg-white py-2.5 pl-11 pr-4 text-sm text-navy placeholder:text-slate-400 transition-all focus:border-gold focus:outline-none focus:ring-4 focus:ring-gold/20" />
+          </div>
+        </div>
+
+        <div id="newsGrid" class="mt-10 grid gap-7 sm:grid-cols-2 lg:grid-cols-4">
 
           <!-- Berita 1 -->
-          <article class="reveal group flex flex-col overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition-all duration-500 hover:-translate-y-2 hover:border-gold/50 hover:shadow-card">
+          <article class="news-card reveal group flex flex-col overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition-all duration-500 hover:-translate-y-2 hover:border-gold/50 hover:shadow-card" data-category="Pelantikan">
             <div class="relative aspect-[16/10] w-full overflow-hidden bg-gradient-to-br from-navy-800 via-navy to-navy-900">
               <div class="absolute inset-0 bg-grid opacity-40" aria-hidden="true"></div>
               <div class="absolute inset-0 grid place-items-center">
@@ -995,7 +1038,7 @@
           </article>
 
           <!-- Berita 2 -->
-          <article class="reveal group flex flex-col overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition-all duration-500 hover:-translate-y-2 hover:border-gold/50 hover:shadow-card">
+          <article class="news-card reveal group flex flex-col overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition-all duration-500 hover:-translate-y-2 hover:border-gold/50 hover:shadow-card" data-category="Diskusi Publik">
             <div class="relative aspect-[16/10] w-full overflow-hidden bg-gradient-to-br from-navy-800 via-navy to-navy-900">
               <div class="absolute inset-0 bg-grid opacity-40" aria-hidden="true"></div>
               <div class="absolute inset-0 grid place-items-center">
@@ -1021,7 +1064,7 @@
           </article>
 
           <!-- Berita 3 -->
-          <article class="reveal group flex flex-col overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition-all duration-500 hover:-translate-y-2 hover:border-gold/50 hover:shadow-card">
+          <article class="news-card reveal group flex flex-col overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition-all duration-500 hover:-translate-y-2 hover:border-gold/50 hover:shadow-card" data-category="Aksi Sosial">
             <div class="relative aspect-[16/10] w-full overflow-hidden bg-gradient-to-br from-navy-800 via-navy to-navy-900">
               <div class="absolute inset-0 bg-grid opacity-40" aria-hidden="true"></div>
               <div class="absolute inset-0 grid place-items-center">
@@ -1047,7 +1090,7 @@
           </article>
 
           <!-- Berita 4 -->
-          <article class="reveal group flex flex-col overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition-all duration-500 hover:-translate-y-2 hover:border-gold/50 hover:shadow-card">
+          <article class="news-card reveal group flex flex-col overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition-all duration-500 hover:-translate-y-2 hover:border-gold/50 hover:shadow-card" data-category="Pelatihan">
             <div class="relative aspect-[16/10] w-full overflow-hidden bg-gradient-to-br from-navy-800 via-navy to-navy-900">
               <div class="absolute inset-0 bg-grid opacity-40" aria-hidden="true"></div>
               <div class="absolute inset-0 grid place-items-center">
@@ -1374,7 +1417,7 @@
               <p class="text-sm leading-relaxed text-slate-400">
                 Kantor DPD Partai Golkar DKI Jakarta<br />
                 Jl. Cikini Raya No. 56, Cikini, Menteng,<br />
-                Jakarta Pusat 10330, DKI Jakarta[reference:3]
+                Jakarta Pusat 10330, DKI Jakarta
               </p>
             </li>
             <li class="flex items-start gap-3">
@@ -1565,7 +1608,7 @@
         });
       }
 
-      /* ---------------- Reveal on scroll - VERSI DIPERBAIKI ---------------- */
+      /* ---------------- Reveal on scroll ---------------- */
       const revealEls = Array.prototype.slice.call(document.querySelectorAll('.reveal'));
 
       if ('IntersectionObserver' in window) {
@@ -1576,17 +1619,17 @@
               observer.unobserve(entry.target);
             }
           });
-        }, { threshold: 0, rootMargin: '0px 0px 0px 0px' }); // <-- DIPERBAIKI
+        }, { threshold: 0, rootMargin: '0px 0px 0px 0px' });
 
         revealEls.forEach(function (el, index) {
           el.style.transitionDelay = Math.min(index % 4, 3) * 70 + 'ms';
           revealObserver.observe(el);
         });
 
-        // Safety fallback - DIPERCEPAT
+        // Safety fallback
         window.setTimeout(function () {
           revealEls.forEach(function (el) { el.classList.add('is-visible'); });
-        }, 1000); // <-- DIPERBAIKI
+        }, 1000);
 
       } else {
         revealEls.forEach(function (el) { el.classList.add('is-visible'); });
@@ -1787,6 +1830,47 @@
 
           window.scrollTo({ top: top, behavior: 'smooth' });
           history.pushState(null, '', targetId);
+        });
+      });
+
+      /* ---------------- Search & Filter Berita (Fitur Baru) ---------------- */
+      const searchInput = document.getElementById('searchNews');
+      const filterButtons = document.querySelectorAll('.filter-btn');
+      const newsCards = document.querySelectorAll('.news-card');
+
+      function filterNews() {
+        const query = searchInput ? searchInput.value.toLowerCase() : '';
+        const activeFilter = document.querySelector('.filter-btn.active');
+        const category = activeFilter ? activeFilter.getAttribute('data-filter') : 'all';
+
+        newsCards.forEach(function (card) {
+          const title = card.querySelector('h3').textContent.toLowerCase();
+          const cardCategory = card.getAttribute('data-category') || '';
+          const matchesSearch = title.includes(query);
+          const matchesCategory = (category === 'all' || cardCategory === category);
+
+          if (matchesSearch && matchesCategory) {
+            card.style.display = '';
+            card.classList.add('is-visible');
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      }
+
+      if (searchInput) {
+        searchInput.addEventListener('input', filterNews);
+      }
+
+      filterButtons.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          filterButtons.forEach(function (b) {
+            b.classList.remove('active', 'bg-navy', 'text-white');
+            b.classList.add('border', 'border-slate-300', 'bg-white', 'text-slate-600');
+          });
+          this.classList.add('active', 'bg-navy', 'text-white');
+          this.classList.remove('border', 'border-slate-300', 'bg-white', 'text-slate-600');
+          filterNews();
         });
       });
 
