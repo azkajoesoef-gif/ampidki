@@ -140,7 +140,7 @@
           </div>
         </a>
 
-        <!-- Desktop Menu (Sederhana dengan Dropdown) -->
+        <!-- Desktop Menu -->
         <ul class="hidden items-center gap-1 xl:gap-2 lg:flex">
           <li><a href="#beranda" class="nav-link rounded-lg px-3 py-2 text-[13px] font-semibold text-slate-200 transition-colors hover:text-ampi-yellow">Beranda</a></li>
 
@@ -276,50 +276,53 @@
             </div>
           </div>
 
-          <!-- Right: Grand Showcase Logo -->
+          <!-- Right Column: Grand Showcase Logo (FIXED CONTRAST & NEW DESIGN) -->
           <div class="relative lg:col-span-5 flex justify-center">
-            <div class="pointer-events-none absolute -inset-8 rounded-[3rem] bg-gradient-to-tr from-ampi-yellow/25 via-transparent to-ampi-navyLight/50 blur-3xl"></div>
+            <!-- Ambient Glow -->
+            <div class="pointer-events-none absolute -inset-8 rounded-[3rem] bg-gradient-to-tr from-ampi-yellow/30 via-transparent to-white/10 blur-3xl"></div>
 
-            <div class="relative w-full max-w-md overflow-hidden rounded-[2.5rem] border border-ampi-yellow/30 bg-gradient-to-b from-ampi-navyLight/90 via-ampi-navy/95 to-ampi-navyDeep p-6 sm:p-8 shadow-2xl backdrop-blur-2xl">
+            <!-- Main Floating Card -->
+            <div class="relative w-full max-w-md overflow-hidden rounded-[2.5rem] border border-ampi-yellow/20 bg-white/95 p-6 sm:p-10 shadow-[0_20px_60px_-15px_rgba(11,26,51,0.3)] backdrop-blur-xl">
+              
+              <!-- Decorative Background Rings -->
               <div class="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
-                <div class="h-72 w-72 sm:h-80 sm:w-80 rounded-full border border-dashed border-ampi-yellow/25 animate-[spin_26s_linear_infinite]"></div>
-                <div class="absolute h-84 w-84 sm:h-96 sm:w-96 rounded-full border border-ampi-yellow/15 animate-[spinReverse_32s_linear_infinite]"></div>
-                <div class="absolute h-56 w-56 sm:h-64 sm:w-64 rounded-full bg-[radial-gradient(circle,rgba(255,215,0,0.35)_0%,rgba(230,184,0,0.1)_45%,transparent_75%)] animate-pulse"></div>
+                <div class="h-72 w-72 rounded-full border border-ampi-navy/5"></div>
+                <div class="absolute h-84 w-84 rounded-full border border-dashed border-ampi-yellow/30 animate-[spin_30s_linear_infinite]"></div>
               </div>
 
+              <!-- Top Badges -->
               <div class="relative z-10 flex items-center justify-between">
-                <span class="inline-flex items-center gap-1.5 rounded-full border border-ampi-yellow/30 bg-ampi-yellow/15 px-3 py-1 text-[10px] font-extrabold uppercase tracking-wider text-ampi-yellow">
+                <span class="inline-flex items-center gap-1.5 rounded-full border border-ampi-navy/10 bg-ampi-yellow/10 px-3 py-1 text-[10px] font-extrabold uppercase tracking-wider text-ampi-yellowDark">
                   <i class="fa-solid fa-shield-halved text-[11px]"></i> Lambang Resmi
                 </span>
-                <span class="inline-flex items-center gap-1.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 text-[10px] font-bold text-emerald-400">
-                  <span class="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse"></span> Sekretariat Aktif
+                <span class="inline-flex items-center gap-1.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 text-[10px] font-bold text-emerald-600">
+                  <span class="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse"></span> Aktif
                 </span>
               </div>
 
-              <div class="relative z-10 my-6 sm:my-8 flex flex-col items-center justify-center text-center">
-                <div class="group relative flex h-44 w-44 sm:h-52 sm:w-52 md:h-56 md:w-56 shrink-0 items-center justify-center rounded-full bg-gradient-to-tr from-ampi-yellowDark via-ampi-yellow to-ampi-yellowLight p-[4px] shadow-glow transition-transform duration-500 hover:scale-105">
-                  <div class="relative flex h-full w-full items-center justify-center rounded-full bg-ampi-navyDeep p-4 sm:p-5 shadow-inner overflow-hidden">
-                    <div class="absolute inset-0 bg-grid-dark opacity-30"></div>
-                    <img src="https://i.ibb.co.com/4RgRYf7Z/logo-ampi.png" alt="Lambang AMPI DKI Jakarta" class="relative z-10 max-h-full max-w-full w-auto h-auto object-contain filter drop-shadow-[0_10px_20px_rgba(255,215,0,0.35)] transition-transform duration-500 group-hover:rotate-2 group-hover:scale-105" />
-                  </div>
+              <!-- Logo Display - Clean White Circle for Maximum Contrast -->
+              <div class="relative z-10 my-8 flex flex-col items-center justify-center text-center">
+                <div class="group relative flex h-48 w-48 sm:h-56 sm:w-56 shrink-0 items-center justify-center rounded-full bg-white p-4 shadow-[0_20px_50px_-15px_rgba(11,26,51,0.2)] border border-slate-100 transition-all duration-500 hover:scale-105 hover:shadow-[0_25px_60px_-15px_rgba(255,215,0,0.4)]">
+                  <img src="https://i.ibb.co.com/4RgRYf7Z/logo-ampi.png" alt="Lambang AMPI DKI Jakarta" class="relative z-10 max-h-full max-w-full w-auto h-auto object-contain transition-transform duration-500 group-hover:scale-105" />
                 </div>
 
-                <h3 class="mt-5 sm:mt-6 text-xl sm:text-2xl font-black uppercase tracking-wider text-white">
-                  AMPI <span class="text-ampi-yellow">DKI JAKARTA</span>
+                <h3 class="mt-6 text-2xl font-black uppercase tracking-wider text-ampi-navy">
+                  AMPI <span class="text-ampi-yellowDark">DKI JAKARTA</span>
                 </h3>
-                <p class="mt-1 text-[11px] sm:text-xs font-semibold tracking-widest uppercase text-slate-300">
+                <p class="mt-1 text-[11px] sm:text-xs font-semibold tracking-widest uppercase text-slate-500">
                   Kekaryaan &bull; Kebangsaan &bull; Pembaharuan
                 </p>
               </div>
 
-              <div class="relative z-10 grid grid-cols-2 gap-3 border-t border-white/10 pt-4">
-                <div class="rounded-xl border border-white/5 bg-white/5 p-3 text-center">
-                  <p class="text-xs text-slate-300 font-medium">Cakupan Wilayah</p>
-                  <p class="text-sm sm:text-base font-extrabold text-ampi-yellow">6 DPD Kota/Kab</p>
+              <!-- Bottom Stats -->
+              <div class="relative z-10 grid grid-cols-2 gap-3 border-t border-slate-100 pt-5">
+                <div class="rounded-xl bg-slate-50 p-3 text-center border border-slate-100">
+                  <p class="text-xs text-slate-500 font-medium">Cakupan Wilayah</p>
+                  <p class="text-sm sm:text-base font-extrabold text-ampi-navy">6 DPD Kota/Kab</p>
                 </div>
-                <div class="rounded-xl border border-white/5 bg-white/5 p-3 text-center">
-                  <p class="text-xs text-slate-300 font-medium">Basis Kader</p>
-                  <p class="text-sm sm:text-base font-extrabold text-white">12.500+ Kader</p>
+                <div class="rounded-xl bg-slate-50 p-3 text-center border border-slate-100">
+                  <p class="text-xs text-slate-500 font-medium">Basis Kader</p>
+                  <p class="text-sm sm:text-base font-extrabold text-ampi-yellowDark">12.500+ Kader</p>
                 </div>
               </div>
             </div>
@@ -619,7 +622,7 @@
 
               <div class="mt-8 flex items-center justify-between border-t border-slate-100 pt-6">
                 <div>
-                  <p class="text-sm font-extrabold text-ampi-navy">Gaeandra Kartasasmita</p>
+                  <p class="text-sm font-extrabold text-ampi-navy">Gaeandra Kartasasasmita</p>
                   <p class="text-xs text-slate-500 font-medium">Plt. Ketua DPD AMPI Provinsi DKI Jakarta</p>
                 </div>
                 <div class="flex items-center gap-2 text-xs font-bold text-ampi-yellowDark">
@@ -1239,7 +1242,6 @@
                 </button>
               </form>
 
-              <!-- Tombol Cek Status (dipindah ke sini) -->
               <div class="mt-6 border-t border-slate-200 pt-6 text-center">
                 <p class="text-xs text-slate-500 mb-3">Sudah pernah mengirim formulir?</p>
                 <button type="button" onclick="openTrackerModal()" class="inline-flex items-center gap-2 rounded-xl border-2 border-ampi-yellow bg-ampi-yellow/10 px-6 py-3 text-xs font-bold text-ampi-navy transition-all hover:bg-ampi-yellow">
@@ -1498,12 +1500,9 @@
     };
 
     function selectMapRegion(key) {
-      // Reset all regions
       document.querySelectorAll('.map-region').forEach(el => el.classList.remove('active'));
-      // Highlight selected
       const selected = document.getElementById('map-' + key);
       if (selected) selected.classList.add('active');
-      // Render detail
       renderWilayahDetail(key);
     }
 
@@ -1792,7 +1791,6 @@
 
     /* Init */
     document.addEventListener('DOMContentLoaded', () => {
-      // Default map selection
       selectMapRegion('jakpus');
     });
   </script>
