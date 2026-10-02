@@ -73,8 +73,9 @@
     .nav-link.active::after { transform: scaleX(1); }
     .nav-link.active { color: #F59E0B; }
 
-    /* Scroll reveal */
-    .reveal { opacity: 0; transform: translateY(26px); transition: opacity .8s cubic-bezier(.22,1,.36,1), transform .8s cubic-bezier(.22,1,.36,1); will-change: opacity, transform; }
+    /* Scroll reveal - DIPERBAIKI TOTAL: Default terlihat */
+    .reveal { opacity: 1; transform: none; transition: opacity .8s cubic-bezier(.22,1,.36,1), transform .8s cubic-bezier(.22,1,.36,1); will-change: opacity, transform; }
+    /* Class 'is-visible' hanya untuk memicu animasi, tapi default sudah terlihat */
     .reveal.is-visible { opacity: 1; transform: none; }
 
     /* Grid pattern background */
@@ -353,7 +354,7 @@
             <h3 class="text-2xl font-extrabold tracking-tight text-navy">Lokomotif Pemuda Pembaharuan di Ibu Kota</h3>
             <div class="mt-5 space-y-4 text-[15px] leading-relaxed text-slate-600">
               <p>
-                Sejak dideklarasikan pada 28 Juni 1978 di Pandaan, Jawa Timur, AMPI menempatkan diri sebagai kekuatan moral dan intelektual pemuda[reference:4]. Di DKI Jakarta — pusat denyut ekonomi, politik, dan budaya nasional — peran tersebut menuntut kepekaan tinggi terhadap persoalan warga kota.
+                Sejak dideklarasikan pada 28 Juni 1978 di Pandaan, Jawa Timur, AMPI menempatkan diri sebagai kekuatan moral dan intelektual pemuda. Di DKI Jakarta — pusat denyut ekonomi, politik, dan budaya nasional — peran tersebut menuntut kepekaan tinggi terhadap persoalan warga kota.
               </p>
               <p>
                 DPD AMPI DKI Jakarta mengoordinasikan gerakan di lima kota administrasi dan satu kabupaten administratif. Kami bekerja lintas sektor: mendorong kebijakan publik yang berpihak pada pemuda, membangun kapasitas kader, menggerakkan ekonomi kreatif, serta menghadirkan kehadiran sosial yang nyata di tengah masyarakat.
