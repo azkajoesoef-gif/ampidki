@@ -8,25 +8,20 @@
   <meta name="description" content="Portal Resmi Dewan Pimpinan Daerah Angkatan Muda Pembaharuan Indonesia (DPD AMPI) Provinsi DKI Jakarta. Kreativitas, Kepemudaan, Pembaharuan untuk Jakarta Kota Global." />
   <meta name="keywords" content="AMPI, DPD AMPI DKI Jakarta, Angkatan Muda Pembaharuan Indonesia, Pemuda Jakarta, Golkar Jakarta, Kepemudaan Jakarta" />
 
-  <!-- Open Graph -->
   <meta property="og:title" content="DPD AMPI DKI Jakarta - Pemuda Pembaharuan" />
   <meta property="og:description" content="Mewadahi Karya dan Pembaharuan Pemuda Jakarta Menuju Kota Global." />
   <meta property="og:image" content="https://i.ibb.co.com/4RgRYf7Z/logo-ampi.png" />
   <meta property="og:type" content="website" />
 
-  <!-- Favicon Resmi -->
   <link rel="icon" type="image/png" href="https://i.ibb.co.com/4RgRYf7Z/logo-ampi.png" />
   <link rel="apple-touch-icon" href="https://i.ibb.co.com/4RgRYf7Z/logo-ampi.png" />
 
-  <!-- Google Fonts: Plus Jakarta Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" />
 
-  <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" referrerpolicy="no-referrer" />
 
-  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -47,6 +42,7 @@
           },
           boxShadow: {
             glow: '0 0 55px -10px rgba(255, 215, 0, 0.45)',
+            glowLg: '0 0 90px -10px rgba(255, 215, 0, 0.55)',
             card: '0 20px 45px -15px rgba(11, 26, 51, 0.15)'
           }
         }
@@ -92,15 +88,12 @@
       background-size: 40px 40px;
     }
 
-    /* Dropdown */
     .dropdown:hover .dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
     .dropdown-menu { opacity: 0; visibility: hidden; transform: translateY(8px); transition: all .25s ease; }
 
-    /* Timeline */
     .timeline-line { position: absolute; left: 50%; top: 0; bottom: 0; width: 3px; background: linear-gradient(to bottom, #FFD700, #E6B800, transparent); transform: translateX(-50%); }
     @media (max-width: 768px) { .timeline-line { left: 20px; } }
 
-    /* Map */
     .map-region { cursor: pointer; transition: all .3s ease; }
     .map-region:hover { fill: #FFD700 !important; filter: drop-shadow(0 0 8px rgba(255,215,0,.6)); }
     .map-region.active { fill: #FFD700 !important; stroke: #0B1A33; stroke-width: 2; }
@@ -109,28 +102,95 @@
     .modal-backdrop.open { opacity: 1; pointer-events: auto; }
     .modal-content { transform: scale(0.95) translateY(20px); transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1); }
     .modal-backdrop.open .modal-content { transform: scale(1) translateY(0); }
+
+    /* ============ PREMIUM LOGO SHOWCASE ANIMATIONS ============ */
+    @keyframes orbit-slow {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    @keyframes orbit-reverse {
+      from { transform: rotate(360deg); }
+      to { transform: rotate(0deg); }
+    }
+    @keyframes pulse-halo {
+      0%, 100% { opacity: 0.35; transform: scale(1); }
+      50% { opacity: 0.7; transform: scale(1.12); }
+    }
+    @keyframes sparkle-float {
+      0%, 100% { opacity: 0; transform: translateY(0) scale(0.5); }
+      50% { opacity: 1; transform: translateY(-8px) scale(1); }
+    }
+    @keyframes shimmer-line {
+      0% { transform: translateX(-150%); }
+      100% { transform: translateX(250%); }
+    }
+    @keyframes ticker-scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    .orbit-ring-1 { animation: orbit-slow 32s linear infinite; }
+    .orbit-ring-2 { animation: orbit-reverse 44s linear infinite; }
+    .orbit-ring-3 { animation: orbit-slow 60s linear infinite; }
+    .pulse-halo { animation: pulse-halo 4s ease-in-out infinite; }
+
+    .sparkle {
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      background: #FFD700;
+      border-radius: 50%;
+      box-shadow: 0 0 12px 2px rgba(255,215,0,0.8);
+      animation: sparkle-float 3s ease-in-out infinite;
+    }
+    .sparkle.s1 { top: 12%; left: 15%; animation-delay: 0s; }
+    .sparkle.s2 { top: 22%; right: 12%; animation-delay: 0.8s; }
+    .sparkle.s3 { bottom: 28%; left: 10%; animation-delay: 1.6s; }
+    .sparkle.s4 { bottom: 18%; right: 18%; animation-delay: 2.4s; }
+    .sparkle.s5 { top: 50%; left: 6%; animation-delay: 1.2s; }
+    .sparkle.s6 { top: 50%; right: 6%; animation-delay: 2s; }
+
+    .shimmer {
+      position: relative;
+      overflow: hidden;
+    }
+    .shimmer::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 40%;
+      height: 100%;
+      background: linear-gradient(120deg, transparent, rgba(255,215,0,0.35), transparent);
+      animation: shimmer-line 4.5s ease-in-out infinite;
+      pointer-events: none;
+    }
+
+    .ticker-wrapper { overflow: hidden; }
+    .ticker-content {
+      display: inline-flex;
+      animation: ticker-scroll 28s linear infinite;
+      white-space: nowrap;
+    }
+
+    .tilt-card { transition: transform .4s cubic-bezier(.22,1,.36,1); }
+    .tilt-card:hover { transform: perspective(1000px) rotateX(3deg) rotateY(-3deg) scale(1.01); }
   </style>
 </head>
 
 <body class="bg-slate-50 text-slate-900 antialiased selection:bg-ampi-yellow selection:text-ampi-navy">
 
-  <!-- SKIP LINK -->
   <a href="#beranda" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[200] focus:rounded-xl focus:bg-ampi-yellow focus:px-5 focus:py-3 focus:text-sm focus:font-extrabold focus:text-ampi-navy focus:shadow-2xl">
     Langsung ke konten utama
   </a>
 
-  <!-- ================= HEADER / NAVBAR ================= -->
+  <!-- ================= HEADER ================= -->
   <header id="navbar" class="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-ampi-navy/90 backdrop-blur-xl transition-all duration-300">
     <nav class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8" aria-label="Navigasi Utama">
       <div class="flex h-20 items-center justify-between gap-4">
 
-        <!-- Logo Brand -->
-        <a href="#beranda" class="group flex shrink-0 items-center gap-3.5">
-          <div class="relative flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-tr from-ampi-yellowDark via-ampi-yellow to-ampi-yellowLight p-[2px] shadow-lg shadow-ampi-yellow/20 transition-transform duration-300 group-hover:scale-105">
-            <div class="flex h-full w-full items-center justify-center rounded-[14px] bg-ampi-navy p-1.5">
-              <img src="https://i.ibb.co.com/4RgRYf7Z/logo-ampi.png" alt="Logo Resmi AMPI DKI Jakarta" class="h-9 w-9 object-contain" />
-            </div>
-          </div>
+        <!-- FIXED Navbar Logo: NO FRAME, Just clean logo with subtle glow -->
+        <a href="#beranda" class="group flex shrink-0 items-center gap-3">
+          <img src="https://i.ibb.co.com/4RgRYf7Z/logo-ampi.png" alt="Logo Resmi AMPI DKI Jakarta" class="h-12 w-12 object-contain drop-shadow-[0_0_15px_rgba(255,215,0,0.4)] transition-all duration-300 group-hover:scale-110 group-hover:drop-shadow-[0_0_25px_rgba(255,215,0,0.7)]" />
           <div class="leading-tight">
             <div class="flex items-center gap-1.5">
               <span class="text-base font-extrabold tracking-tight text-white group-hover:text-ampi-yellow transition-colors">DPD AMPI</span>
@@ -140,11 +200,9 @@
           </div>
         </a>
 
-        <!-- Desktop Menu -->
         <ul class="hidden items-center gap-1 xl:gap-2 lg:flex">
           <li><a href="#beranda" class="nav-link rounded-lg px-3 py-2 text-[13px] font-semibold text-slate-200 transition-colors hover:text-ampi-yellow">Beranda</a></li>
 
-          <!-- Dropdown Profil -->
           <li class="dropdown relative">
             <button class="nav-link flex items-center gap-1.5 rounded-lg px-3 py-2 text-[13px] font-semibold text-slate-200 transition-colors hover:text-ampi-yellow">
               Profil <i class="fa-solid fa-chevron-down text-[10px]"></i>
@@ -167,7 +225,6 @@
 
           <li><a href="#program" class="nav-link rounded-lg px-3 py-2 text-[13px] font-semibold text-slate-200 transition-colors hover:text-ampi-yellow">Program</a></li>
 
-          <!-- Dropdown Informasi -->
           <li class="dropdown relative">
             <button class="nav-link flex items-center gap-1.5 rounded-lg px-3 py-2 text-[13px] font-semibold text-slate-200 transition-colors hover:text-ampi-yellow">
               Informasi <i class="fa-solid fa-chevron-down text-[10px]"></i>
@@ -186,7 +243,6 @@
           <li><a href="#aspirasi" class="nav-link rounded-lg px-3 py-2 text-[13px] font-semibold text-slate-200 transition-colors hover:text-ampi-yellow">Aspirasi</a></li>
         </ul>
 
-        <!-- Action Buttons -->
         <div class="flex items-center gap-3">
           <a href="#aspirasi" class="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-gradient-to-r from-ampi-yellowLight via-ampi-yellow to-ampi-yellowDark px-5 py-2.5 text-xs font-extrabold text-ampi-navy shadow-md shadow-ampi-yellow/20 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-glow">
             <i class="fa-solid fa-user-plus text-xs transition-transform group-hover:scale-110"></i>
@@ -200,7 +256,6 @@
       </div>
     </nav>
 
-    <!-- Mobile Menu -->
     <div id="mobileMenu" class="hidden border-b border-white/10 bg-ampi-navy/98 px-5 py-6 backdrop-blur-2xl lg:hidden">
       <ul class="space-y-1">
         <li><a href="#beranda" class="mobile-link flex items-center gap-3.5 rounded-xl px-4 py-3 text-sm font-semibold text-slate-200 hover:bg-white/5 hover:text-ampi-yellow"><i class="fa-solid fa-house w-4 text-ampi-yellow"></i> Beranda</a></li>
@@ -232,7 +287,6 @@
       <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="grid items-center gap-14 lg:grid-cols-12 lg:gap-12">
 
-          <!-- Copy -->
           <div class="lg:col-span-7">
             <div class="inline-flex items-center gap-2.5 rounded-full border border-ampi-yellow/30 bg-ampi-yellow/10 px-4 py-2 text-[11px] font-bold uppercase tracking-[0.18em] text-ampi-yellow shadow-sm backdrop-blur-md">
               <span class="relative flex h-2 w-2">
@@ -276,53 +330,119 @@
             </div>
           </div>
 
-          <!-- Right Column: Grand Showcase Logo (FIXED CONTRAST & NEW DESIGN) -->
+          <!-- ================= PREMIUM LAMBANG RESMI SHOWCASE ================= -->
           <div class="relative lg:col-span-5 flex justify-center">
-            <!-- Ambient Glow -->
-            <div class="pointer-events-none absolute -inset-8 rounded-[3rem] bg-gradient-to-tr from-ampi-yellow/30 via-transparent to-white/10 blur-3xl"></div>
+            <!-- Ambient Glow Behind Card -->
+            <div class="pointer-events-none absolute -inset-10 rounded-[3rem] bg-gradient-to-tr from-ampi-yellow/30 via-transparent to-ampi-navyLight/30 blur-3xl"></div>
 
-            <!-- Main Floating Card -->
-            <div class="relative w-full max-w-md overflow-hidden rounded-[2.5rem] border border-ampi-yellow/20 bg-white/95 p-6 sm:p-10 shadow-[0_20px_60px_-15px_rgba(11,26,51,0.3)] backdrop-blur-xl">
+            <!-- Main Interactive Card -->
+            <div id="lambangCard" class="tilt-card relative w-full max-w-md overflow-hidden rounded-[2.5rem] border border-ampi-yellow/30 bg-gradient-to-b from-ampi-navyLight/95 via-ampi-navy/98 to-ampi-navyDeep p-6 sm:p-8 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.6)] backdrop-blur-2xl">
               
-              <!-- Decorative Background Rings -->
-              <div class="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
-                <div class="h-72 w-72 rounded-full border border-ampi-navy/5"></div>
-                <div class="absolute h-84 w-84 rounded-full border border-dashed border-ampi-yellow/30 animate-[spin_30s_linear_infinite]"></div>
+              <!-- Top Shimmer Accent Line -->
+              <div class="absolute inset-x-0 top-0 h-px shimmer">
+                <div class="h-full w-full bg-gradient-to-r from-transparent via-ampi-yellow to-transparent"></div>
               </div>
 
-              <!-- Top Badges -->
-              <div class="relative z-10 flex items-center justify-between">
-                <span class="inline-flex items-center gap-1.5 rounded-full border border-ampi-navy/10 bg-ampi-yellow/10 px-3 py-1 text-[10px] font-extrabold uppercase tracking-wider text-ampi-yellowDark">
+              <!-- Corner Decorative Brackets (Bukan Frame Logo, Tapi Aksen Sudut) -->
+              <div class="pointer-events-none absolute left-4 top-4 h-8 w-8 border-l-2 border-t-2 border-ampi-yellow/40 rounded-tl-2xl"></div>
+              <div class="pointer-events-none absolute right-4 top-4 h-8 w-8 border-r-2 border-t-2 border-ampi-yellow/40 rounded-tr-2xl"></div>
+              <div class="pointer-events-none absolute left-4 bottom-4 h-8 w-8 border-l-2 border-b-2 border-ampi-yellow/40 rounded-bl-2xl"></div>
+              <div class="pointer-events-none absolute right-4 bottom-4 h-8 w-8 border-r-2 border-b-2 border-ampi-yellow/40 rounded-br-2xl"></div>
+
+              <!-- TOP STATUS BAR: Live Clock + Verified -->
+              <div class="relative z-20 flex items-center justify-between">
+                <div class="inline-flex items-center gap-1.5 rounded-full border border-ampi-yellow/30 bg-ampi-yellow/15 px-3 py-1 text-[10px] font-extrabold uppercase tracking-wider text-ampi-yellow backdrop-blur-md">
                   <i class="fa-solid fa-shield-halved text-[11px]"></i> Lambang Resmi
-                </span>
-                <span class="inline-flex items-center gap-1.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 text-[10px] font-bold text-emerald-600">
-                  <span class="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse"></span> Aktif
-                </span>
+                </div>
+                <div class="inline-flex items-center gap-1.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 text-[10px] font-bold text-emerald-400 backdrop-blur-md">
+                  <span class="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                  <span id="liveClock" class="font-mono">--:--:--</span> WIB
+                </div>
               </div>
 
-              <!-- Logo Display - Clean White Circle for Maximum Contrast -->
+              <!-- CENTRAL LOGO AREA WITH ORBITAL RINGS -->
               <div class="relative z-10 my-8 flex flex-col items-center justify-center text-center">
-                <div class="group relative flex h-48 w-48 sm:h-56 sm:w-56 shrink-0 items-center justify-center rounded-full bg-white p-4 shadow-[0_20px_50px_-15px_rgba(11,26,51,0.2)] border border-slate-100 transition-all duration-500 hover:scale-105 hover:shadow-[0_25px_60px_-15px_rgba(255,215,0,0.4)]">
-                  <img src="https://i.ibb.co.com/4RgRYf7Z/logo-ampi.png" alt="Lambang AMPI DKI Jakarta" class="relative z-10 max-h-full max-w-full w-auto h-auto object-contain transition-transform duration-500 group-hover:scale-105" />
+                
+                <!-- Orbital Rings Container -->
+                <div class="relative flex items-center justify-center" style="width: 260px; height: 260px;">
+                  
+                  <!-- Ring 1 - Outer Dashed Rotating -->
+                  <div class="orbit-ring-1 absolute inset-0 rounded-full border-2 border-dashed border-ampi-yellow/30"></div>
+                  
+                  <!-- Ring 2 - Middle Solid Reverse Rotating -->
+                  <div class="orbit-ring-2 absolute inset-6 rounded-full border border-ampi-yellow/50"></div>
+                  
+                  <!-- Ring 3 - Inner Dotted -->
+                  <div class="orbit-ring-3 absolute inset-12 rounded-full border-2 border-dotted border-ampi-yellow/40"></div>
+
+                  <!-- Pulsing Halo Behind Logo -->
+                  <div class="pulse-halo absolute inset-16 rounded-full bg-[radial-gradient(circle,rgba(255,215,0,0.45)_0%,rgba(230,184,0,0.15)_50%,transparent_80%)]"></div>
+
+                  <!-- Sparkle Particles -->
+                  <span class="sparkle s1"></span>
+                  <span class="sparkle s2"></span>
+                  <span class="sparkle s3"></span>
+                  <span class="sparkle s4"></span>
+                  <span class="sparkle s5"></span>
+                  <span class="sparkle s6"></span>
+
+                  <!-- Logo AMPI - NO FRAME, Clean & Bold -->
+                  <img src="https://i.ibb.co.com/4RgRYf7Z/logo-ampi.png" 
+                       alt="Lambang Resmi AMPI DKI Jakarta" 
+                       class="relative z-10 h-32 w-32 sm:h-40 sm:w-40 object-contain transition-transform duration-500 hover:scale-110 drop-shadow-[0_10px_30px_rgba(255,215,0,0.5)]" />
                 </div>
 
-                <h3 class="mt-6 text-2xl font-black uppercase tracking-wider text-ampi-navy">
-                  AMPI <span class="text-ampi-yellowDark">DKI JAKARTA</span>
+                <!-- Organization Title -->
+                <h3 class="mt-6 text-2xl sm:text-3xl font-black uppercase tracking-wider text-white">
+                  AMPI <span class="text-ampi-yellow">DKI JAKARTA</span>
                 </h3>
-                <p class="mt-1 text-[11px] sm:text-xs font-semibold tracking-widest uppercase text-slate-500">
+
+                <!-- Tagline -->
+                <p class="mt-1 text-[11px] sm:text-xs font-semibold tracking-[0.25em] uppercase text-slate-400">
                   Kekaryaan &bull; Kebangsaan &bull; Pembaharuan
                 </p>
+
+                <!-- Founding Year Badge -->
+                <div class="mt-4 inline-flex items-center gap-2 rounded-full border border-ampi-yellow/30 bg-ampi-yellow/10 px-4 py-1.5 backdrop-blur-md">
+                  <i class="fa-solid fa-calendar-days text-[11px] text-ampi-yellow"></i>
+                  <span class="text-[10px] font-bold uppercase tracking-wider text-ampi-yellowLight">Est. 28 Juni 1978</span>
+                </div>
               </div>
 
-              <!-- Bottom Stats -->
-              <div class="relative z-10 grid grid-cols-2 gap-3 border-t border-slate-100 pt-5">
-                <div class="rounded-xl bg-slate-50 p-3 text-center border border-slate-100">
-                  <p class="text-xs text-slate-500 font-medium">Cakupan Wilayah</p>
-                  <p class="text-sm sm:text-base font-extrabold text-ampi-navy">6 DPD Kota/Kab</p>
+              <!-- LIVE TICKER: Running Text Info -->
+              <div class="relative z-10 mb-4 overflow-hidden rounded-xl border border-ampi-yellow/20 bg-ampi-navyDeep/60 backdrop-blur-md">
+                <div class="ticker-wrapper py-2">
+                  <div class="ticker-content text-[10px] font-semibold uppercase tracking-wider text-ampi-yellowLight">
+                    <span class="px-4">★ Terdaftar Resmi DPP AMPI</span>
+                    <span class="px-4">★ 6 DPD Kota/Kabupaten Se-DKI</span>
+                    <span class="px-4">★ Kaderisasi Berkelanjutan</span>
+                    <span class="px-4">★ Advokasi Kebijakan Publik Pemuda</span>
+                    <span class="px-4">★ Ekonomi Kreatif &amp; Digital</span>
+                    <span class="px-4">★ Terdaftar Resmi DPP AMPI</span>
+                    <span class="px-4">★ 6 DPD Kota/Kabupaten Se-DKI</span>
+                    <span class="px-4">★ Kaderisasi Berkelanjutan</span>
+                    <span class="px-4">★ Advokasi Kebijakan Publik Pemuda</span>
+                    <span class="px-4">★ Ekonomi Kreatif &amp; Digital</span>
+                  </div>
                 </div>
-                <div class="rounded-xl bg-slate-50 p-3 text-center border border-slate-100">
-                  <p class="text-xs text-slate-500 font-medium">Basis Kader</p>
-                  <p class="text-sm sm:text-base font-extrabold text-ampi-yellowDark">12.500+ Kader</p>
+              </div>
+
+              <!-- BOTTOM STATS GRID -->
+              <div class="relative z-10 grid grid-cols-3 gap-2 border-t border-white/10 pt-4">
+                <div class="rounded-xl border border-white/5 bg-white/5 p-2.5 text-center backdrop-blur-md">
+                  <i class="fa-solid fa-map-location-dot text-ampi-yellow text-xs"></i>
+                  <p class="mt-1 text-[9px] uppercase tracking-wider text-slate-400 font-bold">Wilayah</p>
+                  <p class="text-xs font-extrabold text-white">6 Kota/Kab</p>
+                </div>
+                <div class="rounded-xl border border-white/5 bg-white/5 p-2.5 text-center backdrop-blur-md">
+                  <i class="fa-solid fa-users text-ampi-yellow text-xs"></i>
+                  <p class="mt-1 text-[9px] uppercase tracking-wider text-slate-400 font-bold">Kader</p>
+                  <p class="text-xs font-extrabold text-white">12.500+</p>
+                </div>
+                <div class="rounded-xl border border-white/5 bg-white/5 p-2.5 text-center backdrop-blur-md">
+                  <i class="fa-solid fa-award text-ampi-yellow text-xs"></i>
+                  <p class="mt-1 text-[9px] uppercase tracking-wider text-slate-400 font-bold">Tahun</p>
+                  <p class="text-xs font-extrabold text-white">1978</p>
                 </div>
               </div>
             </div>
@@ -330,7 +450,6 @@
         </div>
       </div>
 
-      <!-- Quick Metrics -->
       <div class="relative mx-auto mt-16 max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
           <div class="rounded-2xl border border-white/10 bg-ampi-navyLight/80 p-6 text-center shadow-card backdrop-blur-md">
@@ -353,7 +472,7 @@
       </div>
     </section>
 
-    <!-- ================= PROFIL & NILAI ================= -->
+    <!-- ================= PROFIL ================= -->
     <section id="profil" class="relative bg-white py-24 sm:py-32">
       <div class="pointer-events-none absolute inset-x-0 top-0 h-64 bg-grid-light opacity-60"></div>
 
@@ -433,7 +552,6 @@
           </div>
         </div>
 
-        <!-- Visi & Misi -->
         <div class="mt-20 grid gap-8 lg:grid-cols-12">
           <div class="lg:col-span-5 rounded-3xl bg-gradient-to-br from-ampi-navy via-ampi-navyLight to-ampi-navyDeep p-8 sm:p-10 text-white shadow-xl relative overflow-hidden flex flex-col justify-between">
             <div class="absolute -right-12 -top-12 h-44 w-44 rounded-full bg-ampi-yellow/15 blur-2xl"></div>
@@ -481,7 +599,7 @@
       </div>
     </section>
 
-    <!-- ================= TIMELINE SEJARAH ================= -->
+    <!-- ================= TIMELINE ================= -->
     <section id="timeline" class="relative bg-slate-100 py-24 sm:py-32 overflow-hidden">
       <div class="pointer-events-none absolute inset-x-0 top-0 h-64 bg-grid-light opacity-60"></div>
 
@@ -501,7 +619,6 @@
         <div class="relative mt-16">
           <div class="timeline-line hidden md:block"></div>
 
-          <!-- Item 1 -->
           <div class="relative mb-12 md:flex md:items-center md:justify-between">
             <div class="md:w-5/12 md:text-right md:pr-10">
               <span class="text-3xl font-black text-ampi-yellowDark">1978</span>
@@ -512,7 +629,6 @@
             <div class="md:w-5/12 md:pl-10"></div>
           </div>
 
-          <!-- Item 2 -->
           <div class="relative mb-12 md:flex md:items-center md:justify-between">
             <div class="md:w-5/12 md:text-right md:pr-10"></div>
             <div class="absolute left-1/2 hidden h-6 w-6 -translate-x-1/2 rounded-full border-4 border-ampi-yellow bg-white shadow md:block"></div>
@@ -523,7 +639,6 @@
             </div>
           </div>
 
-          <!-- Item 3 -->
           <div class="relative mb-12 md:flex md:items-center md:justify-between">
             <div class="md:w-5/12 md:text-right md:pr-10">
               <span class="text-3xl font-black text-ampi-yellowDark">1990-an</span>
@@ -534,7 +649,6 @@
             <div class="md:w-5/12 md:pl-10"></div>
           </div>
 
-          <!-- Item 4 -->
           <div class="relative mb-12 md:flex md:items-center md:justify-between">
             <div class="md:w-5/12 md:text-right md:pr-10"></div>
             <div class="absolute left-1/2 hidden h-6 w-6 -translate-x-1/2 rounded-full border-4 border-ampi-yellow bg-white shadow md:block"></div>
@@ -545,7 +659,6 @@
             </div>
           </div>
 
-          <!-- Item 5 -->
           <div class="relative mb-12 md:flex md:items-center md:justify-between">
             <div class="md:w-5/12 md:text-right md:pr-10">
               <span class="text-3xl font-black text-ampi-yellowDark">2010-an</span>
@@ -556,7 +669,6 @@
             <div class="md:w-5/12 md:pl-10"></div>
           </div>
 
-          <!-- Item 6 -->
           <div class="relative md:flex md:items-center md:justify-between">
             <div class="md:w-5/12 md:text-right md:pr-10"></div>
             <div class="absolute left-1/2 hidden h-6 w-6 -translate-x-1/2 rounded-full border-4 border-ampi-yellow bg-white shadow md:block"></div>
@@ -570,13 +682,12 @@
       </div>
     </section>
 
-    <!-- ================= SAMBUTAN KETUA ================= -->
+    <!-- ================= SAMBUTAN ================= -->
     <section id="sambutan" class="relative bg-white py-24 sm:py-32 overflow-hidden">
       <div class="pointer-events-none absolute -left-20 top-20 h-72 w-72 rounded-full bg-ampi-yellow/15 blur-3xl"></div>
 
       <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
-
           <div class="lg:col-span-5">
             <div class="relative mx-auto max-w-sm lg:max-w-none">
               <div class="absolute -inset-4 rounded-[2.5rem] bg-gradient-to-tr from-ampi-yellow via-ampi-yellowDark to-ampi-navyLight opacity-40 blur-xl"></div>
@@ -622,7 +733,7 @@
 
               <div class="mt-8 flex items-center justify-between border-t border-slate-100 pt-6">
                 <div>
-                  <p class="text-sm font-extrabold text-ampi-navy">Gaeandra Kartasasasmita</p>
+                  <p class="text-sm font-extrabold text-ampi-navy">Gaeandra Kartasasmita</p>
                   <p class="text-xs text-slate-500 font-medium">Plt. Ketua DPD AMPI Provinsi DKI Jakarta</p>
                 </div>
                 <div class="flex items-center gap-2 text-xs font-bold text-ampi-yellowDark">
@@ -635,7 +746,7 @@
       </div>
     </section>
 
-    <!-- ================= STRUKTUR ORGANISASI ================= -->
+    <!-- ================= STRUKTUR ================= -->
     <section id="struktur" class="relative bg-ampi-navy py-24 sm:py-32 text-white">
       <div class="pointer-events-none absolute inset-0 bg-grid-dark opacity-50"></div>
 
@@ -752,7 +863,7 @@
       </div>
     </section>
 
-    <!-- ================= PROGRAM UNGGULAN ================= -->
+    <!-- ================= PROGRAM ================= -->
     <section id="program" class="relative bg-white py-24 sm:py-32">
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="mx-auto max-w-3xl text-center">
@@ -851,7 +962,7 @@
       </div>
     </section>
 
-    <!-- ================= PETA INTERAKTIF WILAYAH ================= -->
+    <!-- ================= PETA WILAYAH ================= -->
     <section id="wilayah" class="relative bg-slate-100 py-24 sm:py-32">
       <div class="pointer-events-none absolute inset-x-0 top-0 h-64 bg-grid-light opacity-60"></div>
 
@@ -869,35 +980,27 @@
         </div>
 
         <div class="mt-14 grid gap-8 lg:grid-cols-12">
-          <!-- Interactive SVG Map -->
           <div class="lg:col-span-7">
             <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-card">
               <svg viewBox="0 0 600 400" class="w-full h-auto" aria-label="Peta Interaktif DKI Jakarta">
-                <!-- Jakarta Pusat -->
                 <path id="map-jakpus" onclick="selectMapRegion('jakpus')" class="map-region" fill="#CBD5E1" stroke="#94A3B8" stroke-width="1.5" d="M280,160 L320,140 L360,150 L370,190 L340,220 L290,210 Z" />
                 <text x="310" y="185" font-size="10" font-weight="bold" fill="#475569" text-anchor="middle" pointer-events="none">Jakarta Pusat</text>
 
-                <!-- Jakarta Selatan -->
                 <path id="map-jaksel" onclick="selectMapRegion('jaksel')" class="map-region" fill="#CBD5E1" stroke="#94A3B8" stroke-width="1.5" d="M290,210 L340,220 L370,190 L400,230 L390,290 L320,310 L270,270 Z" />
                 <text x="330" y="260" font-size="10" font-weight="bold" fill="#475569" text-anchor="middle" pointer-events="none">Jakarta Selatan</text>
 
-                <!-- Jakarta Timur -->
                 <path id="map-jaktim" onclick="selectMapRegion('jaktim')" class="map-region" fill="#CBD5E1" stroke="#94A3B8" stroke-width="1.5" d="M370,190 L420,170 L470,190 L480,250 L440,310 L390,290 L400,230 Z" />
                 <text x="440" y="245" font-size="10" font-weight="bold" fill="#475569" text-anchor="middle" pointer-events="none">Jakarta Timur</text>
 
-                <!-- Jakarta Barat -->
                 <path id="map-jakbar" onclick="selectMapRegion('jakbar')" class="map-region" fill="#CBD5E1" stroke="#94A3B8" stroke-width="1.5" d="M180,180 L230,160 L280,160 L290,210 L270,270 L220,290 L170,250 Z" />
                 <text x="235" y="230" font-size="10" font-weight="bold" fill="#475569" text-anchor="middle" pointer-events="none">Jakarta Barat</text>
 
-                <!-- Jakarta Utara -->
                 <path id="map-jakut" onclick="selectMapRegion('jakut')" class="map-region" fill="#CBD5E1" stroke="#94A3B8" stroke-width="1.5" d="M220,80 L320,70 L380,90 L370,140 L320,140 L280,160 L230,160 L200,130 Z" />
                 <text x="295" y="115" font-size="10" font-weight="bold" fill="#475569" text-anchor="middle" pointer-events="none">Jakarta Utara</text>
 
-                <!-- Kepulauan Seribu -->
                 <path id="map-seribu" onclick="selectMapRegion('seribu')" class="map-region" fill="#CBD5E1" stroke="#94A3B8" stroke-width="1.5" d="M100,40 L140,30 L160,50 L140,70 L100,60 Z" />
                 <text x="130" y="52" font-size="9" font-weight="bold" fill="#475569" text-anchor="middle" pointer-events="none">Kep. Seribu</text>
 
-                <!-- Legend / Decorative -->
                 <rect x="20" y="340" width="120" height="45" rx="8" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="1" />
                 <text x="30" y="358" font-size="9" fill="#64748B">Klik wilayah untuk</text>
                 <text x="30" y="372" font-size="9" fill="#64748B">melihat detail DPD</text>
@@ -905,7 +1008,6 @@
             </div>
           </div>
 
-          <!-- Detail Panel -->
           <div class="lg:col-span-5">
             <div id="wilayahDetail" class="rounded-3xl border border-slate-200 bg-white p-8 shadow-card h-full">
               <div class="text-center py-16">
@@ -1032,7 +1134,7 @@
       </div>
     </section>
 
-    <!-- ================= BERITA & KEGIATAN ================= -->
+    <!-- ================= BERITA ================= -->
     <section id="berita" class="relative bg-white py-24 sm:py-32">
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
@@ -1136,7 +1238,7 @@
       </div>
     </section>
 
-    <!-- ================= ASPIRASI & REGISTRASI ================= -->
+    <!-- ================= ASPIRASI ================= -->
     <section id="aspirasi" class="relative bg-ampi-navy py-24 sm:py-32 text-white overflow-hidden">
       <div class="pointer-events-none absolute inset-0 bg-grid-dark opacity-50"></div>
       <div class="pointer-events-none absolute -left-32 top-0 h-96 w-96 rounded-full bg-ampi-yellow/15 blur-[130px]"></div>
@@ -1265,11 +1367,8 @@
       <div class="grid gap-12 lg:grid-cols-12 lg:gap-10">
         <div class="lg:col-span-4">
           <div class="flex items-center gap-3">
-            <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-tr from-ampi-yellow to-ampi-yellowLight p-0.5">
-              <div class="flex h-full w-full items-center justify-center rounded-[14px] bg-ampi-navyDeep p-1.5">
-                <img src="https://i.ibb.co.com/4RgRYf7Z/logo-ampi.png" alt="Logo AMPI" class="h-full w-full object-contain" />
-              </div>
-            </div>
+            <!-- FIXED Footer Logo: NO FRAME -->
+            <img src="https://i.ibb.co.com/4RgRYf7Z/logo-ampi.png" alt="Logo AMPI" class="h-14 w-14 object-contain drop-shadow-[0_0_15px_rgba(255,215,0,0.35)]" />
             <div>
               <span class="block text-base font-extrabold text-white">DPD AMPI</span>
               <span class="block text-[10px] font-bold uppercase tracking-[0.22em] text-ampi-yellow">DKI Jakarta</span>
@@ -1354,17 +1453,14 @@
     </div>
   </footer>
 
-  <!-- Floating WhatsApp -->
   <a href="https://wa.me/6281200000000?text=Halo%20Admin%20DPD%20AMPI%20DKI%20Jakarta,%20saya%20ingin%20bertanya%20informasi" target="_blank" rel="noopener noreferrer" class="fixed bottom-24 right-6 z-40 flex h-13 w-13 items-center justify-center rounded-full bg-emerald-500 text-white shadow-xl shadow-emerald-500/30 transition-transform duration-300 hover:scale-110 focus:outline-none" title="Chat WhatsApp Sekretariat">
     <i class="fa-brands fa-whatsapp text-2xl"></i>
   </a>
 
-  <!-- Back to Top -->
   <button id="toTop" type="button" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })" class="pointer-events-none fixed bottom-6 right-6 z-40 grid h-12 w-12 translate-y-4 place-items-center rounded-full bg-gradient-to-tr from-ampi-yellowDark via-ampi-yellow to-ampi-yellowLight text-ampi-navy opacity-0 shadow-xl shadow-ampi-yellow/30 transition-all duration-300 hover:scale-110 focus:outline-none">
     <i class="fa-solid fa-arrow-up text-sm font-black"></i>
   </button>
 
-  <!-- Modal: Tracker -->
   <div id="trackerModal" class="modal-backdrop fixed inset-0 z-50 flex items-center justify-center bg-ampi-navy/80 p-4 backdrop-blur-md">
     <div class="modal-content relative w-full max-w-md rounded-3xl border border-ampi-yellow/30 bg-ampi-navyLight p-7 text-white shadow-2xl">
       <button type="button" onclick="closeTrackerModal()" class="absolute right-5 top-5 grid h-9 w-9 place-items-center rounded-full bg-white/10 text-slate-300 hover:bg-white/20 hover:text-white">
@@ -1389,13 +1485,10 @@
         </div>
       </div>
 
-      <div id="trackResult" class="mt-5 hidden rounded-2xl border border-white/10 bg-ampi-navyDeep p-4 text-xs">
-        <!-- Rendered via JS -->
-      </div>
+      <div id="trackResult" class="mt-5 hidden rounded-2xl border border-white/10 bg-ampi-navyDeep p-4 text-xs"></div>
     </div>
   </div>
 
-  <!-- Modal: Ticket Success -->
   <div id="ticketSuccessModal" class="modal-backdrop fixed inset-0 z-50 flex items-center justify-center bg-ampi-navy/85 p-4 backdrop-blur-md">
     <div class="modal-content relative w-full max-w-lg rounded-3xl border-2 border-ampi-yellow bg-ampi-navyLight p-8 text-white shadow-2xl">
       <div class="text-center">
@@ -1427,7 +1520,6 @@
     </div>
   </div>
 
-  <!-- Toast -->
   <div id="toast" class="pointer-events-none fixed inset-x-0 bottom-6 z-[100] flex translate-y-4 justify-center px-4 opacity-0 transition-all duration-300">
     <div class="pointer-events-auto flex w-full max-w-md items-center gap-3 rounded-2xl border border-ampi-yellow/40 bg-ampi-navyLight/95 p-4 shadow-2xl backdrop-blur-md">
       <span id="toastIcon" class="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-ampi-yellow text-ampi-navy font-bold">
@@ -1441,62 +1533,30 @@
   </div>
 
   <script>
-    /* ================= DATA WILAYAH ================= */
+    /* ============ LIVE CLOCK WIB ============ */
+    function updateLiveClock() {
+      const clock = document.getElementById('liveClock');
+      if (!clock) return;
+      const now = new Date();
+      // Convert to WIB (UTC+7)
+      const utc = now.getTime() + (now.getTimezoneOffset() * 60000);
+      const wib = new Date(utc + (3600000 * 7));
+      const hh = String(wib.getHours()).padStart(2, '0');
+      const mm = String(wib.getMinutes()).padStart(2, '0');
+      const ss = String(wib.getSeconds()).padStart(2, '0');
+      clock.textContent = `${hh}:${mm}:${ss}`;
+    }
+    setInterval(updateLiveClock, 1000);
+    updateLiveClock();
+
+    /* ============ DATA WILAYAH ============ */
     const dataWilayah = {
-      jakpus: {
-        nama: "Jakarta Pusat",
-        status: "Kota Administrasi",
-        koordinator: "Koordinator Daerah Jakarta Pusat",
-        alamat: "Sekretariat DPD AMPI Jakpus, Jl. Percetakan Negara / Menteng",
-        program: "Fokus pada advokasi kebijakan publik, audiensi kemitraan eksekutif & legislatif, serta dialog pemuda pembaharuan di pusat pemerintahan.",
-        kecamatan: "8 Kecamatan: Gambir, Tanah Abang, Menteng, Senen, Cempaka Putih, Johar Baru, Kemayoran, Sawah Besar.",
-        kontak: "+62 812-1111-2233"
-      },
-      jaksel: {
-        nama: "Jakarta Selatan",
-        status: "Kota Administrasi",
-        koordinator: "Koordinator Daerah Jakarta Selatan",
-        alamat: "Sekretariat DPD AMPI Jaksel, Kawasan Blok M / Pancoran",
-        program: "Pengembangan ekosistem creative digital hub, inkubasi wirausaha startup anak muda, dan aktivasi ruang kreatif milenial.",
-        kecamatan: "10 Kecamatan: Kebayoran Baru, Kebayoran Lama, Pesanggrahan, Cilandak, Pasar Minggu, Jagakarsa, Mampang, Pancoran, Tebet, Setiabudi.",
-        kontak: "+62 812-2222-3344"
-      },
-      jaktim: {
-        nama: "Jakarta Timur",
-        status: "Kota Administrasi",
-        koordinator: "Koordinator Daerah Jakarta Timur",
-        alamat: "Sekretariat DPD AMPI Jaktim, Kawasan Rawamangun / Jatinegara",
-        program: "Fasilitasi serapan tenaga kerja pemuda, bursa pelatihan vokasi, penguatan UMKM akar rumput, serta pembinaan pemuda karang taruna.",
-        kecamatan: "10 Kecamatan: Matraman, Pulo Gadung, Jatinegara, Duren Sawit, Kramat Jati, Makasar, Pasar Rebo, Ciracas, Cipayung, Cakung.",
-        kontak: "+62 812-3333-4455"
-      },
-      jakbar: {
-        nama: "Jakarta Barat",
-        status: "Kota Administrasi",
-        koordinator: "Koordinator Daerah Jakarta Barat",
-        alamat: "Sekretariat DPD AMPI Jakbar, Kawasan Puri Indah / Grogol",
-        program: "Inkubasi perdagangan dan perniagaan digital, literasi keuangan bagi wirausahawan muda, serta aksi solidaritas sosial warga padat huni.",
-        kecamatan: "8 Kecamatan: Grogol Petamburan, Palmerah, Cengkareng, Kebon Jeruk, Kalideres, Tambora, Taman Sari, Kembangan.",
-        kontak: "+62 812-4444-5566"
-      },
-      jakut: {
-        nama: "Jakarta Utara",
-        status: "Kota Administrasi",
-        koordinator: "Koordinator Daerah Jakarta Utara",
-        alamat: "Sekretariat DPD AMPI Jakut, Kawasan Yos Sudarso / Pluit",
-        program: "Satgas peduli pesisir, advokasi ketahanan lingkungan rob, distribusi air bersih, dan pembinaan pemuda nelayan & kepelabuhanan.",
-        kecamatan: "6 Kecamatan: Penjaringan, Pademangan, Tanjung Priok, Koja, Kelapa Gading, Cilincing.",
-        kontak: "+62 812-5555-6677"
-      },
-      seribu: {
-        nama: "Kepulauan Seribu",
-        status: "Kabupaten Administrasi",
-        koordinator: "Koordinator Daerah Kepulauan Seribu",
-        alamat: "Sekretariat DPD AMPI Kep. Seribu, Pulau Pramuka / Pulau Panggang",
-        program: "Ekowisata bahari berkelanjutan, konservasi terumbu karang pemuda, dan pelatihan pemandu wisata bersertifikat bagi pemuda pulau.",
-        kecamatan: "2 Kecamatan: Kepulauan Seribu Utara & Kepulauan Seribu Selatan (11 Pulau Berpenghuni).",
-        kontak: "+62 812-6666-7788"
-      }
+      jakpus: { nama: "Jakarta Pusat", status: "Kota Administrasi", koordinator: "Koordinator Daerah Jakarta Pusat", alamat: "Sekretariat DPD AMPI Jakpus, Jl. Percetakan Negara / Menteng", program: "Fokus pada advokasi kebijakan publik, audiensi kemitraan eksekutif & legislatif, serta dialog pemuda pembaharuan di pusat pemerintahan.", kecamatan: "8 Kecamatan: Gambir, Tanah Abang, Menteng, Senen, Cempaka Putih, Johar Baru, Kemayoran, Sawah Besar.", kontak: "+62 812-1111-2233" },
+      jaksel: { nama: "Jakarta Selatan", status: "Kota Administrasi", koordinator: "Koordinator Daerah Jakarta Selatan", alamat: "Sekretariat DPD AMPI Jaksel, Kawasan Blok M / Pancoran", program: "Pengembangan ekosistem creative digital hub, inkubasi wirausaha startup anak muda, dan aktivasi ruang kreatif milenial.", kecamatan: "10 Kecamatan: Kebayoran Baru, Kebayoran Lama, Pesanggrahan, Cilandak, Pasar Minggu, Jagakarsa, Mampang, Pancoran, Tebet, Setiabudi.", kontak: "+62 812-2222-3344" },
+      jaktim: { nama: "Jakarta Timur", status: "Kota Administrasi", koordinator: "Koordinator Daerah Jakarta Timur", alamat: "Sekretariat DPD AMPI Jaktim, Kawasan Rawamangun / Jatinegara", program: "Fasilitasi serapan tenaga kerja pemuda, bursa pelatihan vokasi, penguatan UMKM akar rumput, serta pembinaan pemuda karang taruna.", kecamatan: "10 Kecamatan: Matraman, Pulo Gadung, Jatinegara, Duren Sawit, Kramat Jati, Makasar, Pasar Rebo, Ciracas, Cipayung, Cakung.", kontak: "+62 812-3333-4455" },
+      jakbar: { nama: "Jakarta Barat", status: "Kota Administrasi", koordinator: "Koordinator Daerah Jakarta Barat", alamat: "Sekretariat DPD AMPI Jakbar, Kawasan Puri Indah / Grogol", program: "Inkubasi perdagangan dan perniagaan digital, literasi keuangan bagi wirausahawan muda, serta aksi solidaritas sosial warga padat huni.", kecamatan: "8 Kecamatan: Grogol Petamburan, Palmerah, Cengkareng, Kebon Jeruk, Kalideres, Tambora, Taman Sari, Kembangan.", kontak: "+62 812-4444-5566" },
+      jakut: { nama: "Jakarta Utara", status: "Kota Administrasi", koordinator: "Koordinator Daerah Jakarta Utara", alamat: "Sekretariat DPD AMPI Jakut, Kawasan Yos Sudarso / Pluit", program: "Satgas peduli pesisir, advokasi ketahanan lingkungan rob, distribusi air bersih, dan pembinaan pemuda nelayan & kepelabuhanan.", kecamatan: "6 Kecamatan: Penjaringan, Pademangan, Tanjung Priok, Koja, Kelapa Gading, Cilincing.", kontak: "+62 812-5555-6677" },
+      seribu: { nama: "Kepulauan Seribu", status: "Kabupaten Administrasi", koordinator: "Koordinator Daerah Kepulauan Seribu", alamat: "Sekretariat DPD AMPI Kep. Seribu, Pulau Pramuka / Pulau Panggang", program: "Ekowisata bahari berkelanjutan, konservasi terumbu karang pemuda, dan pelatihan pemandu wisata bersertifikat bagi pemuda pulau.", kecamatan: "2 Kecamatan: Kepulauan Seribu Utara & Kepulauan Seribu Selatan (11 Pulau Berpenghuni).", kontak: "+62 812-6666-7788" }
     };
 
     function selectMapRegion(key) {
@@ -1510,27 +1570,23 @@
       const w = dataWilayah[key];
       const container = document.getElementById('wilayahDetail');
       if (!container || !w) return;
-
       container.innerHTML = `
         <div class="flex items-center gap-3 mb-4">
           <span class="rounded-xl bg-ampi-yellow/15 px-3 py-1 text-xs font-black uppercase text-ampi-yellowDark">${w.status}</span>
         </div>
         <h3 class="text-2xl font-extrabold text-ampi-navy">${w.nama}</h3>
         <p class="mt-3 text-sm leading-relaxed text-slate-600">${w.program}</p>
-
         <div class="mt-5 rounded-2xl border border-slate-100 bg-slate-50 p-4 text-xs space-y-2">
           <p><strong class="text-ampi-navy font-bold">Cakupan Wilayah:</strong> <span class="text-slate-600">${w.kecamatan}</span></p>
           <p><strong class="text-ampi-navy font-bold">Alamat Posko:</strong> <span class="text-slate-600">${w.alamat}</span></p>
           <p><strong class="text-ampi-navy font-bold">Koordinator:</strong> <span class="text-slate-600">${w.koordinator}</span></p>
         </div>
-
         <a href="https://wa.me/${w.kontak.replace(/[^0-9]/g, '')}?text=Halo%20Koordinator%20AMPI%20${encodeURIComponent(w.nama)}" target="_blank" rel="noopener noreferrer" class="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-ampi-navy px-5 py-3 text-xs font-bold text-white hover:bg-ampi-yellow hover:text-ampi-navy transition-all">
           <i class="fa-brands fa-whatsapp text-emerald-400"></i> Kontak Pengurus ${w.nama}
         </a>
       `;
     }
 
-    /* ================= FILTER & SEARCH BERITA ================= */
     const newsFilters = document.querySelectorAll('#newsFilters .filter-btn');
     const newsSearchInput = document.getElementById('newsSearchInput');
     const newsCards = document.querySelectorAll('#newsGrid .news-card');
@@ -1539,17 +1595,14 @@
       const query = (newsSearchInput ? newsSearchInput.value : '').toLowerCase().trim();
       const activeBtn = document.querySelector('#newsFilters .filter-btn.active');
       const activeCategory = activeBtn ? activeBtn.getAttribute('data-filter') : 'all';
-
       newsCards.forEach(card => {
         const title = card.querySelector('h3').textContent.toLowerCase();
         const category = card.getAttribute('data-category');
         const matchesCategory = (activeCategory === 'all' || category === activeCategory);
         const matchesQuery = title.includes(query);
-
         card.style.display = (matchesCategory && matchesQuery) ? 'flex' : 'none';
       });
     }
-
     if (newsFilters) {
       newsFilters.forEach(btn => {
         btn.addEventListener('click', function() {
@@ -1563,96 +1616,63 @@
         });
       });
     }
+    if (newsSearchInput) newsSearchInput.addEventListener('input', applyNewsFilter);
 
-    if (newsSearchInput) {
-      newsSearchInput.addEventListener('input', applyNewsFilter);
-    }
-
-    /* ================= FORM SUBMISSION ================= */
     function handleFormSubmission(event) {
       event.preventDefault();
       const btn = document.getElementById('btnSubmitForm');
       const nama = document.getElementById('inputNama').value.trim();
       const wilayah = document.getElementById('inputWilayah').value;
       const kategori = document.getElementById('inputKategori').value;
-
       if (!nama || !wilayah || !kategori) {
         showToast('Data Belum Lengkap', 'Mohon isi seluruh bidang wajib formulir.', 'error');
         return;
       }
-
       const randomNum = Math.floor(1000 + Math.random() * 9000);
       const generatedCode = `AMPI-JKT-${randomNum}`;
-
       const originalText = btn.innerHTML;
       btn.disabled = true;
       btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin mr-2"></i> Mengirim Data...';
-
       setTimeout(() => {
         btn.disabled = false;
         btn.innerHTML = originalText;
-
         document.getElementById('ticketCode').textContent = generatedCode;
         document.getElementById('ticketName').textContent = nama;
         document.getElementById('ticketWilayah').textContent = wilayah;
         document.getElementById('ticketKategori').textContent = kategori;
-
         document.getElementById('ticketSuccessModal').classList.add('open');
         document.getElementById('mainAspirasiForm').reset();
       }, 1000);
     }
-
-    function closeTicketModal() {
-      document.getElementById('ticketSuccessModal').classList.remove('open');
-    }
-
-    /* ================= TRACKER ================= */
-    function openTrackerModal() {
-      document.getElementById('trackerModal').classList.add('open');
-    }
-
-    function closeTrackerModal() {
-      document.getElementById('trackerModal').classList.remove('open');
-    }
-
+    function closeTicketModal() { document.getElementById('ticketSuccessModal').classList.remove('open'); }
+    function openTrackerModal() { document.getElementById('trackerModal').classList.add('open'); }
+    function closeTrackerModal() { document.getElementById('trackerModal').classList.remove('open'); }
     function checkStatusAction() {
       const input = document.getElementById('trackInput');
       const resultBox = document.getElementById('trackResult');
       if (!input || !resultBox) return;
-
       const val = input.value.trim();
-      if (!val) {
-        showToast('Perhatian', 'Ketik nomor tiket atau nomor WhatsApp Anda.');
-        return;
-      }
-
+      if (!val) { showToast('Perhatian', 'Ketik nomor tiket atau nomor WhatsApp Anda.'); return; }
       resultBox.classList.remove('hidden');
       resultBox.innerHTML = `
         <div class="flex items-center gap-2 text-emerald-400 font-bold mb-2">
           <i class="fa-solid fa-circle-check"></i> Data Ditemukan
         </div>
         <p><strong class="text-white">ID Tiket:</strong> ${val.toUpperCase()}</p>
-        <p><strong class="text-white">Status Dokumen:</strong> Terdaftar di Basis Data AMPI DKI</p>
-        <p><strong class="text-white">Posisi Terakhir:</strong> Disposisi ke Bidang Terkait di Kota Administrasi Terkait</p>
-        <div class="mt-3 rounded-lg bg-white/5 p-2 text-[11px] text-slate-300">
-          Tim sekretariat akan mengirim tautan kartu E-KTA atau lembar tanggapan melalui nomor WhatsApp Anda.
-        </div>
+        <p><strong class="text-white">Status:</strong> Terdaftar di Basis Data AMPI DKI</p>
+        <p><strong class="text-white">Posisi:</strong> Disposisi ke Bidang Terkait</p>
       `;
     }
 
-    /* ================= TOAST ================= */
     let toastTimeout = null;
     function showToast(title, message, type = 'info') {
       const toast = document.getElementById('toast');
       const toastTitle = document.getElementById('toastTitle');
       const toastMsg = document.getElementById('toastMessage');
       const toastIcon = document.getElementById('toastIcon');
-
-      if (!toast || !toastTitle || !toastMsg) return;
-
+      if (!toast) return;
       toastTitle.textContent = title;
       toastMsg.textContent = message;
-
       if (type === 'error') {
         toastIcon.className = 'grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-red-500 text-white font-bold';
         toastIcon.innerHTML = '<i class="fa-solid fa-triangle-exclamation"></i>';
@@ -1660,10 +1680,8 @@
         toastIcon.className = 'grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-ampi-yellow text-ampi-navy font-bold';
         toastIcon.innerHTML = '<i class="fa-solid fa-check"></i>';
       }
-
       toast.classList.remove('opacity-0', 'translate-y-4', 'pointer-events-none');
       toast.classList.add('opacity-100', 'translate-y-0');
-
       if (toastTimeout) clearTimeout(toastTimeout);
       toastTimeout = setTimeout(() => {
         toast.classList.add('opacity-0', 'translate-y-4', 'pointer-events-none');
@@ -1671,13 +1689,10 @@
       }, 4000);
     }
 
-    /* ================= SCROLL & NAV ================= */
     const navbar = document.getElementById('navbar');
     const toTop = document.getElementById('toTop');
-
     window.addEventListener('scroll', () => {
       const y = window.scrollY;
-
       if (y > 40) {
         navbar.classList.add('bg-ampi-navy/95', 'shadow-2xl', 'border-white/10');
         navbar.classList.remove('bg-ampi-navy/90');
@@ -1685,7 +1700,6 @@
         navbar.classList.remove('bg-ampi-navy/95', 'shadow-2xl');
         navbar.classList.add('bg-ampi-navy/90');
       }
-
       if (y > 600) {
         toTop.classList.remove('opacity-0', 'translate-y-4', 'pointer-events-none');
         toTop.classList.add('opacity-100', 'translate-y-0');
@@ -1693,7 +1707,6 @@
         toTop.classList.add('opacity-0', 'translate-y-4', 'pointer-events-none');
         toTop.classList.remove('opacity-100', 'translate-y-0');
       }
-
       updateActiveNavOnScroll();
     }, { passive: true });
 
@@ -1709,21 +1722,16 @@
           const height = sec.offsetHeight;
           if (scrollPos >= top && scrollPos < top + height) {
             navAnchors.forEach(a => {
-              if (a.getAttribute('href') === `#${id}`) {
-                a.classList.add('active');
-              } else {
-                a.classList.remove('active');
-              }
+              if (a.getAttribute('href') === `#${id}`) a.classList.add('active');
+              else a.classList.remove('active');
             });
           }
         }
       });
     }
 
-    /* Counter Animation */
     const counters = document.querySelectorAll('.counter');
     let countersStarted = false;
-
     function runCounters() {
       counters.forEach(counter => {
         const target = +counter.getAttribute('data-count');
@@ -1733,7 +1741,6 @@
         const totalSteps = duration / stepTime;
         const increment = target / totalSteps;
         let current = 0;
-
         const timer = setInterval(() => {
           current += increment;
           if (current >= target) {
@@ -1745,7 +1752,6 @@
         }, stepTime);
       });
     }
-
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting && !countersStarted) {
@@ -1754,24 +1760,18 @@
         }
       });
     }, { threshold: 0.2 });
-
     const statsSection = document.querySelector('.counter');
-    if (statsSection) {
-      observer.observe(statsSection.parentElement);
-    }
+    if (statsSection) observer.observe(statsSection.parentElement);
 
-    /* Mobile Menu */
     const menuBtn = document.getElementById('menuBtn');
     const menuIcon = document.getElementById('menuIcon');
     const mobileMenu = document.getElementById('mobileMenu');
-
     function closeMobileMenu() {
       if (!mobileMenu) return;
       mobileMenu.classList.add('hidden');
       menuIcon.className = 'fa-solid fa-bars text-lg';
       menuBtn.setAttribute('aria-expanded', 'false');
     }
-
     if (menuBtn) {
       menuBtn.addEventListener('click', () => {
         const isHidden = mobileMenu.classList.contains('hidden');
@@ -1779,20 +1779,30 @@
           mobileMenu.classList.remove('hidden');
           menuIcon.className = 'fa-solid fa-xmark text-lg';
           menuBtn.setAttribute('aria-expanded', 'true');
-        } else {
-          closeMobileMenu();
-        }
+        } else closeMobileMenu();
+      });
+    }
+    document.querySelectorAll('.mobile-link').forEach(link => link.addEventListener('click', closeMobileMenu));
+
+    /* ============ 3D TILT INTERACTIVE FOR LAMBANG CARD ============ */
+    const lambangCard = document.getElementById('lambangCard');
+    if (lambangCard && window.matchMedia('(hover: hover)').matches) {
+      lambangCard.addEventListener('mousemove', (e) => {
+        const rect = lambangCard.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        const rotateX = ((y - centerY) / centerY) * -4;
+        const rotateY = ((x - centerX) / centerX) * 4;
+        lambangCard.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.01)`;
+      });
+      lambangCard.addEventListener('mouseleave', () => {
+        lambangCard.style.transform = '';
       });
     }
 
-    document.querySelectorAll('.mobile-link').forEach(link => {
-      link.addEventListener('click', closeMobileMenu);
-    });
-
-    /* Init */
-    document.addEventListener('DOMContentLoaded', () => {
-      selectMapRegion('jakpus');
-    });
+    document.addEventListener('DOMContentLoaded', () => selectMapRegion('jakpus'));
   </script>
 </body>
 </html>
