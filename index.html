@@ -167,9 +167,9 @@
 
         <!-- Logo Brand Resmi -->
         <a href="#beranda" class="group flex shrink-0 items-center gap-3.5 focus:outline-none">
-          <div class="relative flex h-13 w-13 items-center justify-center rounded-2xl bg-gradient-to-tr from-gold-deep via-gold to-gold-light p-[2px] shadow-lg shadow-gold/20 transition-transform duration-300 group-hover:scale-105">
+          <div class="relative flex h-12 w-12 sm:h-13 sm:w-13 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-tr from-gold-deep via-gold to-gold-light p-[2px] shadow-lg shadow-gold/20 transition-transform duration-300 group-hover:scale-105">
             <div class="flex h-full w-full items-center justify-center rounded-[14px] bg-navy-900 p-1.5 overflow-hidden">
-              <img src="https://i.ibb.co.com/5hPvhnZp/IMG-9213.png" alt="Logo Resmi AMPI DKI Jakarta" class="h-full w-full object-contain filter drop-shadow" />
+              <img src="https://i.ibb.co.com/5hPvhnZp/IMG-9213.png" alt="Logo Resmi AMPI DKI Jakarta" class="h-9 w-9 sm:h-10 sm:w-10 object-contain filter drop-shadow" />
             </div>
           </div>
           <div class="leading-tight">
@@ -320,16 +320,16 @@
             <div class="pointer-events-none absolute -inset-8 rounded-[3rem] bg-gradient-to-tr from-gold/30 via-transparent to-navy-700/50 blur-3xl"></div>
 
             <!-- Main Showcase Container Card -->
-            <div class="relative w-full max-w-md overflow-hidden rounded-[2.5rem] border border-gold/30 bg-gradient-to-b from-navy-800/90 via-navy-900/95 to-navy-950 p-8 shadow-2xl backdrop-blur-2xl">
+            <div class="relative w-full max-w-md overflow-hidden rounded-[2.5rem] border border-gold/30 bg-gradient-to-b from-navy-800/90 via-navy-900/95 to-navy-950 p-6 sm:p-8 shadow-2xl backdrop-blur-2xl">
               
               <!-- Orbital Rings Animation behind the emblem -->
-              <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+              <div class="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
                 <!-- Rotating Ring 1 -->
-                <div class="h-80 w-80 rounded-full border border-dashed border-gold/25 animate-spin-slow"></div>
+                <div class="h-72 w-72 sm:h-80 sm:w-80 rounded-full border border-dashed border-gold/25 animate-spin-slow"></div>
                 <!-- Rotating Ring 2 -->
-                <div class="absolute h-96 w-96 rounded-full border border-gold/15 animate-spin-reverse-slow"></div>
+                <div class="absolute h-84 w-84 sm:h-96 sm:w-96 rounded-full border border-gold/15 animate-spin-reverse-slow"></div>
                 <!-- Radial Pulsing Halo Background -->
-                <div class="absolute h-64 w-64 rounded-full halo-gold animate-pulse-glow"></div>
+                <div class="absolute h-56 w-56 sm:h-64 sm:w-64 rounded-full halo-gold animate-pulse-glow"></div>
               </div>
 
               <!-- Top Micro Badges -->
@@ -342,21 +342,21 @@
                 </span>
               </div>
 
-              <!-- Central Grand Logo Display -->
-              <div class="relative z-10 my-8 flex flex-col items-center justify-center text-center">
-                <!-- Outer Golden Bezel / Emblem Frame -->
-                <div class="group relative flex h-48 w-48 sm:h-56 sm:w-56 items-center justify-center rounded-full bg-gradient-to-tr from-gold-deep via-gold to-gold-light p-[5px] shadow-glowLg transition-transform duration-500 hover:scale-105">
-                  <div class="flex h-full w-full items-center justify-center rounded-full bg-navy-950 p-6 shadow-inner relative overflow-hidden">
+              <!-- Central Grand Logo Display: LOCKED AND FIXED DIMENSIONS -->
+              <div class="relative z-10 my-6 sm:my-8 flex flex-col items-center justify-center text-center">
+                <!-- Outer Golden Bezel / Emblem Frame with strict width & height constraint -->
+                <div class="group relative flex h-44 w-44 sm:h-52 sm:w-52 md:h-56 md:w-56 shrink-0 items-center justify-center rounded-full bg-gradient-to-tr from-gold-deep via-gold to-gold-light p-[4px] shadow-glowLg transition-transform duration-500 hover:scale-105">
+                  <div class="relative flex h-full w-full items-center justify-center rounded-full bg-navy-950 p-4 sm:p-5 shadow-inner overflow-hidden">
                     <div class="absolute inset-0 bg-grid-dark opacity-30"></div>
-                    <!-- LOGO AMPI BARU: JAUH LEBIH BESAR, JERNIH, DAN MEWAH -->
-                    <img src="https://i.ibb.co.com/5hPvhnZp/IMG-9213.png" alt="Lambang AMPI Nasional & DKI Jakarta" class="relative z-10 h-full w-full object-contain filter drop-shadow-[0_10px_20px_rgba(245,158,11,0.35)] transition-transform duration-500 group-hover:rotate-3 group-hover:scale-110" />
+                    <!-- STRICTLY CONSTRAINED LOGO IMAGE -->
+                    <img src="https://i.ibb.co.com/5hPvhnZp/IMG-9213.png" alt="Lambang AMPI Nasional & DKI Jakarta" class="relative z-10 max-h-full max-w-full w-auto h-auto object-contain filter drop-shadow-[0_10px_20px_rgba(245,158,11,0.35)] transition-transform duration-500 group-hover:rotate-2 group-hover:scale-105" />
                   </div>
                 </div>
 
-                <h3 class="mt-6 text-xl sm:text-2xl font-black uppercase tracking-wider text-white">
+                <h3 class="mt-5 sm:mt-6 text-xl sm:text-2xl font-black uppercase tracking-wider text-white">
                   AMPI <span class="text-gold">DKI JAKARTA</span>
                 </h3>
-                <p class="mt-1 text-xs font-semibold tracking-widest uppercase text-slate-300">
+                <p class="mt-1 text-[11px] sm:text-xs font-semibold tracking-widest uppercase text-slate-300">
                   Kekaryaan &bull; Kebangsaan &bull; Pembaharuan
                 </p>
 
@@ -369,11 +369,11 @@
               <div class="relative z-10 grid grid-cols-2 gap-3 border-t border-white/10 pt-4">
                 <div class="rounded-xl border border-white/5 bg-white/5 p-3 text-center">
                   <p class="text-xs text-slate-300 font-medium">Cakupan Wilayah</p>
-                  <p class="text-base font-extrabold text-gold">6 DPD Kota/Kab</p>
+                  <p class="text-sm sm:text-base font-extrabold text-gold">6 DPD Kota/Kab</p>
                 </div>
                 <div class="rounded-xl border border-white/5 bg-white/5 p-3 text-center">
                   <p class="text-xs text-slate-300 font-medium">Basis Kader</p>
-                  <p class="text-base font-extrabold text-white">12.500+ Kader</p>
+                  <p class="text-sm sm:text-base font-extrabold text-white">12.500+ Kader</p>
                 </div>
               </div>
 
